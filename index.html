@@ -87,14 +87,20 @@
     </section>
 
     <section id="titleCard" class="panel panel--title" aria-labelledby="movieTitle" hidden>
-      <p class="eyebrow">Now playing</p>
+      <div class="title-kicker">
+        <p class="eyebrow">Now playing</p>
+        <p id="sceneMatch" class="title-match"></p>
+      </div>
       <h2 id="movieTitle">Reel Time</h2>
       <p id="rightsIntro" class="panel__copy"></p>
     </section>
 
     <section id="idle" class="panel panel--idle" aria-labelledby="localTime" hidden>
-      <h2 id="localTime">--:--:--</h2>
-      <p id="idleMessage" class="panel__copy">Waiting for the next scene.</p>
+      <div class="time-stack">
+        <h2 id="localTime">--:--:--</h2>
+        <p id="localTimeAmPm" class="time-ampm">--:--:-- --</p>
+      </div>
+      <p id="idleMessage" class="panel__copy">Waiting for the next scene. Grab some pop-corn.</p>
     </section>
 
     <div id="volumeControl" class="volume-control" hidden>

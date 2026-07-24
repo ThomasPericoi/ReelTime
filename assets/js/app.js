@@ -14,8 +14,10 @@
     titleCard: "#titleCard",
     idle: "#idle",
     localTime: "#localTime",
+    localTimeAmPm: "#localTimeAmPm",
     idleMessage: "#idleMessage",
     movieTitle: "#movieTitle",
+    sceneMatch: "#sceneMatch",
     rightsIntro: "#rightsIntro",
     playbackStatus: "#playbackStatus",
     currentCredit: "#currentCredit",
@@ -48,6 +50,8 @@
     countdownBeep: "assets/sounds/countdown_beep.mp3",
     projector: "assets/sounds/projector.mp3",
   };
+
+  const IDLE_MESSAGE = "Waiting for the next scene. Grab some pop-corn.";
 
   const TIMING = {
     countdownStepMs: 1000,
@@ -84,6 +88,7 @@
     nextCheckAt: null,
     timers: [],
     renderedLocalTime: "",
+    renderedLocalTimeAmPm: "",
     renderedNextTimer: "",
     masterVolume: VOLUME.master,
     playedFlexibleSceneIds: new Set(),
@@ -137,32 +142,33 @@
   }
 
   async function primeFuturePlayback() {
-    if (selectScene(new Date(), { mode: "arrival" })) return;
+    const now = new Date();
+    const scene =
+      selectScene(now, { mode: "arrival" }) ||
+      selectScene(findNextPlayableTime(now, { mode: "ongoing" }), { mode: "ongoing" });
 
-    const token = state.sequenceToken;
-    const nextScene = selectScene(findNextPlayableTime(new Date(), { mode: "ongoing" }), { mode: "ongoing" });
-    if (!nextScene) return;
+    if (!scene) return;
 
     try {
+      prepareSceneVideo(scene);
       el.scene.muted = true;
-      el.scene.src = encodeURI(nextScene.src);
-      el.scene.load();
       await el.scene.play();
       el.scene.pause();
+      el.scene.currentTime = 0;
     } catch {
-      // Browsers may refuse deferred media priming; playback still starts from the user gesture.
+      // Browsers may refuse deferred media priming; playback has a muted fallback at scene start.
     } finally {
-      if (token === state.sequenceToken && !state.isPlayingSequence) resetVideo();
       el.scene.muted = false;
+      applySceneVolume();
     }
   }
 
   /*______________________________________ SCHEDULER ______________________________________*/
 
-  function startClock() {
-    enterPlaybackMode();
+  async function startClock() {
     applySceneVolume();
-    primeFuturePlayback();
+    await primeFuturePlayback();
+    enterPlaybackMode();
     scheduleFromNow({ playImmediately: true, mode: "arrival" });
   }
 
@@ -199,7 +205,7 @@
     }
 
     state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
-    showIdle(selected ? "Waiting for the next local-time scene." : "No scene for this minute.");
+    showIdle(IDLE_MESSAGE);
   }
 
   /*__________________________________ PLAYBACK SEQUENCE __________________________________*/
@@ -216,7 +222,7 @@
       await playScene(scene, token);
       settleVideo();
       setFaviconLetter();
-      await fadeOutProjectorSound();
+      await fadeOutProjectorSound(TIMING.quickFadeMs);
     } finally {
       if (token !== state.sequenceToken) return;
       state.isPlayingSequence = false;
@@ -236,7 +242,7 @@
     rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
-    resetVideo();
+    resetVideoUnlessPrimed(scene);
     dimRoom();
     return state.sequenceToken;
   }
@@ -257,6 +263,7 @@
     if (token !== state.sequenceToken) return;
     setFaviconRecording();
     el.movieTitle.textContent = scene.movieTitle;
+    el.sceneMatch.textContent = sceneMatchLine(scene, new Date());
     el.rightsIntro.textContent = creditLine(scene);
     showPanel(el.titleCard);
     await sleep(TIMING.titleCardMs);
@@ -273,16 +280,41 @@
       hidePanels();
       setCreditOverlay(scene);
       el.scene.classList.remove("gate-hit", "is-ending");
-      el.scene.src = encodeURI(scene.src);
-      applySceneVolume();
-      el.scene.muted = false;
-      el.scene.load();
+      prepareSceneVideo(scene);
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
       el.scene.ontimeupdate = () => updateEndingLook(token);
       el.scene.onended = resolve;
       el.scene.onerror = resolve;
-      el.scene.play().catch(resolve);
+      startSceneVideo().catch(resolve);
+    });
+  }
+
+  function prepareSceneVideo(scene) {
+    const src = encodeURI(scene.src);
+    if (el.scene.getAttribute("src") !== src) {
+      el.scene.src = src;
+      el.scene.load();
+    }
+    applySceneVolume();
+    el.scene.muted = false;
+  }
+
+  async function startSceneVideo() {
+    try {
+      await el.scene.play();
+      return;
+    } catch {
+      await startSceneVideoMuted();
+    }
+  }
+
+  async function startSceneVideoMuted() {
+    el.scene.muted = true;
+    await el.scene.play();
+    requestAnimationFrame(() => {
+      el.scene.muted = false;
+      applySceneVolume();
     });
   }
 
@@ -473,7 +505,7 @@
     restoreRoomLight();
     hidePanels();
     setFaviconLetter();
-    showIdle("Debug playback stopped.");
+    showIdle(IDLE_MESSAGE);
   }
 
   /*__________________________________________ UI __________________________________________*/
@@ -491,6 +523,19 @@
     el.app.classList.add("has-freeze-frame");
     el.scene.classList.remove("gate-hit");
     el.scene.classList.add("is-ending");
+    clearSceneHandlers();
+  }
+
+  function resetVideoUnlessPrimed(scene) {
+    if (el.scene.getAttribute("src") !== encodeURI(scene.src)) {
+      resetVideo();
+      return;
+    }
+
+    el.scene.pause();
+    el.scene.currentTime = 0;
+    el.app.classList.remove("has-freeze-frame");
+    el.scene.classList.remove("gate-hit", "is-ending");
     clearSceneHandlers();
   }
 
@@ -578,6 +623,7 @@
   function updateClockFace() {
     const now = new Date();
     renderText(el.localTime, "renderedLocalTime", formatClockTime(now));
+    renderText(el.localTimeAmPm, "renderedLocalTimeAmPm", formatClockTimeAmPm(now));
 
     if (state.nextCheckAt) {
       const nextTimer = formatDuration(Math.max(0, state.nextCheckAt.getTime() - now.getTime()));
@@ -635,6 +681,54 @@
 
   function creditLine(scene) {
     return `${filmMetaLine(scene)} · ${rightsLine(scene)}`;
+  }
+
+  function sceneMatchLine(scene, date = new Date()) {
+    if (scene.precision === "fallback") return "Local time: Lost track of time";
+    if (scene.precision === "broad") return `Local time: ${scene.displayTime}`;
+
+    const span = matchingSpan(scene, date) || scene.spans[0];
+    const target = sceneTargetTime(scene, span);
+    const labels = {
+      exact: "Exactly",
+      before: "Before",
+      after: "After",
+      approx: "Approximately",
+      range: "Around",
+    };
+
+    return `Local time: ${labels[scene.precision] || titleCase(scene.precision)} ${target}`;
+  }
+
+  function matchingSpan(scene, date) {
+    const minute = date.getHours() * 60 + date.getMinutes();
+    return scene.spans.find((span) => coversSpanMinute(span, minute));
+  }
+
+  function sceneTargetTime(scene, span) {
+    if (!span) return scene.displayTime;
+    if (scene.precision === "before") return span.end;
+    if (scene.precision === "after") return span.start;
+    if (scene.precision === "approx" || scene.precision === "range") return minuteToTime(centerMinute(span));
+    return span.start;
+  }
+
+  function coversSpanMinute(span, minute) {
+    if (span.startMinute <= span.endMinute) {
+      return minute >= span.startMinute && minute <= span.endMinute;
+    }
+    return minute >= span.startMinute || minute <= span.endMinute;
+  }
+
+  function centerMinute(span) {
+    const size = span.startMinute <= span.endMinute
+      ? span.endMinute - span.startMinute
+      : 1440 - span.startMinute + span.endMinute;
+    return (span.startMinute + Math.round(size / 2)) % 1440;
+  }
+
+  function titleCase(value) {
+    return String(value).replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
   }
 
   /*______________________________________ CONSOLE API _______________________________________*/
@@ -775,6 +869,18 @@
 
   function formatClockTime(date) {
     return `${pad2(date.getHours())}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())}`;
+  }
+
+  function formatClockTimeAmPm(date) {
+    const hour = date.getHours();
+    const meridiem = hour >= 12 ? "PM" : "AM";
+    const hour12 = hour % 12 || 12;
+    return `${hour12}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())} ${meridiem}`;
+  }
+
+  function minuteToTime(minute) {
+    const value = ((minute % 1440) + 1440) % 1440;
+    return `${pad2(Math.floor(value / 60))}:${pad2(value % 60)}`;
   }
 
   function formatDuration(ms) {

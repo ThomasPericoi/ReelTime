@@ -262,7 +262,23 @@ video {
   }
 }
 
-.panel__copy {
+.panel--title h2 {
+  max-width: min(92vw, 58rem);
+  font-size: clamp(2rem, 10vw, 5.5rem);
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (min-width: 721px) {
+  .panel--title h2 {
+    font-size: clamp(3.25rem, 7vw, 7.5rem);
+  }
+}
+
+.panel__copy,
+.time-ampm,
+.title-match {
   max-width: 92vw;
   margin: 0;
   color: var(--paper-muted);
@@ -270,13 +286,66 @@ video {
   line-height: 1.45;
 }
 
+.time-stack {
+  display: grid;
+  gap: 0.25rem;
+  place-items: center;
+}
+
+.time-stack h2 {
+  max-width: 94vw;
+}
+
+.time-ampm,
+.title-match {
+  font-variant-numeric: tabular-nums;
+}
+
+.time-ampm {
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 7vw, 2.25rem);
+  letter-spacing: 0.045em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 @media (min-width: 721px) {
-  .panel__copy {
-    max-width: 52.5rem;
-    font-size: clamp(1.0625rem, 2vw, 1.5625rem);
+  .time-ampm {
+    font-size: clamp(2rem, 4vw, 4.25rem);
   }
 }
 
+.title-match {
+  color: var(--gold);
+  font-size: clamp(0.8125rem, 3.6vw, 1rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 721px) {
+  .panel__copy,
+  .title-match {
+    max-width: 52.5rem;
+    font-size: clamp(1.0625rem, 2vw, 1.5625rem);
+  }
+
+  .title-match {
+    font-size: clamp(0.875rem, 1vw, 1.125rem);
+  }
+}
+
+
+.title-kicker {
+  display: grid;
+  gap: 0.25rem;
+  place-items: center;
+}
+
+.title-kicker .eyebrow,
+.title-kicker .title-match {
+  margin: 0;
+}
 
 /*_____________________________________ TITLE MARQUEE _________________________________________*/
 
@@ -669,6 +738,7 @@ video {
 .status__movie {
   font-size: 1.125rem;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .status__rights {
