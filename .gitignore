@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+assets/movie-scenes/*.mp4
+assets/movie-scenes/*.mov
+assets/movie-scenes/*.m4v
