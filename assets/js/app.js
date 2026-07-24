@@ -92,6 +92,7 @@
     renderedNextTimer: "",
     masterVolume: VOLUME.master,
     playedFlexibleSceneIds: new Set(),
+    lastPlayedMinuteKey: "",
   };
 
   const audio = {
@@ -165,10 +166,10 @@
 
   /*______________________________________ SCHEDULER ______________________________________*/
 
-  async function startClock() {
-    applySceneVolume();
-    await primeFuturePlayback();
+  function startClock() {
     enterPlaybackMode();
+    applySceneVolume();
+    primeFuturePlayback();
     scheduleFromNow({ playImmediately: true, mode: "arrival" });
   }
 
@@ -192,19 +193,20 @@
   }
 
   function scheduleFromNow({ playImmediately, mode }) {
-    const selected = selectScene(new Date(), { mode });
+    const now = new Date();
+    const selected = selectScene(now, { mode });
 
     if (selected && playImmediately) {
       playSequence(selected);
       return;
     }
 
-    if (selected && selected.id !== state.currentScene?.id) {
+    if (selected && selected.id !== state.currentScene?.id && !hasPlayedThisMinute(now)) {
       playSequence(selected);
       return;
     }
 
-    state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
+    state.nextCheckAt = findNextPlayableTime(afterCurrentMinute(now), { mode: "ongoing" });
     showIdle(IDLE_MESSAGE);
   }
 
@@ -243,6 +245,7 @@
     state.sequenceToken += 1;
     state.isPlayingSequence = true;
     state.currentScene = scene;
+    state.lastPlayedMinuteKey = minuteKey(new Date());
     rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
@@ -290,7 +293,9 @@
       el.scene.ontimeupdate = () => updateEndingLook(token);
       el.scene.onended = () => resolve(true);
       el.scene.onerror = () => resolve(false);
-      startSceneVideo().then(resolve);
+      startSceneVideo().then((didStart) => {
+        if (!didStart) resolve(false);
+      });
     });
   }
 
@@ -392,6 +397,20 @@
     }
 
     return new Date(start.getTime() + 60_000);
+  }
+
+  function hasPlayedThisMinute(date) {
+    return state.lastPlayedMinuteKey === minuteKey(date);
+  }
+
+  function minuteKey(date) {
+    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getHours()}-${date.getMinutes()}`;
+  }
+
+  function afterCurrentMinute(date) {
+    const next = new Date(date);
+    next.setSeconds(0, 0);
+    return next;
   }
 
   /*__________________________________ SCENE NORMALIZATION _________________________________*/
