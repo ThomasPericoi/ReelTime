@@ -85,6 +85,7 @@
     hasStarted: false,
     isPlayingSequence: false,
     isScenePlaying: false,
+    isSceneArmed: false,
     sequenceToken: 0,
     nextCheckAt: null,
     timers: [],
@@ -227,8 +228,7 @@
     rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
-    resetVideoForScene(scene);
-    warmSceneVideo(scene, state.sequenceToken);
+    armSceneVideo(scene);
     dimRoom();
     return state.sequenceToken;
   }
@@ -265,11 +265,12 @@
 
       hidePanels();
       setCreditOverlay(scene);
-      prepareSceneVideo(scene);
+      revealArmedScene(scene);
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
       const finish = (didPlay) => {
         state.isScenePlaying = false;
+        state.isSceneArmed = false;
         resolve(didPlay);
       };
 
@@ -278,17 +279,28 @@
       el.scene.onerror = () => finish(false);
 
       state.isScenePlaying = true;
-      startSceneVideo().then((didStart) => {
+      ensureSceneStillPlaying().then((didStart) => {
         if (!didStart) finish(false);
       });
     });
   }
 
-  function prepareSceneVideo(scene) {
+  function armSceneVideo(scene) {
+    resetVideoForScene(scene);
+    forceSceneMuted();
+    el.scene.loop = true;
+    state.isSceneArmed = true;
+    attemptScenePlay();
+  }
+
+  function revealArmedScene(scene) {
     setSceneSource(scene);
     el.scene.classList.remove("gate-hit", "is-ending");
+    el.scene.loop = false;
+    resetSceneTime();
     allowSceneAudio();
     applySceneVolume();
+    window.setTimeout(keepSafariPlaybackAlive, 250);
   }
 
   function setSceneSource(scene) {
@@ -298,33 +310,12 @@
     el.scene.load();
   }
 
-  async function warmSceneVideo(scene, token) {
-    setSceneSource(scene);
-    forceSceneMuted();
-
-    const didStart = await attemptScenePlay();
-    if (token !== state.sequenceToken || state.isScenePlaying) return;
-
-    if (didStart) {
-      el.scene.pause();
-      resetSceneTime();
-    }
-
-    allowSceneAudio();
-    applySceneVolume();
-  }
-
-  async function startSceneVideo() {
-    allowSceneAudio();
-    applySceneVolume();
-
+  async function ensureSceneStillPlaying() {
+    if (!el.scene.paused && !el.scene.ended) return true;
     if (await attemptScenePlay()) return true;
 
     forceSceneMuted();
-    if (!(await attemptScenePlay())) return false;
-
-    window.setTimeout(tryRestoreSceneAudio, 300);
-    return true;
+    return attemptScenePlay();
   }
 
   async function attemptScenePlay() {
@@ -348,14 +339,17 @@
     el.scene.removeAttribute("muted");
   }
 
-  function tryRestoreSceneAudio() {
-    allowSceneAudio();
-    applySceneVolume();
+  function keepSafariPlaybackAlive() {
+    if (!state.isScenePlaying || el.scene.ended) return;
 
-    if (el.scene.paused && !el.scene.ended) {
+    if (el.scene.paused) {
       forceSceneMuted();
       el.scene.play().catch(() => { });
+      return;
     }
+
+    allowSceneAudio();
+    applySceneVolume();
   }
 
   function updateEndingLook(token) {
@@ -582,6 +576,7 @@
 
   function resetVideoForScene(scene) {
     el.scene.pause();
+    el.scene.loop = false;
     el.app.classList.remove("has-freeze-frame");
     el.scene.classList.remove("gate-hit", "is-ending");
     clearSceneHandlers();
@@ -599,7 +594,9 @@
 
   function resetVideo() {
     state.isScenePlaying = false;
+    state.isSceneArmed = false;
     el.scene.pause();
+    el.scene.loop = false;
     el.app.classList.remove("has-freeze-frame");
     el.scene.classList.remove("gate-hit", "is-ending");
     clearSceneHandlers();
