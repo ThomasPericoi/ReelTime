@@ -8,49 +8,49 @@ Production URL: [reel-time.thomaspericoi.com](https://reel-time.thomaspericoi.co
 
 - Selects a scene from the current local time.
 - Uses a cascade on first launch: exact match first, then broader/approximate scenes if needed.
-- After the arrival scene, only exact-time scenes are used.
+- After the arrival scene, exact scenes stay first; `approx`, `before`, and `after` scenes can fill gaps once each per page load.
 - Plays a 3-second vintage countdown with audio beeps.
 - Shows film title, release year, director, and rights holder before and during playback.
 - Simulates a 1920s-style projection with grain, flicker, vignette, and a short image-catch offset when the scene appears.
 - Runs as plain static files. No framework, no build step, no server required.
 
-## Scene coverage
+## Library stats
 
 Current library stats, generated from `assets/data/scenes.json`:
 
-- Total scenes: **153**
-- Exact-time scenes: **136**
-- Exact minutes covered: **107 / 1440**
-- Exact-time coverage: **7.4%**
+- Total scenes: **180**
+- Exact-time scenes: **150**
+- Exact minutes covered: **115 / 1440**
+- Exact-time share: **8.0%**
 
 `Exact minutes covered` counts unique exact minutes only. Scenes marked `both` count toward both their AM and PM hours.
 
 | Hour | Exact minutes covered | Exact scene entries | All scene entries |
 | --- | ---: | ---: | ---: |
-| 00:00-00:59 | 4 | 5 | 9 |
-| 01:00-01:59 | 7 | 9 | 11 |
-| 02:00-02:59 | 5 | 13 | 14 |
-| 03:00-03:59 | 3 | 12 | 13 |
-| 04:00-04:59 | 5 | 7 | 9 |
-| 05:00-05:59 | 4 | 8 | 9 |
-| 06:00-06:59 | 3 | 8 | 9 |
-| 07:00-07:59 | 5 | 9 | 12 |
-| 08:00-08:59 | 7 | 15 | 21 |
-| 09:00-09:59 | 4 | 6 | 9 |
-| 10:00-10:59 | 4 | 10 | 10 |
-| 11:00-11:59 | 3 | 8 | 10 |
-| 12:00-12:59 | 5 | 9 | 11 |
-| 13:00-13:59 | 7 | 8 | 8 |
-| 14:00-14:59 | 5 | 11 | 11 |
-| 15:00-15:59 | 2 | 8 | 9 |
-| 16:00-16:59 | 6 | 7 | 9 |
-| 17:00-17:59 | 3 | 4 | 5 |
-| 18:00-18:59 | 3 | 3 | 4 |
-| 19:00-19:59 | 3 | 7 | 10 |
-| 20:00-20:59 | 6 | 12 | 17 |
-| 21:00-21:59 | 3 | 8 | 11 |
-| 22:00-22:59 | 5 | 14 | 14 |
-| 23:00-23:59 | 5 | 13 | 17 |
+| 00:00-00:59 | 4 | 6 | 14 |
+| 01:00-01:59 | 8 | 10 | 14 |
+| 02:00-02:59 | 5 | 13 | 16 |
+| 03:00-03:59 | 4 | 15 | 20 |
+| 04:00-04:59 | 5 | 8 | 13 |
+| 05:00-05:59 | 5 | 10 | 16 |
+| 06:00-06:59 | 4 | 9 | 15 |
+| 07:00-07:59 | 6 | 10 | 17 |
+| 08:00-08:59 | 7 | 16 | 25 |
+| 09:00-09:59 | 4 | 9 | 13 |
+| 10:00-10:59 | 4 | 10 | 11 |
+| 11:00-11:59 | 3 | 8 | 12 |
+| 12:00-12:59 | 5 | 9 | 13 |
+| 13:00-13:59 | 7 | 9 | 11 |
+| 14:00-14:59 | 5 | 11 | 13 |
+| 15:00-15:59 | 3 | 10 | 14 |
+| 16:00-16:59 | 6 | 7 | 11 |
+| 17:00-17:59 | 4 | 5 | 8 |
+| 18:00-18:59 | 3 | 3 | 8 |
+| 19:00-19:59 | 4 | 8 | 14 |
+| 20:00-20:59 | 6 | 13 | 21 |
+| 21:00-21:59 | 3 | 10 | 15 |
+| 22:00-22:59 | 5 | 14 | 16 |
+| 23:00-23:59 | 5 | 13 | 19 |
 
 ## Structure
 
@@ -101,6 +101,20 @@ Examples:
 08-30_am_exact_ford-v-ferrari_001.mp4
 12-00_both_approx_gremlins_001.mp4
 08-00_both_before_lucky-number-slevin_001.mp4
+dawn_broad_sunset-boulevard_001.mp4
+fallback_you-can-count-on-me_001.mp4
+```
+
+Broad scenes use this alternate convention:
+
+```text
+broad-label_broad_movie-slug_###.mp4
+```
+
+Fallback scenes use:
+
+```text
+fallback_movie-slug_###.mp4
 ```
 
 ## Debug API

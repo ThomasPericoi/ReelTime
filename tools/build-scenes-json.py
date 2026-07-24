@@ -11,6 +11,27 @@ OUT = DATA_DIR / "scenes.json"
 JS_OUT = DATA_DIR / "scenes-data.js"
 
 RIGHTS = {
+    "a-christmas-story": "MGM / Warner Bros. Pictures",
+    "antichrist": "IFC Films / Zentropa",
+    "beetlejuice": "Warner Bros. Pictures",
+    "bugonia": "Focus Features / Universal Pictures",
+    "four-lions": "Film4 / StudioCanal",
+    "into-the-wild": "Paramount Vantage",
+    "jacob-s-ladder": "TriStar Pictures / StudioCanal",
+    "lord-of-the-rings-3": "New Line Cinema / Warner Bros. Pictures",
+    "paddington": "StudioCanal",
+    "sandlot": "20th Century Studios",
+    "shaun-of-the-dead": "Universal Pictures / StudioCanal",
+    "the-breakfast-club": "Universal Pictures",
+    "the-florida-project": "A24",
+    "the-man-who-fell-to-earth": "StudioCanal",
+    "the-worlds-end": "Universal Pictures / Focus Features",
+    "tower": "Kino Lorber",
+    "trainspotting-2": "Sony Pictures",
+    "trick-r-treat": "Warner Bros. Pictures / Legendary Pictures",
+    "what-we-do-in-the-shadows": "The Orchard / Paramount Pictures",
+    "wonder-boys": "Paramount Pictures",
+    "you-can-count-on-me": "Paramount Classics",
     "a-clockwork-orange": "Warner Bros. Pictures",
     "a-fish-called-wanda": "MGM",
     "a-serious-man": "Focus Features / Universal Pictures",
@@ -111,6 +132,27 @@ RIGHTS = {
 }
 
 MOVIE_META = {
+    "a-christmas-story": {"year": 1983, "director": "Bob Clark"},
+    "antichrist": {"year": 2009, "director": "Lars von Trier"},
+    "beetlejuice": {"year": 1988, "director": "Tim Burton"},
+    "bugonia": {"year": 2025, "director": "Yorgos Lanthimos"},
+    "four-lions": {"year": 2010, "director": "Chris Morris"},
+    "into-the-wild": {"year": 2007, "director": "Sean Penn"},
+    "jacob-s-ladder": {"year": 1990, "director": "Adrian Lyne"},
+    "lord-of-the-rings-3": {"year": 2003, "director": "Peter Jackson"},
+    "paddington": {"year": 2014, "director": "Paul King"},
+    "sandlot": {"year": 1993, "director": "David Mickey Evans"},
+    "shaun-of-the-dead": {"year": 2004, "director": "Edgar Wright"},
+    "the-breakfast-club": {"year": 1985, "director": "John Hughes"},
+    "the-florida-project": {"year": 2017, "director": "Sean Baker"},
+    "the-man-who-fell-to-earth": {"year": 1976, "director": "Nicolas Roeg"},
+    "the-worlds-end": {"year": 2013, "director": "Edgar Wright"},
+    "tower": {"year": 2016, "director": "Keith Maitland"},
+    "trainspotting-2": {"year": 2017, "director": "Danny Boyle"},
+    "trick-r-treat": {"year": 2007, "director": "Michael Dougherty"},
+    "what-we-do-in-the-shadows": {"year": 2014, "director": "Jemaine Clement and Taika Waititi"},
+    "wonder-boys": {"year": 2000, "director": "Curtis Hanson"},
+    "you-can-count-on-me": {"year": 2000, "director": "Kenneth Lonergan"},
     "a-clockwork-orange": {"year": 1971, "director": "Stanley Kubrick"},
     "a-fish-called-wanda": {"year": 1988, "director": "Charles Crichton"},
     "a-serious-man": {"year": 2009, "director": "Joel Coen and Ethan Coen"},
@@ -211,6 +253,18 @@ MOVIE_META = {
 }
 
 TITLE_FIXES = {
+    "a-christmas-story": "A Christmas Story",
+    "bugonia": "Bugonia",
+    "four-lions": "Four Lions",
+    "jacob-s-ladder": "Jacob's Ladder",
+    "lord-of-the-rings-3": "The Lord of the Rings: The Return of the King",
+    "sandlot": "The Sandlot",
+    "the-florida-project": "The Florida Project",
+    "the-man-who-fell-to-earth": "The Man Who Fell to Earth",
+    "the-worlds-end": "The World's End",
+    "trainspotting-2": "T2 Trainspotting",
+    "trick-r-treat": "Trick 'r Treat",
+    "what-we-do-in-the-shadows": "What We Do in the Shadows",
     "a-fish-called-wanda": "A Fish Called Wanda",
     "a-serious-man": "A Serious Man",
     "all-the-presidents-men": "All the President's Men",
@@ -234,6 +288,17 @@ TITLE_FIXES = {
 }
 
 PATTERN = re.compile(r"^(?P<hhmm>\d{2}-\d{2})_(?P<period>am|pm|both|unknown)_(?P<precision>[^_]+)_(?P<movie>.+)_(?P<index>\d+)\.mp4$")
+BROAD_PATTERN = re.compile(r"^(?P<label>[a-z0-9-]+)_broad_(?P<movie>.+)_(?P<index>\d+)\.mp4$")
+FALLBACK_PATTERN = re.compile(r"^fallback_(?P<movie>.+)_(?P<index>\d+)\.mp4$")
+
+SPAN_LABELS = {
+    "dawn": {"display": "Dawn", "spans": [{"start": "05:00", "end": "07:00"}]},
+    "dusk": {"display": "Dusk", "spans": [{"start": "18:00", "end": "20:00"}]},
+    "early-morning": {"display": "Early morning", "spans": [{"start": "05:00", "end": "08:00"}]},
+    "evening": {"display": "Evening", "spans": [{"start": "18:00", "end": "22:00"}]},
+    "midday": {"display": "Midday", "spans": [{"start": "11:00", "end": "14:00"}]},
+    "middle-night": {"display": "Middle of the night", "spans": [{"start": "00:00", "end": "04:00"}]},
+}
 
 
 def titleize(slug):
@@ -295,33 +360,78 @@ def priority_for(precision):
     }.get(precision, 6)
 
 
+def scene_payload(path, movie, display_time, period, precision, spans):
+    metadata = MOVIE_META.get(movie, {})
+    return {
+        "id": path.stem,
+        "src": f"assets/movie-scenes/{path.name}",
+        "movieTitle": titleize(movie),
+        "movieSlug": movie,
+        "releaseYear": metadata.get("year"),
+        "director": metadata.get("director", "Director to verify"),
+        "rightsHolder": RIGHTS.get(movie, "Rights holder to verify"),
+        "displayTime": display_time,
+        "period": period,
+        "precision": precision,
+        "priority": priority_for(precision),
+        "spans": spans,
+    }
+
+
+def parse_scene(path):
+    match = PATTERN.match(path.name)
+    if match:
+        data = match.groupdict()
+        return scene_payload(
+            path,
+            data["movie"],
+            data["hhmm"].replace("-", ":"),
+            data["period"],
+            data["precision"],
+            spans_for(data["hhmm"], data["period"], data["precision"]),
+        )
+
+    match = BROAD_PATTERN.match(path.name)
+    if match:
+        data = match.groupdict()
+        span = SPAN_LABELS.get(data["label"])
+        if not span:
+            print(f"Skipping unknown span label: {path.name}")
+            return None
+        return scene_payload(
+            path,
+            data["movie"],
+            span["display"],
+            "unknown",
+            "broad",
+            span["spans"],
+        )
+
+    match = FALLBACK_PATTERN.match(path.name)
+    if match:
+        data = match.groupdict()
+        return scene_payload(
+            path,
+            data["movie"],
+            "Fallback",
+            "unknown",
+            "fallback",
+            spans_for("00-00", "unknown", "fallback"),
+        )
+
+    print(f"Skipping unrecognized filename: {path.name}")
+    return None
+
+
 def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     scenes = []
     for path in sorted(SCENES_DIR.glob("*.mp4")):
         if path.name.startswith("._"):
             continue
-        match = PATTERN.match(path.name)
-        if not match:
-            print(f"Skipping unrecognized filename: {path.name}")
-            continue
-        data = match.groupdict()
-        movie = data["movie"]
-        metadata = MOVIE_META.get(movie, {})
-        scenes.append({
-            "id": path.stem,
-            "src": f"assets/movie-scenes/{path.name}",
-            "movieTitle": titleize(movie),
-            "movieSlug": movie,
-            "releaseYear": metadata.get("year"),
-            "director": metadata.get("director", "Director to verify"),
-            "rightsHolder": RIGHTS.get(movie, "Rights holder to verify"),
-            "displayTime": data["hhmm"].replace("-", ":"),
-            "period": data["period"],
-            "precision": data["precision"],
-            "priority": priority_for(data["precision"]),
-            "spans": spans_for(data["hhmm"], data["period"], data["precision"]),
-        })
+        scene = parse_scene(path)
+        if scene:
+            scenes.append(scene)
     payload = {
         "schemaVersion": 1,
         "generatedFrom": "movie-scenes filenames",

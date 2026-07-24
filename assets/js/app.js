@@ -41,6 +41,9 @@
     fallback: 9,
   };
 
+  const FLEXIBLE_PRECISIONS = new Set(["approx", "before", "after"]);
+  const ONGOING_PRECISIONS = new Set(["exact", ...FLEXIBLE_PRECISIONS]);
+
   const SOUND_PATHS = {
     countdownBeep: "assets/sounds/countdown_beep.mp3",
     projector: "assets/sounds/projector.mp3",
@@ -83,6 +86,7 @@
     renderedLocalTime: "",
     renderedNextTimer: "",
     masterVolume: VOLUME.master,
+    playedFlexibleSceneIds: new Set(),
   };
 
   const audio = {
@@ -133,10 +137,10 @@
   }
 
   async function primeFuturePlayback() {
-    if (selectScene(new Date(), { exactOnly: false })) return;
+    if (selectScene(new Date(), { mode: "arrival" })) return;
 
     const token = state.sequenceToken;
-    const nextScene = selectScene(findNextPlayableTime(new Date(), { exactOnly: true }), { exactOnly: true });
+    const nextScene = selectScene(findNextPlayableTime(new Date(), { mode: "ongoing" }), { mode: "ongoing" });
     if (!nextScene) return;
 
     try {
@@ -159,7 +163,7 @@
     enterPlaybackMode();
     applySceneVolume();
     primeFuturePlayback();
-    scheduleFromNow({ playImmediately: true, exactOnly: false });
+    scheduleFromNow({ playImmediately: true, mode: "arrival" });
   }
 
   function enterPlaybackMode() {
@@ -177,19 +181,24 @@
   function tickScheduler() {
     if (!state.hasStarted || !state.scenes.length || state.isPlayingSequence) return;
     if (!state.nextCheckAt || Date.now() >= state.nextCheckAt.getTime()) {
-      scheduleFromNow({ playImmediately: false, exactOnly: true });
+      scheduleFromNow({ playImmediately: false, mode: "ongoing" });
     }
   }
 
-  function scheduleFromNow({ playImmediately, exactOnly }) {
-    const selected = selectScene(new Date(), { exactOnly });
+  function scheduleFromNow({ playImmediately, mode }) {
+    const selected = selectScene(new Date(), { mode });
 
-    if (selected && (playImmediately || selected.id !== state.currentScene?.id)) {
+    if (selected && playImmediately) {
       playSequence(selected);
       return;
     }
 
-    state.nextCheckAt = findNextPlayableTime(new Date(), { exactOnly: true });
+    if (selected && selected.id !== state.currentScene?.id) {
+      playSequence(selected);
+      return;
+    }
+
+    state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
     showIdle(selected ? "Waiting for the next local-time scene." : "No scene for this minute.");
   }
 
@@ -202,7 +211,7 @@
       await showCountdown(token);
       startProjectorSound();
       await showTitleCard(scene, token);
-      state.nextCheckAt = findNextPlayableTime(new Date(), { exactOnly: true });
+      state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
       await playScene(scene, token);
       settleVideo();
@@ -211,8 +220,8 @@
     } finally {
       if (token !== state.sequenceToken) return;
       state.isPlayingSequence = false;
-      state.nextCheckAt = findNextPlayableTime(new Date(), { exactOnly: true });
-      scheduleFromNow({ playImmediately: false, exactOnly: true });
+      state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
+      scheduleFromNow({ playImmediately: false, mode: "ongoing" });
       if (!state.isPlayingSequence) {
         restoreRoomLight();
         showReplayButton();
@@ -224,6 +233,7 @@
     state.sequenceToken += 1;
     state.isPlayingSequence = true;
     state.currentScene = scene;
+    rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
     resetVideo();
@@ -284,21 +294,41 @@
 
   /*____________________________________ SCENE MATCHING ____________________________________*/
 
-  function selectScene(date, { exactOnly }) {
+  function selectScene(date, options = {}) {
     const minute = date.getHours() * 60 + date.getMinutes();
-    return state.scenes.find((scene) =>
-      (!exactOnly || scene.precision === "exact") && coversMinute(scene, minute),
-    ) || null;
+    return state.scenes.find((scene) => isPlayableScene(scene, minute, options)) || null;
   }
 
-  function findNextPlayableTime(fromDate, { exactOnly }) {
+  function isPlayableScene(scene, minute, options) {
+    if (!coversMinute(scene, minute)) return false;
+    if (scene.id === options.excludeSceneId) return false;
+    if (options.exactOnly) return scene.precision === "exact";
+    if (options.mode === "ongoing") return isOngoingScene(scene);
+    return true;
+  }
+
+  function isOngoingScene(scene) {
+    if (!ONGOING_PRECISIONS.has(scene.precision)) return false;
+    if (!isFlexibleScene(scene)) return true;
+    return !state.playedFlexibleSceneIds.has(scene.id);
+  }
+
+  function isFlexibleScene(scene) {
+    return FLEXIBLE_PRECISIONS.has(scene.precision);
+  }
+
+  function rememberFlexibleScene(scene) {
+    if (isFlexibleScene(scene)) state.playedFlexibleSceneIds.add(scene.id);
+  }
+
+  function findNextPlayableTime(fromDate, options = {}) {
     const start = new Date(fromDate);
     start.setSeconds(0, 0);
     start.setMinutes(start.getMinutes() + 1);
 
     for (let offset = 0; offset < 1440; offset += 1) {
       const candidate = new Date(start.getTime() + offset * 60_000);
-      if (selectScene(candidate, { exactOnly })) return candidate;
+      if (selectScene(candidate, options)) return candidate;
     }
 
     return new Date(start.getTime() + 60_000);
@@ -645,7 +675,10 @@
   }
 
   function debugPlayAt(hhmm, options = {}) {
-    const scene = selectScene(atLocalTime(hhmm), { exactOnly: Boolean(options.exactOnly) });
+    const scene = selectScene(atLocalTime(hhmm), {
+      exactOnly: Boolean(options.exactOnly),
+      mode: options.mode,
+    });
     if (!scene) throw new Error(`No scene found at ${hhmm}`);
     return forcePlay(scene);
   }
@@ -668,15 +701,37 @@
     return scene;
   }
 
+  function apiHelp() {
+    return {
+      now: "ReelTime.now({ mode: 'arrival' | 'ongoing', exactOnly: true })",
+      scenes: "ReelTime.scenes({ exactOnly, wideOnly, precision, period, time })",
+      find: "ReelTime.find({ query, precision, time })",
+      at: "ReelTime.at('08:30', { mode, exactOnly })",
+      next: "ReelTime.next({ mode: 'ongoing', exactOnly })",
+      play: "ReelTime.play({ id | query | index })",
+      playAt: "ReelTime.playAt('08:30', { mode, exactOnly })",
+      random: "ReelTime.random({ precision, exactOnly })",
+      stop: "ReelTime.stop()",
+    };
+  }
+
   function installDebugApi() {
     window.ReelTime = {
+      help: () => apiHelp(),
       state,
+      now: (options = {}) => nowReport(options),
+      current: () => sceneSnapshot(state.currentScene),
       scenes: (options = {}) => filterScenes(state.scenes, options),
-      current: () => state.currentScene,
       find: (options = {}) => findScenes(options),
-      at: (hhmm, options = {}) => selectScene(atLocalTime(hhmm), { exactOnly: Boolean(options.exactOnly) }),
-      next: (options = {}) => findNextPlayableTime(new Date(), { exactOnly: Boolean(options.exactOnly) }),
-      nextExact: () => findNextPlayableTime(new Date(), { exactOnly: true }),
+      at: (hhmm, options = {}) => selectScene(atLocalTime(hhmm), {
+        exactOnly: Boolean(options.exactOnly),
+        mode: options.mode,
+      }),
+      next: (options = {}) => nextReport({
+        exactOnly: Boolean(options.exactOnly),
+        mode: options.mode || "ongoing",
+      }),
+      nextExact: () => nextReport({ exactOnly: true }),
       play: (options = {}) => debugPlay(options),
       playAt: (hhmm, options = {}) => debugPlayAt(hhmm, options),
       random: (options = {}) => debugPlayRandom(options),

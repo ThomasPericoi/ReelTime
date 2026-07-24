@@ -133,6 +133,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "01-21_both_exact_tower_001",
+      "src": "assets/movie-scenes/01-21_both_exact_tower_001.mp4",
+      "movieTitle": "Tower",
+      "movieSlug": "tower",
+      "releaseYear": 2016,
+      "director": "Keith Maitland",
+      "rightsHolder": "Kino Lorber",
+      "displayTime": "01:21",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:21",
+          "end": "01:21"
+        },
+        {
+          "start": "13:21",
+          "end": "13:21"
+        }
+      ]
+    },
+    {
       "id": "01-21_pm_exact_the-thin-red-line_001",
       "src": "assets/movie-scenes/01-21_pm_exact_the-thin-red-line_001.mp4",
       "movieTitle": "The Thin Red Line",
@@ -637,6 +660,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "03-00_both_after_the-man-who-fell-to-earth_001",
+      "src": "assets/movie-scenes/03-00_both_after_the-man-who-fell-to-earth_001.mp4",
+      "movieTitle": "The Man Who Fell to Earth",
+      "movieSlug": "the-man-who-fell-to-earth",
+      "releaseYear": 1976,
+      "director": "Nicolas Roeg",
+      "rightsHolder": "StudioCanal",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:05"
+        },
+        {
+          "start": "15:00",
+          "end": "15:05"
+        }
+      ]
+    },
+    {
       "id": "03-00_both_exact_american-gangster_001",
       "src": "assets/movie-scenes/03-00_both_exact_american-gangster_001.mp4",
       "movieTitle": "American Gangster",
@@ -817,6 +863,71 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "03-30_am_exact_into-the-wild_001",
+      "src": "assets/movie-scenes/03-30_am_exact_into-the-wild_001.mp4",
+      "movieTitle": "Into the Wild",
+      "movieSlug": "into-the-wild",
+      "releaseYear": 2007,
+      "director": "Sean Penn",
+      "rightsHolder": "Paramount Vantage",
+      "displayTime": "03:30",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:30",
+          "end": "03:30"
+        }
+      ]
+    },
+    {
+      "id": "03-30_both_exact_beetlejuice_001",
+      "src": "assets/movie-scenes/03-30_both_exact_beetlejuice_001.mp4",
+      "movieTitle": "Beetlejuice",
+      "movieSlug": "beetlejuice",
+      "releaseYear": 1988,
+      "director": "Tim Burton",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "03:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:30",
+          "end": "03:30"
+        },
+        {
+          "start": "15:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "id": "03-30_both_exact_wonder-boys_001",
+      "src": "assets/movie-scenes/03-30_both_exact_wonder-boys_001.mp4",
+      "movieTitle": "Wonder Boys",
+      "movieSlug": "wonder-boys",
+      "releaseYear": 2000,
+      "director": "Curtis Hanson",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:30",
+          "end": "03:30"
+        },
+        {
+          "start": "15:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
       "id": "03-51_both_exact_die-hard-2_001",
       "src": "assets/movie-scenes/03-51_both_exact_die-hard-2_001.mp4",
       "movieTitle": "Die Hard 2",
@@ -840,6 +951,25 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "04-00_am_exact_shaun-of-the-dead_001",
+      "src": "assets/movie-scenes/04-00_am_exact_shaun-of-the-dead_001.mp4",
+      "movieTitle": "Shaun of the Dead",
+      "movieSlug": "shaun-of-the-dead",
+      "releaseYear": 2004,
+      "director": "Edgar Wright",
+      "rightsHolder": "Universal Pictures / StudioCanal",
+      "displayTime": "04:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:00",
+          "end": "04:00"
+        }
+      ]
+    },
+    {
       "id": "04-00_both_approx_lost-in-translation_001",
       "src": "assets/movie-scenes/04-00_both_approx_lost-in-translation_001.mp4",
       "movieTitle": "Lost In Translation",
@@ -859,6 +989,29 @@ window.REEL_TIME_SCENES = {
         {
           "start": "15:53",
           "end": "16:07"
+        }
+      ]
+    },
+    {
+      "id": "04-00_both_before_the-worlds-end_001",
+      "src": "assets/movie-scenes/04-00_both_before_the-worlds-end_001.mp4",
+      "movieTitle": "The World's End",
+      "movieSlug": "the-worlds-end",
+      "releaseYear": 2013,
+      "director": "Edgar Wright",
+      "rightsHolder": "Universal Pictures / Focus Features",
+      "displayTime": "04:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "03:55",
+          "end": "04:00"
+        },
+        {
+          "start": "15:55",
+          "end": "16:00"
         }
       ]
     },
@@ -905,6 +1058,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "04-30_both_exact_citizen-kane_001",
+      "src": "assets/movie-scenes/04-30_both_exact_citizen-kane_001.mp4",
+      "movieTitle": "Citizen Kane",
+      "movieSlug": "citizen-kane",
+      "releaseYear": 1941,
+      "director": "Orson Welles",
+      "rightsHolder": "Warner Bros. Discovery",
+      "displayTime": "04:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:30",
+          "end": "04:30"
+        },
+        {
+          "start": "16:30",
+          "end": "16:30"
+        }
+      ]
+    },
+    {
       "id": "04-30_both_exact_the-aviator_001",
       "src": "assets/movie-scenes/04-30_both_exact_the-aviator_001.mp4",
       "movieTitle": "The Aviator",
@@ -924,29 +1100,6 @@ window.REEL_TIME_SCENES = {
         {
           "start": "16:30",
           "end": "16:30"
-        }
-      ]
-    },
-    {
-      "id": "04-33_both_exact_citizen-kane_001",
-      "src": "assets/movie-scenes/04-33_both_exact_citizen-kane_001.mp4",
-      "movieTitle": "Citizen Kane",
-      "movieSlug": "citizen-kane",
-      "releaseYear": 1941,
-      "director": "Orson Welles",
-      "rightsHolder": "Warner Bros. Discovery",
-      "displayTime": "04:33",
-      "period": "both",
-      "precision": "exact",
-      "priority": 1,
-      "spans": [
-        {
-          "start": "04:33",
-          "end": "04:33"
-        },
-        {
-          "start": "16:33",
-          "end": "16:33"
         }
       ]
     },
@@ -1080,6 +1233,25 @@ window.REEL_TIME_SCENES = {
       "releaseYear": 2021,
       "director": "Kenneth Branagh",
       "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "05:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "05:00"
+        }
+      ]
+    },
+    {
+      "id": "05-00_am_exact_jacob-s-ladder_001",
+      "src": "assets/movie-scenes/05-00_am_exact_jacob-s-ladder_001.mp4",
+      "movieTitle": "Jacob's Ladder",
+      "movieSlug": "jacob-s-ladder",
+      "releaseYear": 1990,
+      "director": "Adrian Lyne",
+      "rightsHolder": "TriStar Pictures / StudioCanal",
       "displayTime": "05:00",
       "period": "am",
       "precision": "exact",
@@ -1245,6 +1417,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "05-35_both_exact_bugonia_001",
+      "src": "assets/movie-scenes/05-35_both_exact_bugonia_001.mp4",
+      "movieTitle": "Bugonia",
+      "movieSlug": "bugonia",
+      "releaseYear": 2025,
+      "director": "Yorgos Lanthimos",
+      "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "05:35",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:35",
+          "end": "05:35"
+        },
+        {
+          "start": "17:35",
+          "end": "17:35"
+        }
+      ]
+    },
+    {
       "id": "06-00_am_exact_american-made_001",
       "src": "assets/movie-scenes/06-00_am_exact_american-made_001.mp4",
       "movieTitle": "American Made",
@@ -1363,6 +1558,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "06-00_both_before_the-worlds-end_001",
+      "src": "assets/movie-scenes/06-00_both_before_the-worlds-end_001.mp4",
+      "movieTitle": "The World's End",
+      "movieSlug": "the-worlds-end",
+      "releaseYear": 2013,
+      "director": "Edgar Wright",
+      "rightsHolder": "Universal Pictures / Focus Features",
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "05:55",
+          "end": "06:00"
+        },
+        {
+          "start": "17:55",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_both_exact_black-hawk-down_001",
       "src": "assets/movie-scenes/06-00_both_exact_black-hawk-down_001.mp4",
       "movieTitle": "Black Hawk Down",
@@ -1428,6 +1646,25 @@ window.REEL_TIME_SCENES = {
         {
           "start": "18:15",
           "end": "18:15"
+        }
+      ]
+    },
+    {
+      "id": "06-45_am_exact_beetlejuice_001",
+      "src": "assets/movie-scenes/06-45_am_exact_beetlejuice_001.mp4",
+      "movieTitle": "Beetlejuice",
+      "movieSlug": "beetlejuice",
+      "releaseYear": 1988,
+      "director": "Tim Burton",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "06:45",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:45",
+          "end": "06:45"
         }
       ]
     },
@@ -1539,6 +1776,29 @@ window.REEL_TIME_SCENES = {
         {
           "start": "19:00",
           "end": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "07-06_both_exact_the-breakfast-club_001",
+      "src": "assets/movie-scenes/07-06_both_exact_the-breakfast-club_001.mp4",
+      "movieTitle": "The Breakfast Club",
+      "movieSlug": "the-breakfast-club",
+      "releaseYear": 1985,
+      "director": "John Hughes",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "07:06",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "07:06",
+          "end": "07:06"
+        },
+        {
+          "start": "19:06",
+          "end": "19:06"
         }
       ]
     },
@@ -1845,6 +2105,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "08-00_both_exact_trick-r-treat_001",
+      "src": "assets/movie-scenes/08-00_both_exact_trick-r-treat_001.mp4",
+      "movieTitle": "Trick 'r Treat",
+      "movieSlug": "trick-r-treat",
+      "releaseYear": 2007,
+      "director": "Michael Dougherty",
+      "rightsHolder": "Warner Bros. Pictures / Legendary Pictures",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_pm_exact_the-father_001",
       "src": "assets/movie-scenes/08-00_pm_exact_the-father_001.mp4",
       "movieTitle": "The Father",
@@ -2097,6 +2380,25 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "09-00_am_exact_sandlot_001",
+      "src": "assets/movie-scenes/09-00_am_exact_sandlot_001.mp4",
+      "movieTitle": "The Sandlot",
+      "movieSlug": "sandlot",
+      "releaseYear": 1993,
+      "director": "David Mickey Evans",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "09:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:00",
+          "end": "09:00"
+        }
+      ]
+    },
+    {
       "id": "09-00_both_approx_no-country-for-old-men_001",
       "src": "assets/movie-scenes/09-00_both_approx_no-country-for-old-men_001.mp4",
       "movieTitle": "No Country for Old Men",
@@ -2161,6 +2463,29 @@ window.REEL_TIME_SCENES = {
         },
         {
           "start": "20:55",
+          "end": "21:00"
+        }
+      ]
+    },
+    {
+      "id": "09-00_both_exact_a-christmas-story_001",
+      "src": "assets/movie-scenes/09-00_both_exact_a-christmas-story_001.mp4",
+      "movieTitle": "A Christmas Story",
+      "movieSlug": "a-christmas-story",
+      "releaseYear": 1983,
+      "director": "Bob Clark",
+      "rightsHolder": "MGM / Warner Bros. Pictures",
+      "displayTime": "09:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:00",
+          "end": "09:00"
+        },
+        {
+          "start": "21:00",
           "end": "21:00"
         }
       ]
@@ -2284,6 +2609,29 @@ window.REEL_TIME_SCENES = {
       "releaseYear": 1986,
       "director": "David Lynch",
       "rightsHolder": "MGM / De Laurentiis Entertainment Group",
+      "displayTime": "09:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:30",
+          "end": "09:30"
+        },
+        {
+          "start": "21:30",
+          "end": "21:30"
+        }
+      ]
+    },
+    {
+      "id": "09-30_both_exact_you-can-count-on-me_001",
+      "src": "assets/movie-scenes/09-30_both_exact_you-can-count-on-me_001.mp4",
+      "movieTitle": "You Can Count on Me",
+      "movieSlug": "you-can-count-on-me",
+      "releaseYear": 2000,
+      "director": "Kenneth Lonergan",
+      "rightsHolder": "Paramount Classics",
       "displayTime": "09:30",
       "period": "both",
       "precision": "exact",
@@ -2957,6 +3305,25 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "12-00_am_after_the-man-who-fell-to-earth_001",
+      "src": "assets/movie-scenes/12-00_am_after_the-man-who-fell-to-earth_001.mp4",
+      "movieTitle": "The Man Who Fell to Earth",
+      "movieSlug": "the-man-who-fell-to-earth",
+      "releaseYear": 1976,
+      "director": "Nicolas Roeg",
+      "rightsHolder": "StudioCanal",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:05"
+        }
+      ]
+    },
+    {
       "id": "12-00_am_approx_a-nightmare-on-elm-street_001",
       "src": "assets/movie-scenes/12-00_am_approx_a-nightmare-on-elm-street_001.mp4",
       "movieTitle": "A Nightmare on Elm Street",
@@ -2995,6 +3362,25 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "12-00_am_approx_the-florida-project_001",
+      "src": "assets/movie-scenes/12-00_am_approx_the-florida-project_001.mp4",
+      "movieTitle": "The Florida Project",
+      "movieSlug": "the-florida-project",
+      "releaseYear": 2017,
+      "director": "Sean Baker",
+      "rightsHolder": "A24",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "23:53",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
       "id": "12-00_am_approx_watchmen_001",
       "src": "assets/movie-scenes/12-00_am_approx_watchmen_001.mp4",
       "movieTitle": "Watchmen",
@@ -3021,6 +3407,25 @@ window.REEL_TIME_SCENES = {
       "releaseYear": 1984,
       "director": "Wes Craven",
       "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_exact_trainspotting-2_001",
+      "src": "assets/movie-scenes/12-00_am_exact_trainspotting-2_001.mp4",
+      "movieTitle": "T2 Trainspotting",
+      "movieSlug": "trainspotting-2",
+      "releaseYear": 2017,
+      "director": "Danny Boyle",
+      "rightsHolder": "Sony Pictures",
       "displayTime": "12:00",
       "period": "am",
       "precision": "exact",
@@ -3258,6 +3663,158 @@ window.REEL_TIME_SCENES = {
         {
           "start": "12:45",
           "end": "12:45"
+        }
+      ]
+    },
+    {
+      "id": "dawn_broad_sunset-boulevard_001",
+      "src": "assets/movie-scenes/dawn_broad_sunset-boulevard_001.mp4",
+      "movieTitle": "Sunset Boulevard",
+      "movieSlug": "sunset-boulevard",
+      "releaseYear": 1950,
+      "director": "Billy Wilder",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "Dawn",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "07:00"
+        }
+      ]
+    },
+    {
+      "id": "dusk_broad_paddington_001",
+      "src": "assets/movie-scenes/dusk_broad_paddington_001.mp4",
+      "movieTitle": "Paddington",
+      "movieSlug": "paddington",
+      "releaseYear": 2014,
+      "director": "Paul King",
+      "rightsHolder": "StudioCanal",
+      "displayTime": "Dusk",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "18:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "early-morning_broad_pulp-fiction_001",
+      "src": "assets/movie-scenes/early-morning_broad_pulp-fiction_001.mp4",
+      "movieTitle": "Pulp Fiction",
+      "movieSlug": "pulp-fiction",
+      "releaseYear": 1994,
+      "director": "Quentin Tarantino",
+      "rightsHolder": "Miramax",
+      "displayTime": "Early morning",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "early-morning_broad_what-we-do-in-the-shadows_001",
+      "src": "assets/movie-scenes/early-morning_broad_what-we-do-in-the-shadows_001.mp4",
+      "movieTitle": "What We Do in the Shadows",
+      "movieSlug": "what-we-do-in-the-shadows",
+      "releaseYear": 2014,
+      "director": "Jemaine Clement and Taika Waititi",
+      "rightsHolder": "The Orchard / Paramount Pictures",
+      "displayTime": "Early morning",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "evening_broad_antichrist_001",
+      "src": "assets/movie-scenes/evening_broad_antichrist_001.mp4",
+      "movieTitle": "Antichrist",
+      "movieSlug": "antichrist",
+      "releaseYear": 2009,
+      "director": "Lars von Trier",
+      "rightsHolder": "IFC Films / Zentropa",
+      "displayTime": "Evening",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "18:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "id": "fallback_you-can-count-on-me_001",
+      "src": "assets/movie-scenes/fallback_you-can-count-on-me_001.mp4",
+      "movieTitle": "You Can Count on Me",
+      "movieSlug": "you-can-count-on-me",
+      "releaseYear": 2000,
+      "director": "Kenneth Lonergan",
+      "rightsHolder": "Paramount Classics",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "midday_broad_lord-of-the-rings-3_001",
+      "src": "assets/movie-scenes/midday_broad_lord-of-the-rings-3_001.mp4",
+      "movieTitle": "The Lord of the Rings: The Return of the King",
+      "movieSlug": "lord-of-the-rings-3",
+      "releaseYear": 2003,
+      "director": "Peter Jackson",
+      "rightsHolder": "New Line Cinema / Warner Bros. Pictures",
+      "displayTime": "Midday",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "11:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "id": "middle-night_broad_four-lions_001",
+      "src": "assets/movie-scenes/middle-night_broad_four-lions_001.mp4",
+      "movieTitle": "Four Lions",
+      "movieSlug": "four-lions",
+      "releaseYear": 2010,
+      "director": "Chris Morris",
+      "rightsHolder": "Film4 / StudioCanal",
+      "displayTime": "Middle of the night",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "04:00"
         }
       ]
     }
