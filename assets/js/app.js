@@ -97,6 +97,9 @@
   init();
 
   async function init() {
+    if (globalThis.AsciiPrinter) {
+      AsciiPrinter.printByName("television");
+    }
     setFaviconLetter();
     tickClock();
     window.setInterval(tickClock, 1000);
@@ -379,7 +382,7 @@
   function playCountdownBeep() {
     const beep = new Audio(SOUND_PATHS.countdownBeep);
     beep.volume = scaledVolume(VOLUME.countdownBeep);
-    beep.play().catch(() => {});
+    beep.play().catch(() => { });
   }
 
   function startProjectorSound() {
@@ -391,7 +394,7 @@
     audio.projector.pause();
     audio.projector.currentTime = 0;
     audio.projector.volume = scaledVolume(VOLUME.projector);
-    audio.projector.play().catch(() => {});
+    audio.projector.play().catch(() => { });
   }
 
   function fadeOutProjectorSound(duration = TIMING.projectorFadeMs) {

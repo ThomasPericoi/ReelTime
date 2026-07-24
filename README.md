@@ -73,13 +73,11 @@ tools/
   build-scenes-json.py
 ```
 
-`assets/data/scenes-data.js` is used by the browser, including when opening `index.html` directly via `file://`. `assets/data/scenes.json` is kept as the readable data export.
+`assets/data/scenes-data.js` is used by the browser, including when opening `index.html` directly via `file://`. `assets/data/scenes.json` is kept as the readable data export. Video scenes are intentionally ignored by git.
 
 ## Local use
 
 Open `index.html` directly in a browser.
-
-No `python -m http.server` is required.
 
 ## Rebuild scene data
 
@@ -129,4 +127,4 @@ ReelTime.audio.projectorStop()
 
 ## Rights note
 
-Film metadata and rights-holder labels are best-effort references for display and should be verified before any public or commercial use. Video scenes are intentionally ignored by git.
+I don't have the rights of the movies. Please don't sue me.
