@@ -133,6 +133,25 @@
       ]
     },
     {
+      "id": "01-18_am_exact_back-to-the-future_001",
+      "src": "assets/movie-scenes/01-18_am_exact_back-to-the-future_001.mp4",
+      "movieTitle": "Back to the Future",
+      "movieSlug": "back-to-the-future",
+      "releaseYear": 1985,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "01:18",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:18",
+          "end": "01:18"
+        }
+      ]
+    },
+    {
       "id": "01-21_both_exact_tower_001",
       "src": "assets/movie-scenes/01-21_both_exact_tower_001.mp4",
       "movieTitle": "Tower",
@@ -557,6 +576,48 @@
       ]
     },
     {
+      "id": "02-30_both_exact_thelma-and-louise_001",
+      "src": "assets/movie-scenes/02-30_both_exact_thelma-and-louise_001.mp4",
+      "movieTitle": "Thelma & Louise",
+      "movieSlug": "thelma-and-louise",
+      "releaseYear": 1991,
+      "director": "Ridley Scott",
+      "rightsHolder": "MGM",
+      "displayTime": "02:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:30",
+          "end": "02:30"
+        },
+        {
+          "start": "14:30",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "02-30_pm_exact_late-night-with-the-devil_001",
+      "src": "assets/movie-scenes/02-30_pm_exact_late-night-with-the-devil_001.mp4",
+      "movieTitle": "Late Night with the Devil",
+      "movieSlug": "late-night-with-the-devil",
+      "releaseYear": 2023,
+      "director": "Cameron Cairnes and Colin Cairnes",
+      "rightsHolder": "IFC Films / Shudder",
+      "displayTime": "02:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "14:30",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
       "id": "02-55_both_exact_little-miss-sunshine_001",
       "src": "assets/movie-scenes/02-55_both_exact_little-miss-sunshine_001.mp4",
       "movieTitle": "Little Miss Sunshine",
@@ -599,6 +660,25 @@
         {
           "start": "14:59",
           "end": "14:59"
+        }
+      ]
+    },
+    {
+      "id": "03-00_am_after_nosferatu_001",
+      "src": "assets/movie-scenes/03-00_am_after_nosferatu_001.mp4",
+      "movieTitle": "Nosferatu",
+      "movieSlug": "nosferatu",
+      "releaseYear": 2024,
+      "director": "Robert Eggers",
+      "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "03:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:05"
         }
       ]
     },
@@ -863,6 +943,25 @@
       ]
     },
     {
+      "id": "03-20_pm_exact_fifth-element_001",
+      "src": "assets/movie-scenes/03-20_pm_exact_fifth-element_001.mp4",
+      "movieTitle": "The Fifth Element",
+      "movieSlug": "fifth-element",
+      "releaseYear": 1997,
+      "director": "Luc Besson",
+      "rightsHolder": "Gaumont / Sony Pictures",
+      "displayTime": "03:20",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "15:20",
+          "end": "15:20"
+        }
+      ]
+    },
+    {
       "id": "03-30_am_exact_into-the-wild_001",
       "src": "assets/movie-scenes/03-30_am_exact_into-the-wild_001.mp4",
       "movieTitle": "Into the Wild",
@@ -888,6 +987,29 @@
       "movieSlug": "beetlejuice",
       "releaseYear": 1988,
       "director": "Tim Burton",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "03:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:30",
+          "end": "03:30"
+        },
+        {
+          "start": "15:30",
+          "end": "15:30"
+        }
+      ]
+    },
+    {
+      "id": "03-30_both_exact_mickey-17_001",
+      "src": "assets/movie-scenes/03-30_both_exact_mickey-17_001.mp4",
+      "movieTitle": "Mickey 17",
+      "movieSlug": "mickey-17",
+      "releaseYear": 2025,
+      "director": "Bong Joon Ho",
       "rightsHolder": "Warner Bros. Pictures",
       "displayTime": "03:30",
       "period": "both",
@@ -1352,6 +1474,48 @@
       ]
     },
     {
+      "id": "05-00_both_exact_the-strange-case-of-benjamin-button_001",
+      "src": "assets/movie-scenes/05-00_both_exact_the-strange-case-of-benjamin-button_001.mp4",
+      "movieTitle": "The Curious Case of Benjamin Button",
+      "movieSlug": "the-strange-case-of-benjamin-button",
+      "releaseYear": 2008,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "displayTime": "05:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "05:00"
+        },
+        {
+          "start": "17:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "id": "05-00_pm_exact_anora_001",
+      "src": "assets/movie-scenes/05-00_pm_exact_anora_001.mp4",
+      "movieTitle": "Anora",
+      "movieSlug": "anora",
+      "releaseYear": 2024,
+      "director": "Sean Baker",
+      "rightsHolder": "Neon",
+      "displayTime": "05:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "17:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
       "id": "05-02_both_exact_american-hustle_001",
       "src": "assets/movie-scenes/05-02_both_exact_american-hustle_001.mp4",
       "movieTitle": "American Hustle",
@@ -1558,6 +1722,29 @@
       ]
     },
     {
+      "id": "06-00_both_before_the-age-of-innocence_001",
+      "src": "assets/movie-scenes/06-00_both_before_the-age-of-innocence_001.mp4",
+      "movieTitle": "The Age of Innocence",
+      "movieSlug": "the-age-of-innocence",
+      "releaseYear": 1993,
+      "director": "Martin Scorsese",
+      "rightsHolder": "Columbia Pictures",
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "05:55",
+          "end": "06:00"
+        },
+        {
+          "start": "17:55",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_both_before_the-worlds-end_001",
       "src": "assets/movie-scenes/06-00_both_before_the-worlds-end_001.mp4",
       "movieTitle": "The World's End",
@@ -1650,6 +1837,52 @@
       ]
     },
     {
+      "id": "06-34_both_exact_once-upon-a-time-in-america_001",
+      "src": "assets/movie-scenes/06-34_both_exact_once-upon-a-time-in-america_001.mp4",
+      "movieTitle": "Once Upon a Time in America",
+      "movieSlug": "once-upon-a-time-in-america",
+      "releaseYear": 1984,
+      "director": "Sergio Leone",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "06:34",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:34",
+          "end": "06:34"
+        },
+        {
+          "start": "18:34",
+          "end": "18:34"
+        }
+      ]
+    },
+    {
+      "id": "06-35_both_exact_once-upon-a-time-in-america_001",
+      "src": "assets/movie-scenes/06-35_both_exact_once-upon-a-time-in-america_001.mp4",
+      "movieTitle": "Once Upon a Time in America",
+      "movieSlug": "once-upon-a-time-in-america",
+      "releaseYear": 1984,
+      "director": "Sergio Leone",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "06:35",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:35",
+          "end": "06:35"
+        },
+        {
+          "start": "18:35",
+          "end": "18:35"
+        }
+      ]
+    },
+    {
       "id": "06-45_am_exact_beetlejuice_001",
       "src": "assets/movie-scenes/06-45_am_exact_beetlejuice_001.mp4",
       "movieTitle": "Beetlejuice",
@@ -1684,6 +1917,29 @@
         {
           "start": "07:00",
           "end": "07:00"
+        }
+      ]
+    },
+    {
+      "id": "07-00_both_after_the-age-of-innocence_001",
+      "src": "assets/movie-scenes/07-00_both_after_the-age-of-innocence_001.mp4",
+      "movieTitle": "The Age of Innocence",
+      "movieSlug": "the-age-of-innocence",
+      "releaseYear": 1993,
+      "director": "Martin Scorsese",
+      "rightsHolder": "Columbia Pictures",
+      "displayTime": "07:00",
+      "period": "both",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "07:00",
+          "end": "07:05"
+        },
+        {
+          "start": "19:00",
+          "end": "19:05"
         }
       ]
     },
@@ -1741,6 +1997,29 @@
       "releaseYear": 2000,
       "director": "Mary Harron",
       "rightsHolder": "Lionsgate",
+      "displayTime": "07:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "07:00",
+          "end": "07:00"
+        },
+        {
+          "start": "19:00",
+          "end": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "07-00_both_exact_labyrinth_001",
+      "src": "assets/movie-scenes/07-00_both_exact_labyrinth_001.mp4",
+      "movieTitle": "Labyrinth",
+      "movieSlug": "labyrinth",
+      "releaseYear": 1986,
+      "director": "Jim Henson",
+      "rightsHolder": "TriStar Pictures / The Jim Henson Company",
       "displayTime": "07:00",
       "period": "both",
       "precision": "exact",
@@ -1887,6 +2166,25 @@
       ]
     },
     {
+      "id": "07-30_pm_before_weapons_001",
+      "src": "assets/movie-scenes/07-30_pm_before_weapons_001.mp4",
+      "movieTitle": "Weapons",
+      "movieSlug": "weapons",
+      "releaseYear": 2025,
+      "director": "Zach Cregger",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "07:30",
+      "period": "pm",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "19:25",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
       "id": "07-30_pm_exact_mid90s_001",
       "src": "assets/movie-scenes/07-30_pm_exact_mid90s_001.mp4",
       "movieTitle": "Mid90s",
@@ -1894,6 +2192,25 @@
       "releaseYear": 2018,
       "director": "Jonah Hill",
       "rightsHolder": "A24",
+      "displayTime": "07:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "19:30",
+          "end": "19:30"
+        }
+      ]
+    },
+    {
+      "id": "07-30_pm_exact_point-break_001",
+      "src": "assets/movie-scenes/07-30_pm_exact_point-break_001.mp4",
+      "movieTitle": "Point Break",
+      "movieSlug": "point-break",
+      "releaseYear": 1991,
+      "director": "Kathryn Bigelow",
+      "rightsHolder": "20th Century Studios",
       "displayTime": "07:30",
       "period": "pm",
       "precision": "exact",
@@ -1990,6 +2307,29 @@
       ]
     },
     {
+      "id": "08-00_both_before_in-the-name-of-the-father_001",
+      "src": "assets/movie-scenes/08-00_both_before_in-the-name-of-the-father_001.mp4",
+      "movieTitle": "In the Name of the Father",
+      "movieSlug": "in-the-name-of-the-father",
+      "releaseYear": 1993,
+      "director": "Jim Sheridan",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "07:55",
+          "end": "08:00"
+        },
+        {
+          "start": "19:55",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_before_lucky-number-slevin_001",
       "src": "assets/movie-scenes/08-00_both_before_lucky-number-slevin_001.mp4",
       "movieTitle": "Lucky Number Slevin",
@@ -2041,6 +2381,29 @@
       "movieTitle": "Back to the Future Part III",
       "movieSlug": "back-to-the-future-part-3",
       "releaseYear": 1990,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "08-00_both_exact_back-to-the-future_001",
+      "src": "assets/movie-scenes/08-00_both_exact_back-to-the-future_001.mp4",
+      "movieTitle": "Back to the Future",
+      "movieSlug": "back-to-the-future",
+      "releaseYear": 1985,
       "director": "Robert Zemeckis",
       "rightsHolder": "Universal Pictures",
       "displayTime": "08:00",
@@ -2212,6 +2575,25 @@
       ]
     },
     {
+      "id": "08-17_am_exact_under-the-skin_001",
+      "src": "assets/movie-scenes/08-17_am_exact_under-the-skin_001.mp4",
+      "movieTitle": "Under the Skin",
+      "movieSlug": "under-the-skin",
+      "releaseYear": 2013,
+      "director": "Jonathan Glazer",
+      "rightsHolder": "A24 / StudioCanal",
+      "displayTime": "08:17",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:17",
+          "end": "08:17"
+        }
+      ]
+    },
+    {
       "id": "08-17_both_exact_127-hours_001",
       "src": "assets/movie-scenes/08-17_both_exact_127-hours_001.mp4",
       "movieTitle": "127 Hours",
@@ -2242,6 +2624,29 @@
       "releaseYear": 2010,
       "director": "Danny Boyle",
       "rightsHolder": "Searchlight Pictures / Pathé",
+      "displayTime": "08:20",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:20",
+          "end": "08:20"
+        },
+        {
+          "start": "20:20",
+          "end": "20:20"
+        }
+      ]
+    },
+    {
+      "id": "08-20_both_exact_back-to-the-future_001",
+      "src": "assets/movie-scenes/08-20_both_exact_back-to-the-future_001.mp4",
+      "movieTitle": "Back to the Future",
+      "movieSlug": "back-to-the-future",
+      "releaseYear": 1985,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Universal Pictures",
       "displayTime": "08:20",
       "period": "both",
       "precision": "exact",
@@ -2556,6 +2961,25 @@
         {
           "start": "21:00",
           "end": "21:00"
+        }
+      ]
+    },
+    {
+      "id": "09-00_pm_after_asteroid-city_001",
+      "src": "assets/movie-scenes/09-00_pm_after_asteroid-city_001.mp4",
+      "movieTitle": "Asteroid City",
+      "movieSlug": "asteroid-city",
+      "releaseYear": 2023,
+      "director": "Wes Anderson",
+      "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "09:00",
+      "period": "pm",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "21:00",
+          "end": "21:05"
         }
       ]
     },
@@ -3324,6 +3748,25 @@
       ]
     },
     {
+      "id": "12-00_am_after_the-strange-case-of-benjamin-button_001",
+      "src": "assets/movie-scenes/12-00_am_after_the-strange-case-of-benjamin-button_001.mp4",
+      "movieTitle": "The Curious Case of Benjamin Button",
+      "movieSlug": "the-strange-case-of-benjamin-button",
+      "releaseYear": 2008,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:05"
+        }
+      ]
+    },
+    {
       "id": "12-00_am_approx_a-nightmare-on-elm-street_001",
       "src": "assets/movie-scenes/12-00_am_approx_a-nightmare-on-elm-street_001.mp4",
       "movieTitle": "A Nightmare on Elm Street",
@@ -3548,6 +3991,25 @@
       "releaseYear": 2003,
       "director": "Peter Weir",
       "rightsHolder": "20th Century Studios",
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "12:00",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_exact_the-conversation_001",
+      "src": "assets/movie-scenes/12-00_pm_exact_the-conversation_001.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
       "displayTime": "12:00",
       "period": "pm",
       "precision": "exact",
