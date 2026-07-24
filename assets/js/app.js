@@ -84,6 +84,7 @@
     currentScene: null,
     hasStarted: false,
     isPlayingSequence: false,
+    isScenePlaying: false,
     sequenceToken: 0,
     nextCheckAt: null,
     timers: [],
@@ -142,34 +143,11 @@
     throw new Error("assets/data/scenes-data.js is required when opening Reel Time as a local file.");
   }
 
-  async function primeFuturePlayback() {
-    const now = new Date();
-    const scene =
-      selectScene(now, { mode: "arrival" }) ||
-      selectScene(findNextPlayableTime(now, { mode: "ongoing" }), { mode: "ongoing" });
-
-    if (!scene) return;
-
-    try {
-      prepareSceneVideo(scene);
-      forceSceneMuted();
-      await el.scene.play();
-      el.scene.pause();
-      el.scene.currentTime = 0;
-    } catch {
-      // Browsers may refuse deferred media priming; playback has a muted fallback at scene start.
-    } finally {
-      allowSceneAudio();
-      applySceneVolume();
-    }
-  }
-
   /*______________________________________ SCHEDULER ______________________________________*/
 
   function startClock() {
     enterPlaybackMode();
     applySceneVolume();
-    primeFuturePlayback();
     scheduleFromNow({ playImmediately: true, mode: "arrival" });
   }
 
@@ -249,7 +227,8 @@
     rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
-    resetVideoUnlessPrimed(scene);
+    resetVideoForScene(scene);
+    warmSceneVideo(scene, state.sequenceToken);
     dimRoom();
     return state.sequenceToken;
   }
@@ -286,43 +265,71 @@
 
       hidePanels();
       setCreditOverlay(scene);
-      el.scene.classList.remove("gate-hit", "is-ending");
       prepareSceneVideo(scene);
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
+      const finish = (didPlay) => {
+        state.isScenePlaying = false;
+        resolve(didPlay);
+      };
+
       el.scene.ontimeupdate = () => updateEndingLook(token);
-      el.scene.onended = () => resolve(true);
-      el.scene.onerror = () => resolve(false);
+      el.scene.onended = () => finish(true);
+      el.scene.onerror = () => finish(false);
+
+      state.isScenePlaying = true;
       startSceneVideo().then((didStart) => {
-        if (!didStart) resolve(false);
+        if (!didStart) finish(false);
       });
     });
   }
 
   function prepareSceneVideo(scene) {
-    const src = encodeURI(scene.src);
-    if (el.scene.getAttribute("src") !== src) {
-      el.scene.src = src;
-      el.scene.load();
-    }
-    applySceneVolume();
+    setSceneSource(scene);
+    el.scene.classList.remove("gate-hit", "is-ending");
     allowSceneAudio();
+    applySceneVolume();
+  }
+
+  function setSceneSource(scene) {
+    const src = encodeURI(scene.src);
+    if (el.scene.getAttribute("src") === src) return;
+    el.scene.src = src;
+    el.scene.load();
+  }
+
+  async function warmSceneVideo(scene, token) {
+    setSceneSource(scene);
+    forceSceneMuted();
+
+    const didStart = await attemptScenePlay();
+    if (token !== state.sequenceToken || state.isScenePlaying) return;
+
+    if (didStart) {
+      el.scene.pause();
+      resetSceneTime();
+    }
+
+    allowSceneAudio();
+    applySceneVolume();
   }
 
   async function startSceneVideo() {
-    try {
-      await el.scene.play();
-      return true;
-    } catch {
-      return startSceneVideoMuted();
-    }
+    allowSceneAudio();
+    applySceneVolume();
+
+    if (await attemptScenePlay()) return true;
+
+    forceSceneMuted();
+    if (!(await attemptScenePlay())) return false;
+
+    window.setTimeout(tryRestoreSceneAudio, 300);
+    return true;
   }
 
-  async function startSceneVideoMuted() {
+  async function attemptScenePlay() {
     try {
-      forceSceneMuted();
       await el.scene.play();
-      window.setTimeout(tryRestoreSceneAudio, 250);
       return true;
     } catch {
       return false;
@@ -573,20 +580,25 @@
     clearSceneHandlers();
   }
 
-  function resetVideoUnlessPrimed(scene) {
-    if (el.scene.getAttribute("src") !== encodeURI(scene.src)) {
-      resetVideo();
-      return;
-    }
-
+  function resetVideoForScene(scene) {
     el.scene.pause();
-    el.scene.currentTime = 0;
     el.app.classList.remove("has-freeze-frame");
     el.scene.classList.remove("gate-hit", "is-ending");
     clearSceneHandlers();
+    setSceneSource(scene);
+    resetSceneTime();
+  }
+
+  function resetSceneTime() {
+    try {
+      el.scene.currentTime = 0;
+    } catch {
+      // Safari may reject seeking before metadata is available; the next load/play starts at 0 anyway.
+    }
   }
 
   function resetVideo() {
+    state.isScenePlaying = false;
     el.scene.pause();
     el.app.classList.remove("has-freeze-frame");
     el.scene.classList.remove("gate-hit", "is-ending");
