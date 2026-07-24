@@ -151,14 +151,14 @@
 
     try {
       prepareSceneVideo(scene);
-      el.scene.muted = true;
+      forceSceneMuted();
       await el.scene.play();
       el.scene.pause();
       el.scene.currentTime = 0;
     } catch {
       // Browsers may refuse deferred media priming; playback has a muted fallback at scene start.
     } finally {
-      el.scene.muted = false;
+      allowSceneAudio();
       applySceneVolume();
     }
   }
@@ -219,8 +219,12 @@
       await showTitleCard(scene, token);
       state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
-      await playScene(scene, token);
-      settleVideo();
+      const didPlay = await playScene(scene, token);
+      if (didPlay) {
+        settleVideo();
+      } else {
+        resetVideo();
+      }
       setFaviconLetter();
       await fadeOutProjectorSound(TIMING.quickFadeMs);
     } finally {
@@ -273,7 +277,7 @@
   function playScene(scene, token) {
     return new Promise((resolve) => {
       if (token !== state.sequenceToken) {
-        resolve();
+        resolve(false);
         return;
       }
 
@@ -284,9 +288,9 @@
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
       el.scene.ontimeupdate = () => updateEndingLook(token);
-      el.scene.onended = resolve;
-      el.scene.onerror = resolve;
-      startSceneVideo().catch(resolve);
+      el.scene.onended = () => resolve(true);
+      el.scene.onerror = () => resolve(false);
+      startSceneVideo().then(resolve);
     });
   }
 
@@ -297,25 +301,49 @@
       el.scene.load();
     }
     applySceneVolume();
-    el.scene.muted = false;
+    allowSceneAudio();
   }
 
   async function startSceneVideo() {
     try {
       await el.scene.play();
-      return;
+      return true;
     } catch {
-      await startSceneVideoMuted();
+      return startSceneVideoMuted();
     }
   }
 
   async function startSceneVideoMuted() {
+    try {
+      forceSceneMuted();
+      await el.scene.play();
+      window.setTimeout(tryRestoreSceneAudio, 250);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function forceSceneMuted() {
+    el.scene.defaultMuted = true;
     el.scene.muted = true;
-    await el.scene.play();
-    requestAnimationFrame(() => {
-      el.scene.muted = false;
-      applySceneVolume();
-    });
+    el.scene.setAttribute("muted", "");
+  }
+
+  function allowSceneAudio() {
+    el.scene.defaultMuted = false;
+    el.scene.muted = false;
+    el.scene.removeAttribute("muted");
+  }
+
+  function tryRestoreSceneAudio() {
+    allowSceneAudio();
+    applySceneVolume();
+
+    if (el.scene.paused && !el.scene.ended) {
+      forceSceneMuted();
+      el.scene.play().catch(() => { });
+    }
   }
 
   function updateEndingLook(token) {

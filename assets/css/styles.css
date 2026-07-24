@@ -141,7 +141,7 @@ video {
 .projection__video {
   z-index: 1;
   object-fit: cover;
-  background: #e8dfc9;
+  background: #050505;
   border: 6px solid rgba(28, 24, 17, 0.96);
   outline: 1px solid rgba(241, 222, 176, 0.45);
   box-shadow:
