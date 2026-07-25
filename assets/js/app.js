@@ -47,8 +47,12 @@
   const ONGOING_PRECISIONS = new Set(["exact", ...FLEXIBLE_PRECISIONS]);
 
   const SOUND_PATHS = {
-    countdownBeep: "assets/sounds/countdown_beep.mp3",
-    projector: "assets/sounds/projector.mp3",
+    countdownBeep: "assets/sounds/countdown_beep_001.mp3",
+    projector: "assets/sounds/projector_001.mp3",
+    hushes: [
+      "assets/sounds/hush_001.mp3",
+      "assets/sounds/hush_002.mp3",
+    ],
   };
 
   const IDLE_MESSAGE = "Waiting for the next scene. Grab some pop-corn.";
@@ -64,6 +68,7 @@
   const VOLUME = {
     countdownBeep: 0.7,
     projector: 0.35,
+    hush: 0.7,
     master: 0.8,
   };
 
@@ -85,7 +90,6 @@
     hasStarted: false,
     isPlayingSequence: false,
     isScenePlaying: false,
-    isSceneArmed: false,
     sequenceToken: 0,
     nextCheckAt: null,
     timers: [],
@@ -201,13 +205,10 @@
       state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
       const didPlay = await playScene(scene, token);
-      if (didPlay) {
-        settleVideo();
-      } else {
-        resetVideo();
-      }
+      if (didPlay) settleVideo();
+      else resetVideo();
       setFaviconLetter();
-      await fadeOutProjectorSound(TIMING.quickFadeMs);
+      await fadeOutProjectorSound();
     } finally {
       if (token !== state.sequenceToken) return;
       state.isPlayingSequence = false;
@@ -228,7 +229,7 @@
     rememberFlexibleScene(scene);
     clearManagedTimers();
     hideSequenceUi();
-    armSceneVideo(scene);
+    resetVideo();
     dimRoom();
     return state.sequenceToken;
   }
@@ -251,6 +252,7 @@
     el.movieTitle.textContent = scene.movieTitle;
     el.sceneMatch.textContent = sceneMatchLine(scene, new Date());
     el.rightsIntro.textContent = creditLine(scene);
+    maybePlayHush();
     showPanel(el.titleCard);
     await sleep(TIMING.titleCardMs);
     el.titleCard.hidden = true;
@@ -265,12 +267,11 @@
 
       hidePanels();
       setCreditOverlay(scene);
-      revealArmedScene(scene);
+      prepareSceneVideo(scene);
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
       const finish = (didPlay) => {
         state.isScenePlaying = false;
-        state.isSceneArmed = false;
         resolve(didPlay);
       };
 
@@ -279,76 +280,21 @@
       el.scene.onerror = () => finish(false);
 
       state.isScenePlaying = true;
-      ensureSceneStillPlaying().then((didStart) => {
-        if (!didStart) finish(false);
-      });
+      el.scene.play().catch(() => finish(false));
     });
   }
 
-  function armSceneVideo(scene) {
-    resetVideoForScene(scene);
-    forceSceneMuted();
-    el.scene.loop = true;
-    state.isSceneArmed = true;
-    attemptScenePlay();
-  }
-
-  function revealArmedScene(scene) {
-    setSceneSource(scene);
-    el.scene.classList.remove("gate-hit", "is-ending");
-    el.scene.loop = false;
-    resetSceneTime();
-    allowSceneAudio();
-    applySceneVolume();
-    window.setTimeout(keepSafariPlaybackAlive, 250);
-  }
-
-  function setSceneSource(scene) {
+  function prepareSceneVideo(scene) {
     const src = encodeURI(scene.src);
-    if (el.scene.getAttribute("src") === src) return;
-    el.scene.src = src;
-    el.scene.load();
-  }
-
-  async function ensureSceneStillPlaying() {
-    if (!el.scene.paused && !el.scene.ended) return true;
-    if (await attemptScenePlay()) return true;
-
-    forceSceneMuted();
-    return attemptScenePlay();
-  }
-
-  async function attemptScenePlay() {
-    try {
-      await el.scene.play();
-      return true;
-    } catch {
-      return false;
+    if (el.scene.getAttribute("src") !== src) {
+      el.scene.src = src;
+      el.scene.load();
     }
-  }
 
-  function forceSceneMuted() {
-    el.scene.defaultMuted = true;
-    el.scene.muted = true;
-    el.scene.setAttribute("muted", "");
-  }
-
-  function allowSceneAudio() {
+    el.scene.classList.remove("gate-hit", "is-ending");
     el.scene.defaultMuted = false;
     el.scene.muted = false;
     el.scene.removeAttribute("muted");
-  }
-
-  function keepSafariPlaybackAlive() {
-    if (!state.isScenePlaying || el.scene.ended) return;
-
-    if (el.scene.paused) {
-      forceSceneMuted();
-      el.scene.play().catch(() => { });
-      return;
-    }
-
-    allowSceneAudio();
     applySceneVolume();
   }
 
@@ -490,9 +436,19 @@
   }
 
   function playCountdownBeep() {
-    const beep = new Audio(SOUND_PATHS.countdownBeep);
-    beep.volume = scaledVolume(VOLUME.countdownBeep);
-    beep.play().catch(() => { });
+    playOneShot(SOUND_PATHS.countdownBeep, VOLUME.countdownBeep);
+  }
+
+  function maybePlayHush() {
+    if (Math.random() >= 0.25) return;
+    const hush = randomItem(SOUND_PATHS.hushes);
+    playOneShot(hush, VOLUME.hush);
+  }
+
+  function playOneShot(src, volume) {
+    const sound = new Audio(src);
+    sound.volume = scaledVolume(volume);
+    sound.play().catch(() => { });
   }
 
   function startProjectorSound() {
@@ -574,29 +530,12 @@
     clearSceneHandlers();
   }
 
-  function resetVideoForScene(scene) {
-    el.scene.pause();
-    el.scene.loop = false;
-    el.app.classList.remove("has-freeze-frame");
-    el.scene.classList.remove("gate-hit", "is-ending");
-    clearSceneHandlers();
-    setSceneSource(scene);
-    resetSceneTime();
-  }
-
-  function resetSceneTime() {
-    try {
-      el.scene.currentTime = 0;
-    } catch {
-      // Safari may reject seeking before metadata is available; the next load/play starts at 0 anyway.
-    }
-  }
-
   function resetVideo() {
     state.isScenePlaying = false;
-    state.isSceneArmed = false;
     el.scene.pause();
-    el.scene.loop = false;
+    el.scene.defaultMuted = false;
+    el.scene.muted = false;
+    el.scene.removeAttribute("muted");
     el.app.classList.remove("has-freeze-frame");
     el.scene.classList.remove("gate-hit", "is-ending");
     clearSceneHandlers();
@@ -944,6 +883,10 @@
     const minutes = Math.floor(total / 60);
     const seconds = total % 60;
     return `${pad2(minutes)}:${pad2(seconds)}`;
+  }
+
+  function randomItem(items) {
+    return items[Math.floor(Math.random() * items.length)];
   }
 
   function pad2(value) {
