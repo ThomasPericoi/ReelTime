@@ -9,6 +9,7 @@
     startPanel: "#startPanel",
     startButton: "#startButton",
     startMessage: "#startMessage",
+    posterWall: "#posterWall",
     countdown: "#countdown",
     countdownNumber: "#countdownNumber",
     titleCard: "#titleCard",
@@ -56,6 +57,143 @@
   };
 
   const IDLE_MESSAGE = "Waiting for the next scene. Grab some pop-corn.";
+
+  const POSTER_BASE_PATH = "assets/movie-posters/";
+  const POSTER_FILES = [
+    "12-angry-men.jpg",
+    "12-monkeys.jpg",
+    "127-hours.jpg",
+    "a-beautiful-mind.jpg",
+    "a-christmas-story.jpg",
+    "a-clockwork-orange.jpg",
+    "a-fish-called-wanda.jpg",
+    "a-nightmare-on-elm-street.jpg",
+    "a-serious-man.jpg",
+    "all-the-president-s-men.jpg",
+    "american-gangster.jpg",
+    "american-hustle.jpg",
+    "american-made.jpg",
+    "american-psycho.jpg",
+    "anora.jpg",
+    "antichrist.jpg",
+    "apocalypse-now.jpg",
+    "asteroid-city.jpg",
+    "back-to-the-future-part-iii.jpg",
+    "back-to-the-future.jpg",
+    "basic-instinct.jpg",
+    "batman-returns.jpg",
+    "beetlejuice.jpg",
+    "before-sunrise.jpg",
+    "belfast.jpg",
+    "black-hawk-dawn.jpg",
+    "blue-velvet.jpg",
+    "bone-tomahawk.jpg",
+    "bugonia.jpg",
+    "burn-after-reading.jpg",
+    "captain-fantastic.jpg",
+    "carrie.jpg",
+    "cast-away.jpg",
+    "chef.jpg",
+    "citizen-kane.jpg",
+    "clueless.jpg",
+    "dawn-of-the-dead.jpg",
+    "demolition.jpg",
+    "die-hard-2.jpg",
+    "donnie-darko.jpg",
+    "dr-strangelove.jpg",
+    "ed-wood.jpg",
+    "escape-from-new-york.jpg",
+    "eternal-sunshine-of-the-spotless-mind.jpg",
+    "evil-dead-2.jpg",
+    "ex-machina.jpg",
+    "fantastic-mr-fox.jpg",
+    "fargo.jpg",
+    "ford-v-ferrari.jpg",
+    "four-lions.jpg",
+    "foxcatcher.jpg",
+    "fury.jpg",
+    "good-morning-vietnam.jpg",
+    "good-will-hunting.jpg",
+    "goodfellas.jpg",
+    "green-book.jpg",
+    "gremlins.jpg",
+    "in-the-loop.jpg",
+    "in-the-name-of-the-father.jpg",
+    "indiana-jones-and-the-last-crusade.jpg",
+    "insidious.jpg",
+    "insomnia.jpg",
+    "into-the-wild.jpg",
+    "jacob-s-ladder.jpg",
+    "jaws.jpg",
+    "labyrinth.jpg",
+    "late-night-with-the-devil.jpeg",
+    "little-miss-sunshine.jpg",
+    "lost-in-translation.jpg",
+    "lucky-number-slevin.jpg",
+    "manchester-by-the-sea.jpg",
+    "master-and-commander.jpg",
+    "mean-girls.jpg",
+    "memento.jpg",
+    "mickey-17.jpg",
+    "mid90s.jpg",
+    "midsommar.jpeg",
+    "moonrise-kingdom.jpg",
+    "mulholland-drive.jpg",
+    "munich.jpg",
+    "nightcrawler.jpg",
+    "no-country-for-old-men.jpg",
+    "nosferatu.jpg",
+    "once-upon-a-in-hollywood.jpg",
+    "once-upon-a-time-in-america.jpg",
+    "paddington.jpg",
+    "paris-texas.jpg",
+    "pig.jpg",
+    "point-break.jpg",
+    "pulp-fiction.jpg",
+    "rain-man.jpg",
+    "rear-window.jpg",
+    "rocky.jpg",
+    "scarface.jpg",
+    "scott-pilgrim.jpg",
+    "shaun-of-the-dead.jpg",
+    "sicario.jpg",
+    "some-like-it-hot.jpg",
+    "spotlight.jpg",
+    "stand-by-me.jpg",
+    "sunset-boulevard.jpg",
+    "t2-trainspotting.jpg",
+    "the-age-of-innocence.jpg",
+    "the-aviator.jpg",
+    "the-banshees-of-inisherin.jpg",
+    "the-blues-brothers.jpg",
+    "the-breakfast-club.jpg",
+    "the-conversation.jpg",
+    "the-curious-case-of-benjamin-button.jpg",
+    "the-departed.jpg",
+    "the-father.jpg",
+    "the-fifth-element.jpg",
+    "the-florida-project.jpg",
+    "the-game.jpg",
+    "the-green-mile.jpg",
+    "the-lord-of-the-rings-3.jpg",
+    "the-man-who-fell-to-earth.jpg",
+    "the-master.jpg",
+    "the-road.jpg",
+    "the-sandlot.jpg",
+    "the-shawshank-redemption.jpg",
+    "the-terminator.jpg",
+    "the-thin-red-line.jpg",
+    "the-worlds-end.jpg",
+    "thelma-and-louise.jpg",
+    "under-the-skin.jpg",
+    "wall-e.jpg",
+    "watchmen.jpg",
+    "weapons.jpg",
+    "what-we-do-in-the-shadows.jpg",
+    "wonder-boys.jpg",
+    "you-can-count-on-me.jpg",
+    "zero-dark-thirty.jpg",
+  ];
 
   const TIMING = {
     countdownStepMs: 1000,
@@ -120,6 +258,7 @@
     tickClock();
     window.setInterval(tickClock, 1000);
     initVolumeControl();
+    initPosterWall();
     el.startButton.addEventListener("click", startClock, { once: true });
     el.replayButton.addEventListener("click", replayCurrentScene);
 
@@ -132,6 +271,62 @@
     } catch {
       el.startMessage.textContent = "Could not load the scene library. Check that assets/data/scenes-data.js is available.";
     }
+  }
+
+
+  /*_____________________________________ POSTER WALL ______________________________________*/
+
+  function initPosterWall() {
+    if (!el.posterWall || !POSTER_FILES.length || prefersReducedMotion()) return;
+
+    const isCompactViewport = window.matchMedia("(max-width: 720px)").matches;
+    const columnCount = isCompactViewport ? 5 : 8;
+    const rowsPerColumn = isCompactViewport ? 8 : 9;
+    const pool = createPosterPool();
+    const fragment = document.createDocumentFragment();
+
+    el.posterWall.textContent = "";
+    el.posterWall.style.setProperty("--poster-columns", columnCount);
+
+    for (let columnIndex = 0; columnIndex < columnCount; columnIndex += 1) {
+      const column = document.createElement("div");
+      column.className = "poster-wall__column";
+      column.style.setProperty("--poster-duration", `${250 + columnIndex * 5}s`);
+      column.style.setProperty("--poster-offset", `${(columnIndex % 3) * -4}rem`);
+      if (columnIndex % 2) column.classList.add("poster-wall__column--reverse");
+
+      const group = document.createElement("div");
+      group.className = "poster-wall__group";
+      for (let rowIndex = 0; rowIndex < rowsPerColumn; rowIndex += 1) {
+        group.append(createPoster(pool.next().value));
+      }
+
+      column.append(group, group.cloneNode(true));
+      fragment.append(column);
+    }
+
+    el.posterWall.append(fragment);
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => el.posterWall.classList.add("is-visible"));
+    }, 1000);
+  }
+
+  function* createPosterPool() {
+    let pool = [];
+    while (true) {
+      if (!pool.length) pool = shuffle(POSTER_FILES);
+      yield pool.pop();
+    }
+  }
+
+  function createPoster(src) {
+    const img = document.createElement("img");
+    img.className = "poster-wall__poster";
+    img.src = `${POSTER_BASE_PATH}${src}`;
+    img.alt = "";
+    img.loading = "lazy";
+    img.decoding = "async";
+    return img;
   }
 
   /*____________________________________ SCENE LIBRARY ____________________________________*/
@@ -883,6 +1078,19 @@
     const minutes = Math.floor(total / 60);
     const seconds = total % 60;
     return `${pad2(minutes)}:${pad2(seconds)}`;
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function shuffle(items) {
+    const copy = [...items];
+    for (let index = copy.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+    }
+    return copy;
   }
 
   function randomItem(items) {

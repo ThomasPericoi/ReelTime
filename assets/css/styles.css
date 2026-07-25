@@ -7,6 +7,7 @@
   --ink: #050505;
   --gold: #ecd49d;
   --panel: rgba(5, 5, 5, 0.96);
+  --start-overlay: rgba(5, 5, 5, 0.68);
 
   --projection-width: min(88vw, 560px);
   --projection-height: min(44dvh, 360px);
@@ -232,6 +233,36 @@ video {
   }
 }
 
+.panel--start {
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.panel--start:before,
+.panel--start:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.panel--start:before {
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(244, 236, 216, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.42), var(--start-overlay) 52%, rgba(5, 5, 5, 0.84));
+}
+
+.panel--start:after {
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(5, 5, 5, 0.72), transparent 28%, transparent 72%, rgba(5, 5, 5, 0.72));
+}
+
+.panel--start > :not(.poster-wall) {
+  position: relative;
+  z-index: 3;
+}
+
 .panel[hidden] {
   display: none;
 }
@@ -347,6 +378,68 @@ video {
   margin: 0;
 }
 
+
+/*_____________________________________ POSTER WALL __________________________________________*/
+
+.poster-wall {
+  width: 132vw;
+  height: 132vh;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--poster-columns, 8), minmax(6.5rem, 1fr));
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-7deg) scale(1.06);
+  transition: opacity 1.4s ease;
+  transform-origin: center;
+  filter: sepia(0.22) saturate(0.74) brightness(0.72) contrast(1.08);
+  overflow: hidden;
+  contain: layout paint;
+}
+
+.poster-wall.is-visible {
+  opacity: 0.46;
+}
+
+.poster-wall__column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+  transform: translateY(var(--poster-offset, 0));
+  animation: poster-scroll-up var(--poster-duration, 52s) linear infinite;
+  will-change: transform;
+}
+
+.poster-wall__column--reverse {
+  animation-name: poster-scroll-down;
+}
+
+.poster-wall__group {
+  display: grid;
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+}
+
+.poster-wall__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  display: block;
+  object-fit: cover;
+  background: #111;
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.32);
+}
+
+@media (max-width: 720px) {
+  .poster-wall {
+    width: 158vw;
+    height: 136vh;
+    grid-template-columns: repeat(var(--poster-columns, 5), minmax(5.75rem, 1fr));
+    transform: translate(-50%, -50%) rotate(-8deg) scale(1.06);
+  }
+}
+
 /*_____________________________________ START TITLE __________________________________________*/
 
 .start-title {
@@ -367,7 +460,6 @@ video {
   justify-content: center;
   gap: 0.625rem;
   color: #090806;
-  font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -803,6 +895,26 @@ video {
   }
 }
 
+@keyframes poster-scroll-up {
+  from {
+    transform: translateY(var(--poster-offset, 0));
+  }
+
+  to {
+    transform: translateY(calc(var(--poster-offset, 0) - 50% - clamp(0.3125rem, 0.85vw, 0.625rem)));
+  }
+}
+
+@keyframes poster-scroll-down {
+  from {
+    transform: translateY(calc(var(--poster-offset, 0) - 50% - clamp(0.3125rem, 0.85vw, 0.625rem)));
+  }
+
+  to {
+    transform: translateY(var(--poster-offset, 0));
+  }
+}
+
 @keyframes projection-grain {
   0% {
     background-position: 0 0, 0 0;
@@ -850,6 +962,7 @@ video {
 @media (prefers-reduced-motion: reduce) {
 
   .app:before,
+  .poster-wall__column,
   .projection__video,
   .projection__noise,
   .projection__video.gate-hit,
