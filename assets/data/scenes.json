@@ -41,6 +41,48 @@
       ]
     },
     {
+      "id": "01-00_both_exact_taxi-driver_001",
+      "src": "assets/movie-scenes/01-00_both_exact_taxi-driver_001.mp4",
+      "movieTitle": "Taxi Driver",
+      "movieSlug": "taxi-driver",
+      "releaseYear": 1976,
+      "director": "Martin Scorsese",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "displayTime": "01:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:00",
+          "end": "01:00"
+        },
+        {
+          "start": "13:00",
+          "end": "13:00"
+        }
+      ]
+    },
+    {
+      "id": "01-00_pm_exact_snowden_001",
+      "src": "assets/movie-scenes/01-00_pm_exact_snowden_001.mp4",
+      "movieTitle": "Snowden",
+      "movieSlug": "snowden",
+      "releaseYear": 2016,
+      "director": "Oliver Stone",
+      "rightsHolder": "Open Road Films",
+      "displayTime": "01:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "13:00",
+          "end": "13:00"
+        }
+      ]
+    },
+    {
       "id": "01-06_both_exact_nightcrawler_001",
       "src": "assets/movie-scenes/01-06_both_exact_nightcrawler_001.mp4",
       "movieTitle": "Nightcrawler",
@@ -358,6 +400,25 @@
       ]
     },
     {
+      "id": "02-00_am_exact_the-sting_001",
+      "src": "assets/movie-scenes/02-00_am_exact_the-sting_001.mp4",
+      "movieTitle": "The Sting",
+      "movieSlug": "the-sting",
+      "releaseYear": 1973,
+      "director": "George Roy Hill",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "02:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:00"
+        }
+      ]
+    },
+    {
       "id": "02-00_both_exact_american-psycho_001",
       "src": "assets/movie-scenes/02-00_both_exact_american-psycho_001.mp4",
       "movieTitle": "American Psycho",
@@ -473,6 +534,29 @@
       ]
     },
     {
+      "id": "02-00_both_exact_the-elephant-man_001",
+      "src": "assets/movie-scenes/02-00_both_exact_the-elephant-man_001.mp4",
+      "movieTitle": "The Elephant Man",
+      "movieSlug": "the-elephant-man",
+      "releaseYear": 1980,
+      "director": "David Lynch",
+      "rightsHolder": "Paramount Pictures / StudioCanal",
+      "displayTime": "02:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:00"
+        },
+        {
+          "start": "14:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
       "id": "02-00_pm_exact_watchmen_001",
       "src": "assets/movie-scenes/02-00_pm_exact_watchmen_001.mp4",
       "movieTitle": "Watchmen",
@@ -549,6 +633,29 @@
         {
           "start": "02:30",
           "end": "02:30"
+        }
+      ]
+    },
+    {
+      "id": "02-30_both_before_3-10-to-yuma_001",
+      "src": "assets/movie-scenes/02-30_both_before_3-10-to-yuma_001.mp4",
+      "movieTitle": "3:10 to Yuma",
+      "movieSlug": "3-10-to-yuma",
+      "releaseYear": 2007,
+      "director": "James Mangold",
+      "rightsHolder": "Lionsgate",
+      "displayTime": "02:30",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "02:25",
+          "end": "02:30"
+        },
+        {
+          "start": "14:25",
+          "end": "14:30"
         }
       ]
     },
@@ -728,6 +835,25 @@
       "releaseYear": 2012,
       "director": "Paul Thomas Anderson",
       "rightsHolder": "The Weinstein Company",
+      "displayTime": "03:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_am_exact_the-social-network_001",
+      "src": "assets/movie-scenes/03-00_am_exact_the-social-network_001.mp4",
+      "movieTitle": "The Social Network",
+      "movieSlug": "the-social-network",
+      "releaseYear": 2010,
+      "director": "David Fincher",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
       "displayTime": "03:00",
       "period": "am",
       "precision": "exact",
@@ -943,6 +1069,29 @@
       ]
     },
     {
+      "id": "03-08_both_exact_the-conjuring_001",
+      "src": "assets/movie-scenes/03-08_both_exact_the-conjuring_001.mp4",
+      "movieTitle": "The Conjuring",
+      "movieSlug": "the-conjuring",
+      "releaseYear": 2013,
+      "director": "James Wan",
+      "rightsHolder": "Warner Bros. Pictures / New Line Cinema",
+      "displayTime": "03:08",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:08",
+          "end": "03:08"
+        },
+        {
+          "start": "15:08",
+          "end": "15:08"
+        }
+      ]
+    },
+    {
       "id": "03-20_pm_exact_fifth-element_001",
       "src": "assets/movie-scenes/03-20_pm_exact_fifth-element_001.mp4",
       "movieTitle": "The Fifth Element",
@@ -1050,6 +1199,29 @@
       ]
     },
     {
+      "id": "03-42_both_exact_the-martian_001",
+      "src": "assets/movie-scenes/03-42_both_exact_the-martian_001.mp4",
+      "movieTitle": "The Martian",
+      "movieSlug": "the-martian",
+      "releaseYear": 2015,
+      "director": "Ridley Scott",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "03:42",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:42",
+          "end": "03:42"
+        },
+        {
+          "start": "15:42",
+          "end": "15:42"
+        }
+      ]
+    },
+    {
       "id": "03-51_both_exact_die-hard-2_001",
       "src": "assets/movie-scenes/03-51_both_exact_die-hard-2_001.mp4",
       "movieTitle": "Die Hard 2",
@@ -1069,6 +1241,25 @@
         {
           "start": "15:51",
           "end": "15:51"
+        }
+      ]
+    },
+    {
+      "id": "04-00_am_exact_nocturnal-animals_001",
+      "src": "assets/movie-scenes/04-00_am_exact_nocturnal-animals_001.mp4",
+      "movieTitle": "Nocturnal Animals",
+      "movieSlug": "nocturnal-animals",
+      "releaseYear": 2016,
+      "director": "Tom Ford",
+      "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "04:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:00",
+          "end": "04:00"
         }
       ]
     },
@@ -1111,6 +1302,29 @@
         {
           "start": "15:53",
           "end": "16:07"
+        }
+      ]
+    },
+    {
+      "id": "04-00_both_before_the-sting_001",
+      "src": "assets/movie-scenes/04-00_both_before_the-sting_001.mp4",
+      "movieTitle": "The Sting",
+      "movieSlug": "the-sting",
+      "releaseYear": 1973,
+      "director": "George Roy Hill",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "04:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "03:55",
+          "end": "04:00"
+        },
+        {
+          "start": "15:55",
+          "end": "16:00"
         }
       ]
     },
@@ -1435,6 +1649,29 @@
       "releaseYear": 2009,
       "director": "Joel Coen and Ethan Coen",
       "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "05:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "05:00"
+        },
+        {
+          "start": "17:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "id": "05-00_both_exact_eyes-wide-shut_001",
+      "src": "assets/movie-scenes/05-00_both_exact_eyes-wide-shut_001.mp4",
+      "movieTitle": "Eyes Wide Shut",
+      "movieSlug": "eyes-wide-shut",
+      "releaseYear": 1999,
+      "director": "Stanley Kubrick",
+      "rightsHolder": "Warner Bros. Pictures",
       "displayTime": "05:00",
       "period": "both",
       "precision": "exact",
@@ -1791,6 +2028,25 @@
       ]
     },
     {
+      "id": "06-00_pm_exact_the-farewell_001",
+      "src": "assets/movie-scenes/06-00_pm_exact_the-farewell_001.mp4",
+      "movieTitle": "The Farewell",
+      "movieSlug": "the-farewell",
+      "releaseYear": 2019,
+      "director": "Lulu Wang",
+      "rightsHolder": "A24",
+      "displayTime": "06:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "18:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
       "id": "06-05_both_exact_12-angry-men_001",
       "src": "assets/movie-scenes/06-05_both_exact_12-angry-men_001.mp4",
       "movieTitle": "12 Angry Men",
@@ -1898,6 +2154,29 @@
         {
           "start": "06:45",
           "end": "06:45"
+        }
+      ]
+    },
+    {
+      "id": "06-53_both_exact_the-martian_001",
+      "src": "assets/movie-scenes/06-53_both_exact_the-martian_001.mp4",
+      "movieTitle": "The Martian",
+      "movieSlug": "the-martian",
+      "releaseYear": 2015,
+      "director": "Ridley Scott",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "06:53",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:53",
+          "end": "06:53"
+        },
+        {
+          "start": "18:53",
+          "end": "18:53"
         }
       ]
     },
@@ -2468,6 +2747,29 @@
       ]
     },
     {
+      "id": "08-00_both_exact_ghostbusters_001",
+      "src": "assets/movie-scenes/08-00_both_exact_ghostbusters_001.mp4",
+      "movieTitle": "Ghostbusters",
+      "movieSlug": "ghostbusters",
+      "releaseYear": 1984,
+      "director": "Ivan Reitman",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_exact_trick-r-treat_001",
       "src": "assets/movie-scenes/08-00_both_exact_trick-r-treat_001.mp4",
       "movieTitle": "Trick 'r Treat",
@@ -2743,6 +3045,29 @@
       ]
     },
     {
+      "id": "08-35_both_exact_good-time_001",
+      "src": "assets/movie-scenes/08-35_both_exact_good-time_001.mp4",
+      "movieTitle": "Good Time",
+      "movieSlug": "good-time",
+      "releaseYear": 2017,
+      "director": "Josh Safdie and Benny Safdie",
+      "rightsHolder": "A24",
+      "displayTime": "08:35",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:35",
+          "end": "08:35"
+        },
+        {
+          "start": "20:35",
+          "end": "20:35"
+        }
+      ]
+    },
+    {
       "id": "08-42_am_exact_a-beautiful-mind_001",
       "src": "assets/movie-scenes/08-42_am_exact_a-beautiful-mind_001.mp4",
       "movieTitle": "A Beautiful Mind",
@@ -2965,6 +3290,29 @@
       ]
     },
     {
+      "id": "09-00_both_exact_the-babadook_001",
+      "src": "assets/movie-scenes/09-00_both_exact_the-babadook_001.mp4",
+      "movieTitle": "The Babadook",
+      "movieSlug": "the-babadook",
+      "releaseYear": 2014,
+      "director": "Jennifer Kent",
+      "rightsHolder": "IFC Films / Umbrella Entertainment",
+      "displayTime": "09:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:00",
+          "end": "09:00"
+        },
+        {
+          "start": "21:00",
+          "end": "21:00"
+        }
+      ]
+    },
+    {
       "id": "09-00_pm_after_asteroid-city_001",
       "src": "assets/movie-scenes/09-00_pm_after_asteroid-city_001.mp4",
       "movieTitle": "Asteroid City",
@@ -3022,6 +3370,29 @@
         {
           "start": "21:15",
           "end": "21:15"
+        }
+      ]
+    },
+    {
+      "id": "09-18_both_exact_the-conjuring_001",
+      "src": "assets/movie-scenes/09-18_both_exact_the-conjuring_001.mp4",
+      "movieTitle": "The Conjuring",
+      "movieSlug": "the-conjuring",
+      "releaseYear": 2013,
+      "director": "James Wan",
+      "rightsHolder": "Warner Bros. Pictures / New Line Cinema",
+      "displayTime": "09:18",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:18",
+          "end": "09:18"
+        },
+        {
+          "start": "21:18",
+          "end": "21:18"
         }
       ]
     },
@@ -3148,6 +3519,25 @@
       ]
     },
     {
+      "id": "10-00_am_exact_zodiac_001",
+      "src": "assets/movie-scenes/10-00_am_exact_zodiac_001.mp4",
+      "movieTitle": "Zodiac",
+      "movieSlug": "zodiac",
+      "releaseYear": 2007,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "displayTime": "10:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:00",
+          "end": "10:00"
+        }
+      ]
+    },
+    {
       "id": "10-00_both_exact_chef_001",
       "src": "assets/movie-scenes/10-00_both_exact_chef_001.mp4",
       "movieTitle": "Chef",
@@ -3224,6 +3614,29 @@
       "releaseYear": 1983,
       "director": "Brian De Palma",
       "rightsHolder": "Universal Pictures",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:00",
+          "end": "10:00"
+        },
+        {
+          "start": "22:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "id": "10-00_both_exact_the-notebook_001",
+      "src": "assets/movie-scenes/10-00_both_exact_the-notebook_001.mp4",
+      "movieTitle": "The Notebook",
+      "movieSlug": "the-notebook",
+      "releaseYear": 2004,
+      "director": "Nick Cassavetes",
+      "rightsHolder": "New Line Cinema / Warner Bros. Pictures",
       "displayTime": "10:00",
       "period": "both",
       "precision": "exact",
@@ -3519,6 +3932,29 @@
       ]
     },
     {
+      "id": "11-00_both_exact_zodiac_001",
+      "src": "assets/movie-scenes/11-00_both_exact_zodiac_001.mp4",
+      "movieTitle": "Zodiac",
+      "movieSlug": "zodiac",
+      "releaseYear": 2007,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "displayTime": "11:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:00",
+          "end": "11:00"
+        },
+        {
+          "start": "23:00",
+          "end": "23:00"
+        }
+      ]
+    },
+    {
       "id": "11-00_pm_exact_demolition_001",
       "src": "assets/movie-scenes/11-00_pm_exact_demolition_001.mp4",
       "movieTitle": "Demolition",
@@ -3553,6 +3989,52 @@
         {
           "start": "23:00",
           "end": "23:00"
+        }
+      ]
+    },
+    {
+      "id": "11-11_both_exact_us_001",
+      "src": "assets/movie-scenes/11-11_both_exact_us_001.mp4",
+      "movieTitle": "Us",
+      "movieSlug": "us",
+      "releaseYear": 2019,
+      "director": "Jordan Peele",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "11:11",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:11",
+          "end": "11:11"
+        },
+        {
+          "start": "23:11",
+          "end": "23:11"
+        }
+      ]
+    },
+    {
+      "id": "11-30_both_approx_the-shining_001",
+      "src": "assets/movie-scenes/11-30_both_approx_the-shining_001.mp4",
+      "movieTitle": "The Shining",
+      "movieSlug": "the-shining",
+      "releaseYear": 1980,
+      "director": "Stanley Kubrick",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "11:30",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "11:23",
+          "end": "11:37"
+        },
+        {
+          "start": "23:23",
+          "end": "23:37"
         }
       ]
     },
@@ -3843,6 +4325,25 @@
       ]
     },
     {
+      "id": "12-00_am_before_when-harry-met-sally_001",
+      "src": "assets/movie-scenes/12-00_am_before_when-harry-met-sally_001.mp4",
+      "movieTitle": "When Harry Met Sally...",
+      "movieSlug": "when-harry-met-sally",
+      "releaseYear": 1989,
+      "director": "Rob Reiner",
+      "rightsHolder": "Castle Rock Entertainment / MGM",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "23:55",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
       "id": "12-00_am_exact_a-nightmare-on-elm-street_001",
       "src": "assets/movie-scenes/12-00_am_exact_a-nightmare-on-elm-street_001.mp4",
       "movieTitle": "A Nightmare on Elm Street",
@@ -3850,6 +4351,25 @@
       "releaseYear": 1984,
       "director": "Wes Craven",
       "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_exact_the-social-network_001",
+      "src": "assets/movie-scenes/12-00_am_exact_the-social-network_001.mp4",
+      "movieTitle": "The Social Network",
+      "movieSlug": "the-social-network",
+      "releaseYear": 2010,
+      "director": "David Fincher",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
       "displayTime": "12:00",
       "period": "am",
       "precision": "exact",
@@ -4045,6 +4565,29 @@
       ]
     },
     {
+      "id": "12-30_both_exact_the-usual-suspects_001",
+      "src": "assets/movie-scenes/12-30_both_exact_the-usual-suspects_001.mp4",
+      "movieTitle": "The Usual Suspects",
+      "movieSlug": "the-usual-suspects",
+      "releaseYear": 1995,
+      "director": "Bryan Singer",
+      "rightsHolder": "MGM / Gramercy Pictures",
+      "displayTime": "12:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:30",
+          "end": "00:30"
+        },
+        {
+          "start": "12:30",
+          "end": "12:30"
+        }
+      ]
+    },
+    {
       "id": "12-30_pm_exact_a-fish-called-wanda_001",
       "src": "assets/movie-scenes/12-30_pm_exact_a-fish-called-wanda_001.mp4",
       "movieTitle": "A Fish Called Wanda",
@@ -4220,6 +4763,25 @@
         {
           "start": "18:00",
           "end": "22:00"
+        }
+      ]
+    },
+    {
+      "id": "fallback_the-notebook_001",
+      "src": "assets/movie-scenes/fallback_the-notebook_001.mp4",
+      "movieTitle": "The Notebook",
+      "movieSlug": "the-notebook",
+      "releaseYear": 2004,
+      "director": "Nick Cassavetes",
+      "rightsHolder": "New Line Cinema / Warner Bros. Pictures",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
         }
       ]
     },

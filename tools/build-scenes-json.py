@@ -146,6 +146,26 @@ RIGHTS = {
     "wall-e": "Pixar / Walt Disney Pictures",
     "watchmen": "Warner Bros. Pictures / Paramount Pictures",
     "zero-dark-thirty": "Sony Pictures",
+    "3-10-to-yuma": "Lionsgate",
+    "eyes-wide-shut": "Warner Bros. Pictures",
+    "ghostbusters": "Columbia Pictures / Sony Pictures",
+    "good-time": "A24",
+    "nocturnal-animals": "Focus Features / Universal Pictures",
+    "snowden": "Open Road Films",
+    "taxi-driver": "Columbia Pictures / Sony Pictures",
+    "the-babadook": "IFC Films / Umbrella Entertainment",
+    "the-conjuring": "Warner Bros. Pictures / New Line Cinema",
+    "the-elephant-man": "Paramount Pictures / StudioCanal",
+    "the-farewell": "A24",
+    "the-martian": "20th Century Studios",
+    "the-notebook": "New Line Cinema / Warner Bros. Pictures",
+    "the-shining": "Warner Bros. Pictures",
+    "the-social-network": "Columbia Pictures / Sony Pictures",
+    "the-sting": "Universal Pictures",
+    "the-usual-suspects": "MGM / Gramercy Pictures",
+    "us": "Universal Pictures",
+    "when-harry-met-sally": "Castle Rock Entertainment / MGM",
+    "zodiac": "Paramount Pictures / Warner Bros. Pictures",
 }
 
 MOVIE_META = {
@@ -284,6 +304,26 @@ MOVIE_META = {
     "wall-e": {"year": 2008, "director": "Andrew Stanton"},
     "watchmen": {"year": 2009, "director": "Zack Snyder"},
     "zero-dark-thirty": {"year": 2012, "director": "Kathryn Bigelow"},
+    "3-10-to-yuma": {"year": 2007, "director": "James Mangold"},
+    "eyes-wide-shut": {"year": 1999, "director": "Stanley Kubrick"},
+    "ghostbusters": {"year": 1984, "director": "Ivan Reitman"},
+    "good-time": {"year": 2017, "director": "Josh Safdie and Benny Safdie"},
+    "nocturnal-animals": {"year": 2016, "director": "Tom Ford"},
+    "snowden": {"year": 2016, "director": "Oliver Stone"},
+    "taxi-driver": {"year": 1976, "director": "Martin Scorsese"},
+    "the-babadook": {"year": 2014, "director": "Jennifer Kent"},
+    "the-conjuring": {"year": 2013, "director": "James Wan"},
+    "the-elephant-man": {"year": 1980, "director": "David Lynch"},
+    "the-farewell": {"year": 2019, "director": "Lulu Wang"},
+    "the-martian": {"year": 2015, "director": "Ridley Scott"},
+    "the-notebook": {"year": 2004, "director": "Nick Cassavetes"},
+    "the-shining": {"year": 1980, "director": "Stanley Kubrick"},
+    "the-social-network": {"year": 2010, "director": "David Fincher"},
+    "the-sting": {"year": 1973, "director": "George Roy Hill"},
+    "the-usual-suspects": {"year": 1995, "director": "Bryan Singer"},
+    "us": {"year": 2019, "director": "Jordan Peele"},
+    "when-harry-met-sally": {"year": 1989, "director": "Rob Reiner"},
+    "zodiac": {"year": 2007, "director": "David Fincher"},
 }
 
 TITLE_FIXES = {
@@ -330,6 +370,8 @@ TITLE_FIXES = {
     "indiana-jones-3": "Indiana Jones and the Last Crusade",
     "terminator": "The Terminator",
     "wall-e": "WALL-E",
+    "3-10-to-yuma": "3:10 to Yuma",
+    "when-harry-met-sally": "When Harry Met Sally...",
 }
 
 PATTERN = re.compile(r"^(?P<hhmm>\d{2}-\d{2})_(?P<period>am|pm|both|unknown)_(?P<precision>[^_]+)_(?P<movie>.+)_(?P<index>\d+)\.mp4$")
