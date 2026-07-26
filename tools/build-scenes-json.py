@@ -387,6 +387,12 @@ SPAN_LABELS = {
     "middle-night": {"display": "Middle of the night", "spans": [{"start": "00:00", "end": "04:00"}]},
 }
 
+BROAD_SPAN_OVERRIDES = {
+    "early-morning_broad_pulp-fiction_001": [{"start": "05:00", "end": "07:30"}],
+    "evening_broad_antichrist_001": [{"start": "19:00", "end": "21:00"}],
+    "midday_broad_lord-of-the-rings-3_001": [{"start": "11:15", "end": "12:45"}],
+}
+
 
 def titleize(slug):
     if slug in TITLE_FIXES:
@@ -491,7 +497,7 @@ def parse_scene(path):
             span["display"],
             "unknown",
             "broad",
-            span["spans"],
+            BROAD_SPAN_OVERRIDES.get(path.stem, span["spans"]),
         )
 
     match = FALLBACK_PATTERN.match(path.name)

@@ -22,6 +22,7 @@
     rightsIntro: "#rightsIntro",
     playbackStatus: "#playbackStatus",
     currentCredit: "#currentCredit",
+    overlayMatch: "#overlayMatch",
     overlayMovie: "#overlayMovie",
     overlayRights: "#overlayRights",
     nextCountdown: "#nextCountdown",
@@ -50,7 +51,9 @@
   const SOUND_PATHS = {
     countdownBeep: "assets/sounds/countdown_beep_001.mp3",
     projector: "assets/sounds/projector_001.mp3",
-    hushes: [
+    titleNoises: [
+      "assets/sounds/ahem_001.mp3",
+      "assets/sounds/ahem_002.mp3",
       "assets/sounds/hush_001.mp3",
       "assets/sounds/hush_002.mp3",
     ],
@@ -223,9 +226,9 @@
   };
 
   const VOLUME = {
-    countdownBeep: 0.7,
+    countdownBeep: 0.6,
     projector: 0.35,
-    hush: 0.7,
+    titleNoise: 0.5,
     master: 0.8,
   };
 
@@ -277,6 +280,7 @@
     tickClock();
     window.setInterval(tickClock, 1000);
     initVolumeControl();
+    initVideoMode();
     initPosterWall();
     el.startButton.addEventListener("click", startClock, { once: true });
     el.replayButton.addEventListener("click", replayCurrentScene);
@@ -292,6 +296,27 @@
     }
   }
 
+
+
+  function initVideoMode() {
+    configureSceneVideoMode();
+  }
+
+  function configureSceneVideoMode() {
+    if (!usesNativeMobilePlayer()) {
+      el.scene.controls = false;
+      return;
+    }
+
+    el.scene.controls = true;
+    el.scene.preload = "metadata";
+    el.scene.removeAttribute("playsinline");
+    el.scene.removeAttribute("webkit-playsinline");
+  }
+
+  function usesNativeMobilePlayer() {
+    return window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 1;
+  }
 
   /*_____________________________________ POSTER WALL ______________________________________*/
 
@@ -466,7 +491,7 @@
     el.movieTitle.textContent = scene.movieTitle;
     el.sceneMatch.textContent = sceneMatchLine(scene, new Date());
     el.rightsIntro.textContent = creditLine(scene);
-    maybePlayHush();
+    maybePlayTitleNoise();
     showPanel(el.titleCard);
     await sleep(TIMING.titleCardMs);
     el.titleCard.hidden = true;
@@ -494,11 +519,13 @@
       el.scene.onerror = () => finish(false);
 
       state.isScenePlaying = true;
+      if (usesNativeMobilePlayer()) return;
       el.scene.play().catch(() => finish(false));
     });
   }
 
   function prepareSceneVideo(scene) {
+    configureSceneVideoMode();
     const src = encodeURI(scene.src);
     if (el.scene.getAttribute("src") !== src) {
       el.scene.src = src;
@@ -653,10 +680,10 @@
     playOneShot(SOUND_PATHS.countdownBeep, VOLUME.countdownBeep);
   }
 
-  function maybePlayHush() {
+  function maybePlayTitleNoise() {
     if (Math.random() >= 0.25) return;
-    const hush = randomItem(SOUND_PATHS.hushes);
-    playOneShot(hush, VOLUME.hush);
+    const noise = randomItem(SOUND_PATHS.titleNoises);
+    playOneShot(noise, VOLUME.titleNoise);
   }
 
   function playOneShot(src, volume) {
@@ -794,12 +821,14 @@
   function setCreditOverlay(scene) {
     showPlaybackStatus();
     el.currentCredit.hidden = false;
+    el.overlayMatch.textContent = sceneMatchLine(scene, new Date());
     el.overlayMovie.textContent = scene.movieTitle;
     el.overlayRights.textContent = creditLine(scene);
   }
 
   function clearCreditOverlay() {
     el.currentCredit.hidden = true;
+    el.overlayMatch.textContent = "";
     el.overlayMovie.textContent = "";
     el.overlayRights.textContent = "";
   }
@@ -893,8 +922,8 @@
   }
 
   function sceneMatchLine(scene, date = new Date()) {
-    if (scene.precision === "fallback") return "Local time: Lost track of time";
-    if (scene.precision === "broad") return `Local time: ${scene.displayTime}`;
+    if (scene.precision === "fallback") return "Best time match: Lost track of time";
+    if (scene.precision === "broad") return `Best time match: ${scene.displayTime}`;
 
     const span = matchingSpan(scene, date) || scene.spans[0];
     const target = sceneTargetTime(scene, span);
@@ -906,7 +935,7 @@
       range: "Around",
     };
 
-    return `Local time: ${labels[scene.precision] || titleCase(scene.precision)} ${target}`;
+    return `Best time match: ${labels[scene.precision] || titleCase(scene.precision)} ${target}`;
   }
 
   function matchingSpan(scene, date) {
