@@ -341,7 +341,7 @@
     el.posterWall.append(fragment);
     window.setTimeout(() => {
       window.requestAnimationFrame(() => el.posterWall.classList.add("is-visible"));
-    }, 1000);
+    }, 500);
   }
 
   function* createPosterPool() {
