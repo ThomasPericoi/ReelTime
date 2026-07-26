@@ -448,6 +448,50 @@ video {
   text-shadow: none;
 }
 
+
+.mobile-notice {
+  display: none;
+}
+
+@media (max-width: 720px), (pointer: coarse) {
+  .projection__video,
+  .projection__noise,
+  .app__room-light,
+  .panel--start .start-title,
+  .panel--start #startMessage,
+  .panel--start #startButton,
+  .panel--countdown,
+  .panel--title,
+  .panel--idle,
+  .volume-control,
+  .status,
+  .signature--corner {
+    display: none !important;
+  }
+
+  .panel--start {
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile-notice {
+    max-width: min(28rem, 86vw);
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  .mobile-notice h1 {
+    margin: 0;
+  }
+
+  .mobile-notice p {
+    margin: 0;
+    color: var(--paper-muted);
+    font-size: clamp(0.9375rem, 4vw, 1.125rem);
+    line-height: 1.55;
+  }
+}
+
 /*________________________________________ BUTTONS ____________________________________________*/
 
 .button {

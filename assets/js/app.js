@@ -280,7 +280,6 @@
     tickClock();
     window.setInterval(tickClock, 1000);
     initVolumeControl();
-    initVideoMode();
     initPosterWall();
     el.startButton.addEventListener("click", startClock, { once: true });
     el.replayButton.addEventListener("click", replayCurrentScene);
@@ -297,30 +296,6 @@
   }
 
 
-
-  function initVideoMode() {
-    configureSceneVideoMode();
-  }
-
-  function configureSceneVideoMode() {
-    if (!usesNativeMobilePlayer()) {
-      el.scene.controls = false;
-      return;
-    }
-
-    el.scene.controls = true;
-    el.scene.preload = "metadata";
-    el.scene.removeAttribute("playsinline");
-    el.scene.removeAttribute("webkit-playsinline");
-  }
-
-  function usesNativeMobilePlayer() {
-    return (
-      navigator.maxTouchPoints > 0 ||
-      window.matchMedia("(pointer: coarse)").matches ||
-      /Android|iPad|iPhone|iPod|Mobile|Tablet/i.test(navigator.userAgent)
-    );
-  }
 
   /*_____________________________________ POSTER WALL ______________________________________*/
 
@@ -444,7 +419,6 @@
     try {
       await showCountdown(token);
       startProjectorSound();
-      fadeOutProjectorSoundOnNativeMobile();
       await showTitleCard(scene, token);
       state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
@@ -519,20 +493,16 @@
         resolve(didPlay);
       };
 
-      const usesNativePlayer = usesNativeMobilePlayer();
-
       el.scene.ontimeupdate = () => updateEndingLook(token);
       el.scene.onended = () => finish(true);
-      el.scene.onerror = usesNativePlayer ? null : () => finish(false);
+      el.scene.onerror = () => finish(false);
 
       state.isScenePlaying = true;
-      if (usesNativePlayer) return;
       el.scene.play().catch(() => finish(false));
     });
   }
 
   function prepareSceneVideo(scene) {
-    configureSceneVideoMode();
     const src = encodeURI(scene.src);
     if (el.scene.getAttribute("src") !== src) {
       el.scene.src = src;
@@ -711,15 +681,6 @@
     audio.projector.play().catch(() => { });
   }
 
-
-  function fadeOutProjectorSoundOnNativeMobile() {
-    if (!usesNativeMobilePlayer()) return;
-
-    const timer = window.setTimeout(() => {
-      fadeOutProjectorSound();
-    }, 5000);
-    state.timers.push(timer);
-  }
 
   function fadeOutProjectorSound(duration = TIMING.projectorFadeMs) {
     return new Promise((resolve) => {

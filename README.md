@@ -13,6 +13,7 @@ Production URL: [reel-time.thomaspericoi.com](https://reel-time.thomaspericoi.co
 - Shows film title, release year, director, and rights holder before and during playback.
 - Simulates a 1920s-style projection with grain, flicker, vignette, and a short image-catch offset when the scene appears.
 - Runs as plain static files. No framework, no build step, no server required.
+- Presents a desktop-only experience on mobile, where browsers restrict timed video playback.
 
 ## Library stats
 
