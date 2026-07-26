@@ -315,7 +315,11 @@
   }
 
   function usesNativeMobilePlayer() {
-    return window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 1;
+    return (
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      /Android|iPad|iPhone|iPod|Mobile|Tablet/i.test(navigator.userAgent)
+    );
   }
 
   /*_____________________________________ POSTER WALL ______________________________________*/
@@ -440,6 +444,7 @@
     try {
       await showCountdown(token);
       startProjectorSound();
+      fadeOutProjectorSoundOnNativeMobile();
       await showTitleCard(scene, token);
       state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
@@ -514,12 +519,14 @@
         resolve(didPlay);
       };
 
+      const usesNativePlayer = usesNativeMobilePlayer();
+
       el.scene.ontimeupdate = () => updateEndingLook(token);
       el.scene.onended = () => finish(true);
-      el.scene.onerror = () => finish(false);
+      el.scene.onerror = usesNativePlayer ? null : () => finish(false);
 
       state.isScenePlaying = true;
-      if (usesNativeMobilePlayer()) return;
+      if (usesNativePlayer) return;
       el.scene.play().catch(() => finish(false));
     });
   }
@@ -702,6 +709,16 @@
     audio.projector.currentTime = 0;
     audio.projector.volume = scaledVolume(VOLUME.projector);
     audio.projector.play().catch(() => { });
+  }
+
+
+  function fadeOutProjectorSoundOnNativeMobile() {
+    if (!usesNativeMobilePlayer()) return;
+
+    const timer = window.setTimeout(() => {
+      fadeOutProjectorSound();
+    }, 5000);
+    state.timers.push(timer);
   }
 
   function fadeOutProjectorSound(duration = TIMING.projectorFadeMs) {
