@@ -83,6 +83,25 @@
       ]
     },
     {
+      "id": "01-04_pm_exact_back-to-the-future_001",
+      "src": "assets/movie-scenes/01-04_pm_exact_back-to-the-future_001.mp4",
+      "movieTitle": "Back to the Future",
+      "movieSlug": "back-to-the-future",
+      "releaseYear": 1985,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "01:04",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "13:04",
+          "end": "13:04"
+        }
+      ]
+    },
+    {
       "id": "01-06_both_exact_nightcrawler_001",
       "src": "assets/movie-scenes/01-06_both_exact_nightcrawler_001.mp4",
       "movieTitle": "Nightcrawler",
@@ -125,6 +144,25 @@
         {
           "start": "13:10",
           "end": "13:10"
+        }
+      ]
+    },
+    {
+      "id": "01-15_am_exact_back-to-the-future_001",
+      "src": "assets/movie-scenes/01-15_am_exact_back-to-the-future_001.mp4",
+      "movieTitle": "Back to the Future",
+      "movieSlug": "back-to-the-future",
+      "releaseYear": 1985,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "01:15",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:15",
+          "end": "01:15"
         }
       ]
     },
@@ -278,6 +316,29 @@
       ]
     },
     {
+      "id": "01-30_both_exact_novocaine_001",
+      "src": "assets/movie-scenes/01-30_both_exact_novocaine_001.mp4",
+      "movieTitle": "Novocaine",
+      "movieSlug": "novocaine",
+      "releaseYear": 2025,
+      "director": "Dan Berk and Robert Olsen",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "01:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:30",
+          "end": "01:30"
+        },
+        {
+          "start": "13:30",
+          "end": "13:30"
+        }
+      ]
+    },
+    {
       "id": "01-30_both_exact_zero-dark-thirty_001",
       "src": "assets/movie-scenes/01-30_both_exact_zero-dark-thirty_001.mp4",
       "movieTitle": "Zero Dark Thirty",
@@ -337,8 +398,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "01:53",
-          "end": "02:07"
+          "start": "01:55",
+          "end": "02:05"
         }
       ]
     },
@@ -557,6 +618,25 @@
       ]
     },
     {
+      "id": "02-00_pm_exact_darkest-hour_001",
+      "src": "assets/movie-scenes/02-00_pm_exact_darkest-hour_001.mp4",
+      "movieTitle": "Darkest Hour",
+      "movieSlug": "darkest-hour",
+      "releaseYear": 2017,
+      "director": "Joe Wright",
+      "rightsHolder": "Focus Features / Universal Pictures",
+      "displayTime": "02:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "14:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
       "id": "02-00_pm_exact_watchmen_001",
       "src": "assets/movie-scenes/02-00_pm_exact_watchmen_001.mp4",
       "movieTitle": "Watchmen",
@@ -721,6 +801,48 @@
         {
           "start": "14:30",
           "end": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "02-30_pm_exact_the-conversation_001",
+      "src": "assets/movie-scenes/02-30_pm_exact_the-conversation_001.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "02:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "14:30",
+          "end": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "02-45_both_exact_novocaine_001",
+      "src": "assets/movie-scenes/02-45_both_exact_novocaine_001.mp4",
+      "movieTitle": "Novocaine",
+      "movieSlug": "novocaine",
+      "releaseYear": 2025,
+      "director": "Dan Berk and Robert Olsen",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "02:45",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:45",
+          "end": "02:45"
+        },
+        {
+          "start": "14:45",
+          "end": "14:45"
         }
       ]
     },
@@ -1027,6 +1149,121 @@
       ]
     },
     {
+      "id": "03-00_both_exact_the-conversation_001",
+      "src": "assets/movie-scenes/03-00_both_exact_the-conversation_001.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_both_exact_the-conversation_002",
+      "src": "assets/movie-scenes/03-00_both_exact_the-conversation_002.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_both_exact_the-conversation_003",
+      "src": "assets/movie-scenes/03-00_both_exact_the-conversation_003.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_both_exact_the-conversation_004",
+      "src": "assets/movie-scenes/03-00_both_exact_the-conversation_004.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_both_exact_the-conversation_005",
+      "src": "assets/movie-scenes/03-00_both_exact_the-conversation_005.mp4",
+      "movieTitle": "The Conversation",
+      "movieSlug": "the-conversation",
+      "releaseYear": 1974,
+      "director": "Francis Ford Coppola",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
       "id": "03-00_both_exact_the-departed_001",
       "src": "assets/movie-scenes/03-00_both_exact_the-departed_001.mp4",
       "movieTitle": "The Departed",
@@ -1296,12 +1533,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "03:53",
-          "end": "04:07"
+          "start": "03:55",
+          "end": "04:05"
         },
         {
-          "start": "15:53",
-          "end": "16:07"
+          "start": "15:55",
+          "end": "16:05"
         }
       ]
     },
@@ -1352,6 +1589,29 @@
       ]
     },
     {
+      "id": "04-11_both_exact_being-john-malkovich_001",
+      "src": "assets/movie-scenes/04-11_both_exact_being-john-malkovich_001.mp4",
+      "movieTitle": "Being John Malkovich",
+      "movieSlug": "being-john-malkovich",
+      "releaseYear": 1999,
+      "director": "Spike Jonze",
+      "rightsHolder": "USA Films / Universal Pictures",
+      "displayTime": "04:11",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:11",
+          "end": "04:11"
+        },
+        {
+          "start": "16:11",
+          "end": "16:11"
+        }
+      ]
+    },
+    {
       "id": "04-20_both_exact_lucky-number-slevin_001",
       "src": "assets/movie-scenes/04-20_both_exact_lucky-number-slevin_001.mp4",
       "movieTitle": "Lucky Number Slevin",
@@ -1390,6 +1650,29 @@
         {
           "start": "16:29",
           "end": "16:29"
+        }
+      ]
+    },
+    {
+      "id": "04-30_both_exact_beau-is-afraid_001",
+      "src": "assets/movie-scenes/04-30_both_exact_beau-is-afraid_001.mp4",
+      "movieTitle": "Beau Is Afraid",
+      "movieSlug": "beau-is-afraid",
+      "releaseYear": 2023,
+      "director": "Ari Aster",
+      "rightsHolder": "A24",
+      "displayTime": "04:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:30",
+          "end": "04:30"
+        },
+        {
+          "start": "16:30",
+          "end": "16:30"
         }
       ]
     },
@@ -1632,12 +1915,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "04:53",
-          "end": "05:07"
+          "start": "04:55",
+          "end": "05:05"
         },
         {
-          "start": "16:53",
-          "end": "17:07"
+          "start": "16:55",
+          "end": "17:05"
         }
       ]
     },
@@ -1898,6 +2181,25 @@
       ]
     },
     {
+      "id": "06-00_am_exact_point-break_001",
+      "src": "assets/movie-scenes/06-00_am_exact_point-break_001.mp4",
+      "movieTitle": "Point Break",
+      "movieSlug": "point-break",
+      "releaseYear": 1991,
+      "director": "Kathryn Bigelow",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "06:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:00",
+          "end": "06:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_am_exact_rear-window_001",
       "src": "assets/movie-scenes/06-00_am_exact_rear-window_001.mp4",
       "movieTitle": "Rear Window",
@@ -2012,6 +2314,29 @@
       "releaseYear": 2001,
       "director": "Ridley Scott",
       "rightsHolder": "Sony Pictures",
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:00",
+          "end": "06:00"
+        },
+        {
+          "start": "18:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "06-00_both_exact_from-dusk-till-dawn_001",
+      "src": "assets/movie-scenes/06-00_both_exact_from-dusk-till-dawn_001.mp4",
+      "movieTitle": "From Dusk Till Dawn",
+      "movieSlug": "from-dusk-till-dawn",
+      "releaseYear": 1996,
+      "director": "Robert Rodriguez",
+      "rightsHolder": "Miramax / Dimension Films",
       "displayTime": "06:00",
       "period": "both",
       "precision": "exact",
@@ -2515,12 +2840,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:38",
-          "end": "07:52"
+          "start": "07:40",
+          "end": "07:50"
         },
         {
-          "start": "19:38",
-          "end": "19:52"
+          "start": "19:40",
+          "end": "19:50"
         }
       ]
     },
@@ -2563,6 +2888,29 @@
       ]
     },
     {
+      "id": "08-00_both_approx_from-dusk-till-dawn_001",
+      "src": "assets/movie-scenes/08-00_both_approx_from-dusk-till-dawn_001.mp4",
+      "movieTitle": "From Dusk Till Dawn",
+      "movieSlug": "from-dusk-till-dawn",
+      "releaseYear": 1996,
+      "director": "Robert Rodriguez",
+      "rightsHolder": "Miramax / Dimension Films",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "07:55",
+          "end": "08:05"
+        },
+        {
+          "start": "19:55",
+          "end": "20:05"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_approx_mid90s_001",
       "src": "assets/movie-scenes/08-00_both_approx_mid90s_001.mp4",
       "movieTitle": "Mid90s",
@@ -2576,12 +2924,35 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:53",
-          "end": "08:07"
+          "start": "07:55",
+          "end": "08:05"
         },
         {
-          "start": "19:53",
-          "end": "20:07"
+          "start": "19:55",
+          "end": "20:05"
+        }
+      ]
+    },
+    {
+      "id": "08-00_both_approx_true-lies_001",
+      "src": "assets/movie-scenes/08-00_both_approx_true-lies_001.mp4",
+      "movieTitle": "True Lies",
+      "movieSlug": "true-lies",
+      "releaseYear": 1994,
+      "director": "James Cameron",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "07:55",
+          "end": "08:05"
+        },
+        {
+          "start": "19:55",
+          "end": "20:05"
         }
       ]
     },
@@ -3142,12 +3513,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "08:53",
-          "end": "09:07"
+          "start": "08:55",
+          "end": "09:05"
         },
         {
-          "start": "20:53",
-          "end": "21:07"
+          "start": "20:55",
+          "end": "21:05"
         }
       ]
     },
@@ -3165,12 +3536,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "08:53",
-          "end": "09:07"
+          "start": "08:55",
+          "end": "09:05"
         },
         {
-          "start": "20:53",
-          "end": "21:07"
+          "start": "20:55",
+          "end": "21:05"
         }
       ]
     },
@@ -3710,6 +4081,25 @@
       ]
     },
     {
+      "id": "10-00_pm_exact_sing-sing_001",
+      "src": "assets/movie-scenes/10-00_pm_exact_sing-sing_001.mp4",
+      "movieTitle": "Sing Sing",
+      "movieSlug": "sing-sing",
+      "releaseYear": 2023,
+      "director": "Greg Kwedar",
+      "rightsHolder": "A24",
+      "displayTime": "10:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "22:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
       "id": "10-01_both_exact_rainman_001",
       "src": "assets/movie-scenes/10-01_both_exact_rainman_001.mp4",
       "movieTitle": "Rain Man",
@@ -3748,6 +4138,29 @@
         {
           "start": "22:04",
           "end": "22:04"
+        }
+      ]
+    },
+    {
+      "id": "10-25_both_exact_once-upon-a-time-in-america_001",
+      "src": "assets/movie-scenes/10-25_both_exact_once-upon-a-time-in-america_001.mp4",
+      "movieTitle": "Once Upon a Time in America",
+      "movieSlug": "once-upon-a-time-in-america",
+      "releaseYear": 1984,
+      "director": "Sergio Leone",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "10:25",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:25",
+          "end": "10:25"
+        },
+        {
+          "start": "22:25",
+          "end": "22:25"
         }
       ]
     },
@@ -3798,6 +4211,29 @@
       ]
     },
     {
+      "id": "10-30_both_exact_point-break_001",
+      "src": "assets/movie-scenes/10-30_both_exact_point-break_001.mp4",
+      "movieTitle": "Point Break",
+      "movieSlug": "point-break",
+      "releaseYear": 1991,
+      "director": "Kathryn Bigelow",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "10:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:30",
+          "end": "10:30"
+        },
+        {
+          "start": "22:30",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
       "id": "10-30_both_exact_spotlight_001",
       "src": "assets/movie-scenes/10-30_both_exact_spotlight_001.mp4",
       "movieTitle": "Spotlight",
@@ -3814,6 +4250,25 @@
           "start": "10:30",
           "end": "10:30"
         },
+        {
+          "start": "22:30",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "id": "10-30_pm_exact_i-saw-the-tv-glow_001",
+      "src": "assets/movie-scenes/10-30_pm_exact_i-saw-the-tv-glow_001.mp4",
+      "movieTitle": "I Saw the TV Glow",
+      "movieSlug": "i-saw-the-tv-glow",
+      "releaseYear": 2024,
+      "director": "Jane Schoenbrun",
+      "rightsHolder": "A24",
+      "displayTime": "10:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "22:30",
           "end": "22:30"
@@ -3840,6 +4295,29 @@
       ]
     },
     {
+      "id": "10-44_both_exact_ocean-s-eleven_001",
+      "src": "assets/movie-scenes/10-44_both_exact_ocean-s-eleven_001.mp4",
+      "movieTitle": "Ocean's Eleven",
+      "movieSlug": "ocean-s-eleven",
+      "releaseYear": 2001,
+      "director": "Steven Soderbergh",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "10:44",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:44",
+          "end": "10:44"
+        },
+        {
+          "start": "22:44",
+          "end": "22:44"
+        }
+      ]
+    },
+    {
       "id": "10-45_both_exact_fargo_001",
       "src": "assets/movie-scenes/10-45_both_exact_fargo_001.mp4",
       "movieTitle": "Fargo",
@@ -3859,6 +4337,29 @@
         {
           "start": "22:45",
           "end": "22:45"
+        }
+      ]
+    },
+    {
+      "id": "10-46_both_exact_ocean-s-eleven_001",
+      "src": "assets/movie-scenes/10-46_both_exact_ocean-s-eleven_001.mp4",
+      "movieTitle": "Ocean's Eleven",
+      "movieSlug": "ocean-s-eleven",
+      "releaseYear": 2001,
+      "director": "Steven Soderbergh",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "10:46",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:46",
+          "end": "10:46"
+        },
+        {
+          "start": "22:46",
+          "end": "22:46"
         }
       ]
     },
@@ -4029,12 +4530,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "11:23",
-          "end": "11:37"
+          "start": "11:25",
+          "end": "11:35"
         },
         {
-          "start": "23:23",
-          "end": "23:37"
+          "start": "23:25",
+          "end": "23:35"
         }
       ]
     },
@@ -4262,8 +4763,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:53",
-          "end": "00:07"
+          "start": "23:55",
+          "end": "00:05"
         }
       ]
     },
@@ -4281,8 +4782,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:53",
-          "end": "00:07"
+          "start": "23:55",
+          "end": "00:05"
         }
       ]
     },
@@ -4300,8 +4801,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:53",
-          "end": "00:07"
+          "start": "23:55",
+          "end": "00:05"
         }
       ]
     },
@@ -4319,8 +4820,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:53",
-          "end": "00:07"
+          "start": "23:55",
+          "end": "00:05"
         }
       ]
     },
@@ -4414,12 +4915,58 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:53",
-          "end": "00:07"
+          "start": "23:55",
+          "end": "00:05"
         },
         {
-          "start": "11:53",
-          "end": "12:07"
+          "start": "11:55",
+          "end": "12:05"
+        }
+      ]
+    },
+    {
+      "id": "12-00_both_approx_the-lobster_001",
+      "src": "assets/movie-scenes/12-00_both_approx_the-lobster_001.mp4",
+      "movieTitle": "The Lobster",
+      "movieSlug": "the-lobster",
+      "releaseYear": 2015,
+      "director": "Yorgos Lanthimos",
+      "rightsHolder": "A24 / Film4",
+      "displayTime": "12:00",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "23:55",
+          "end": "00:05"
+        },
+        {
+          "start": "11:55",
+          "end": "12:05"
+        }
+      ]
+    },
+    {
+      "id": "12-00_both_approx_true-grit_001",
+      "src": "assets/movie-scenes/12-00_both_approx_true-grit_001.mp4",
+      "movieTitle": "True Grit",
+      "movieSlug": "true-grit",
+      "releaseYear": 2010,
+      "director": "Joel Coen and Ethan Coen",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "12:00",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "23:55",
+          "end": "00:05"
+        },
+        {
+          "start": "11:55",
+          "end": "12:05"
         }
       ]
     },
@@ -4565,6 +5112,29 @@
       ]
     },
     {
+      "id": "12-15_both_exact_true-grit_001",
+      "src": "assets/movie-scenes/12-15_both_exact_true-grit_001.mp4",
+      "movieTitle": "True Grit",
+      "movieSlug": "true-grit",
+      "releaseYear": 2010,
+      "director": "Joel Coen and Ethan Coen",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "12:15",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:15",
+          "end": "00:15"
+        },
+        {
+          "start": "12:15",
+          "end": "12:15"
+        }
+      ]
+    },
+    {
       "id": "12-30_both_exact_the-usual-suspects_001",
       "src": "assets/movie-scenes/12-30_both_exact_the-usual-suspects_001.mp4",
       "movieTitle": "The Usual Suspects",
@@ -4595,6 +5165,25 @@
       "releaseYear": 1988,
       "director": "Charles Crichton",
       "rightsHolder": "MGM",
+      "displayTime": "12:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "12:30",
+          "end": "12:30"
+        }
+      ]
+    },
+    {
+      "id": "12-30_pm_exact_marty-supreme_001",
+      "src": "assets/movie-scenes/12-30_pm_exact_marty-supreme_001.mp4",
+      "movieTitle": "Marty Supreme",
+      "movieSlug": "marty-supreme",
+      "releaseYear": 2025,
+      "director": "Josh Safdie",
+      "rightsHolder": "A24",
       "displayTime": "12:30",
       "period": "pm",
       "precision": "exact",
@@ -4767,6 +5356,82 @@
       ]
     },
     {
+      "id": "fallback_civil-war_001",
+      "src": "assets/movie-scenes/fallback_civil-war_001.mp4",
+      "movieTitle": "Civil War",
+      "movieSlug": "civil-war",
+      "releaseYear": 2024,
+      "director": "Alex Garland",
+      "rightsHolder": "A24",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "fallback_neon-demon_001",
+      "src": "assets/movie-scenes/fallback_neon-demon_001.mp4",
+      "movieTitle": "The Neon Demon",
+      "movieSlug": "neon-demon",
+      "releaseYear": 2016,
+      "director": "Nicolas Winding Refn",
+      "rightsHolder": "Amazon Studios / Broad Green Pictures",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "fallback_poor-things_001",
+      "src": "assets/movie-scenes/fallback_poor-things_001.mp4",
+      "movieTitle": "Poor Things",
+      "movieSlug": "poor-things",
+      "releaseYear": 2023,
+      "director": "Yorgos Lanthimos",
+      "rightsHolder": "Searchlight Pictures",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "fallback_sicario_001",
+      "src": "assets/movie-scenes/fallback_sicario_001.mp4",
+      "movieTitle": "Sicario",
+      "movieSlug": "sicario",
+      "releaseYear": 2015,
+      "director": "Denis Villeneuve",
+      "rightsHolder": "Lionsgate",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
       "id": "fallback_the-notebook_001",
       "src": "assets/movie-scenes/fallback_the-notebook_001.mp4",
       "movieTitle": "The Notebook",
@@ -4839,6 +5504,25 @@
         {
           "start": "00:30",
           "end": "04:00"
+        }
+      ]
+    },
+    {
+      "id": "morning_broad_big-fish_001",
+      "src": "assets/movie-scenes/morning_broad_big-fish_001.mp4",
+      "movieTitle": "Big Fish",
+      "movieSlug": "big-fish",
+      "releaseYear": 2003,
+      "director": "Tim Burton",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "displayTime": "Morning",
+      "period": "unknown",
+      "precision": "broad",
+      "priority": 5,
+      "spans": [
+        {
+          "start": "07:00",
+          "end": "11:30"
         }
       ]
     }
