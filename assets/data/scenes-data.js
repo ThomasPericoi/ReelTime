@@ -4685,8 +4685,8 @@ window.REEL_TIME_SCENES = {
       "priority": 5,
       "spans": [
         {
-          "start": "05:00",
-          "end": "07:00"
+          "start": "04:50",
+          "end": "06:50"
         }
       ]
     },
@@ -4705,7 +4705,7 @@ window.REEL_TIME_SCENES = {
       "spans": [
         {
           "start": "18:00",
-          "end": "20:00"
+          "end": "20:10"
         }
       ]
     },
@@ -4743,7 +4743,7 @@ window.REEL_TIME_SCENES = {
       "spans": [
         {
           "start": "05:00",
-          "end": "08:00"
+          "end": "07:30"
         }
       ]
     },
@@ -4762,7 +4762,7 @@ window.REEL_TIME_SCENES = {
       "spans": [
         {
           "start": "19:00",
-          "end": "21:00"
+          "end": "22:00"
         }
       ]
     },
@@ -4818,7 +4818,7 @@ window.REEL_TIME_SCENES = {
       "priority": 5,
       "spans": [
         {
-          "start": "11:15",
+          "start": "11:30",
           "end": "12:45"
         }
       ]
@@ -4837,7 +4837,7 @@ window.REEL_TIME_SCENES = {
       "priority": 5,
       "spans": [
         {
-          "start": "00:00",
+          "start": "00:30",
           "end": "04:00"
         }
       ]

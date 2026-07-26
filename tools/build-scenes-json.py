@@ -379,18 +379,12 @@ BROAD_PATTERN = re.compile(r"^(?P<label>[a-z0-9-]+)_broad_(?P<movie>.+)_(?P<inde
 FALLBACK_PATTERN = re.compile(r"^fallback_(?P<movie>.+)_(?P<index>\d+)\.mp4$")
 
 SPAN_LABELS = {
-    "dawn": {"display": "Dawn", "spans": [{"start": "05:00", "end": "07:00"}]},
-    "dusk": {"display": "Dusk", "spans": [{"start": "18:00", "end": "20:00"}]},
-    "early-morning": {"display": "Early morning", "spans": [{"start": "05:00", "end": "08:00"}]},
-    "evening": {"display": "Evening", "spans": [{"start": "18:00", "end": "22:00"}]},
-    "midday": {"display": "Midday", "spans": [{"start": "11:00", "end": "14:00"}]},
-    "middle-night": {"display": "Middle of the night", "spans": [{"start": "00:00", "end": "04:00"}]},
-}
-
-BROAD_SPAN_OVERRIDES = {
-    "early-morning_broad_pulp-fiction_001": [{"start": "05:00", "end": "07:30"}],
-    "evening_broad_antichrist_001": [{"start": "19:00", "end": "21:00"}],
-    "midday_broad_lord-of-the-rings-3_001": [{"start": "11:15", "end": "12:45"}],
+    "dawn": {"display": "Dawn", "spans": [{"start": "04:50", "end": "06:50"}]},
+    "dusk": {"display": "Dusk", "spans": [{"start": "18:00", "end": "20:10"}]},
+    "early-morning": {"display": "Early morning", "spans": [{"start": "05:00", "end": "07:30"}]},
+    "evening": {"display": "Evening", "spans": [{"start": "19:00", "end": "22:00"}]},
+    "midday": {"display": "Midday", "spans": [{"start": "11:30", "end": "12:45"}]},
+    "middle-night": {"display": "Middle of the night", "spans": [{"start": "00:30", "end": "04:00"}]},
 }
 
 
@@ -497,7 +491,7 @@ def parse_scene(path):
             span["display"],
             "unknown",
             "broad",
-            BROAD_SPAN_OVERRIDES.get(path.stem, span["spans"]),
+            span["spans"],
         )
 
     match = FALLBACK_PATTERN.match(path.name)
