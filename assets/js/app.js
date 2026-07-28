@@ -307,7 +307,7 @@
       const library = await loadSceneLibrary();
       state.scenes = library.scenes.map(normalizeScene).sort(sortScenes);
       installConsoleApi();
-      el.startMessage.textContent = "A talking clock made of movie scenes. Press play and let cinema tell you the time.";
+      el.startMessage.textContent = "A talking clock made of movie scenes. Best enjoyed running in the background, waiting for cinema to tell you the time.";
       el.startButton.disabled = false;
     } catch {
       el.startMessage.textContent = "Could not load the scene library. Check that assets/data/scenes-data.js is available.";
