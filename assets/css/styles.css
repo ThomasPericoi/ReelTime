@@ -226,17 +226,14 @@ video {
   align-content: center;
   grid-template-rows: auto auto auto;
   gap: clamp(1rem, 4.5vh, 2rem);
+  overflow: hidden;
+  background: var(--ink);
 }
 
 @media (min-width: 721px) {
   .panel--start {
     gap: clamp(1.25rem, 5vh, 2.5rem);
   }
-}
-
-.panel--start {
-  overflow: hidden;
-  background: var(--ink);
 }
 
 .panel--start:before,
@@ -367,7 +364,6 @@ video {
   }
 }
 
-
 .title-kicker {
   display: grid;
   gap: 0.25rem;
@@ -447,7 +443,6 @@ video {
   color: var(--paper);
   text-shadow: none;
 }
-
 
 .mobile-notice {
   display: none;
@@ -835,7 +830,6 @@ video {
 .status[hidden] {
   display: none;
 }
-
 .status__match,
 .status__movie,
 .status__rights {
@@ -845,6 +839,7 @@ video {
 .status__credit[hidden] {
   display: none;
 }
+
 
 .status__match {
   color: var(--gold);

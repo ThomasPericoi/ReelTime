@@ -63,9 +63,9 @@
     <p class="noscript">Reel Time requires JavaScript to load the scene library and play the clock.</p>
   </noscript>
 
-  <main id="app" class="app" aria-live="polite">
+  <main id="app" class="app">
     <video id="scene" class="projection__video" aria-label="Movie scene currently telling the time" playsinline
-      webkit-playsinline muted preload="auto"></video>
+      webkit-playsinline preload="auto"></video>
     <div class="projection__noise" aria-hidden="true"></div>
     <div class="app__room-light" aria-hidden="true"></div>
 
@@ -74,7 +74,7 @@
       <div class="mobile-notice" aria-labelledby="mobileTitle">
         <h1 id="mobileTitle">Reel Time</h1>
         <p>A talking clock made of movie scenes, designed for desktop browsers.</p>
-        <p>Mobile browsers restrict timed video playback, so the full projection is desktop-only (for now). Complain to Apple.</p>
+        <p>Mobile browsers restrict scheduled video playback, so the full projection is desktop-only for now.</p>
       </div>
       <h1 id="appTitle" class="start-title">Reel Time</h1>
       <p id="startMessage" class="panel__copy">Loading scene library...</p>
@@ -85,7 +85,7 @@
           <path d="M14 9l6 6-6 6"></path>
           <path d="M4 4v7a4 4 0 0 0 4 4h11"></path>
         </svg>
-        <span>What time is it Hollywood?</span>
+        <span>What time is it, Hollywood?</span>
       </button>
       <a class="signature signature--start" href="https://thomaspericoi.com/" target="_blank" rel="noopener noreferrer" aria-label="Thomas was here - Go to thomaspericoi.com">
         <span class="signature__logo" aria-hidden="true">
@@ -136,7 +136,7 @@
         <h2 id="localTime">--:--:--</h2>
         <p id="localTimeAmPm" class="time-ampm">--:--:-- --</p>
       </div>
-      <p id="idleMessage" class="panel__copy">Waiting for the next scene. Grab some pop-corn.</p>
+      <p id="idleMessage" class="panel__copy" role="status" aria-live="polite">Waiting for the next scene. Grab some pop-corn.</p>
     </section>
 
     <div id="volumeControl" class="volume-control" hidden>

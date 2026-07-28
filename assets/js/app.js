@@ -257,6 +257,7 @@
   const state = {
     scenes: [],
     currentScene: null,
+    currentSceneDate: null,
     hasStarted: false,
     isPlayingSequence: false,
     isScenePlaying: false,
@@ -297,15 +298,13 @@
     try {
       const library = await loadSceneLibrary();
       state.scenes = library.scenes.map(normalizeScene).sort(sortScenes);
-      installDebugApi();
+      installConsoleApi();
       el.startMessage.textContent = "A talking clock made of movie scenes. Press play and let cinema tell you the time.";
       el.startButton.disabled = false;
     } catch {
       el.startMessage.textContent = "Could not load the scene library. Check that assets/data/scenes-data.js is available.";
     }
   }
-
-
 
   /*_____________________________________ POSTER WALL ______________________________________*/
 
@@ -408,31 +407,31 @@
     const selected = selectScene(now, { mode });
 
     if (selected && playImmediately) {
-      playSequence(selected);
+      playSequence(selected, now);
       return;
     }
 
     if (selected && selected.id !== state.currentScene?.id && !hasPlayedThisMinute(now)) {
-      playSequence(selected);
+      playSequence(selected, now);
       return;
     }
 
     state.nextCheckAt = findNextPlayableTime(afterCurrentMinute(now), { mode: "ongoing" });
-    showIdle(IDLE_MESSAGE);
+    showIdle(idleMessageFor(state.currentScene, state.currentSceneDate));
   }
 
   /*__________________________________ PLAYBACK SEQUENCE __________________________________*/
 
-  async function playSequence(scene) {
-    const token = beginSequence(scene);
+  async function playSequence(scene, contextDate = sceneContextDate(scene)) {
+    const token = beginSequence(scene, contextDate);
 
     try {
       await showCountdown(token);
       startProjectorSound();
-      await showTitleCard(scene, token);
+      await showTitleCard(scene, token, contextDate);
       state.nextCheckAt = findNextPlayableTime(new Date(), { mode: "ongoing" });
       showNextCountdown();
-      const didPlay = await playScene(scene, token);
+      const didPlay = await playScene(scene, token, contextDate);
       if (didPlay) settleVideo();
       else resetVideo();
       setFaviconLetter();
@@ -449,10 +448,11 @@
     }
   }
 
-  function beginSequence(scene) {
+  function beginSequence(scene, contextDate) {
     state.sequenceToken += 1;
     state.isPlayingSequence = true;
     state.currentScene = scene;
+    state.currentSceneDate = new Date(contextDate);
     state.lastPlayedMinuteKey = minuteKey(new Date());
     rememberFlexibleScene(scene);
     clearManagedTimers();
@@ -474,11 +474,11 @@
     el.countdown.hidden = true;
   }
 
-  async function showTitleCard(scene, token) {
+  async function showTitleCard(scene, token, contextDate) {
     if (token !== state.sequenceToken) return;
     setFaviconRecording();
     el.movieTitle.textContent = scene.movieTitle;
-    el.sceneMatch.textContent = sceneMatchLine(scene, new Date());
+    el.sceneMatch.textContent = sceneMatchLine(scene, contextDate);
     el.rightsIntro.textContent = creditLine(scene);
     maybePlayTitleNoise();
     showPanel(el.titleCard);
@@ -486,7 +486,7 @@
     el.titleCard.hidden = true;
   }
 
-  function playScene(scene, token) {
+  function playScene(scene, token, contextDate) {
     return new Promise((resolve) => {
       if (token !== state.sequenceToken) {
         resolve(false);
@@ -494,7 +494,7 @@
       }
 
       hidePanels();
-      setCreditOverlay(scene);
+      setCreditOverlay(scene, contextDate);
       prepareSceneVideo(scene);
       requestAnimationFrame(() => el.scene.classList.add("gate-hit"));
 
@@ -535,13 +535,23 @@
   /*____________________________________ SCENE MATCHING ____________________________________*/
 
   function selectScene(date, options = {}) {
+    const pool = bestScenePool(date, options);
+    return pool.length ? randomItem(pool) : null;
+  }
+
+  function bestScenePool(date, options = {}) {
     const minute = date.getHours() * 60 + date.getMinutes();
-    return state.scenes.find((scene) => isPlayableScene(scene, minute, options)) || null;
+    const matches = state.scenes.filter((scene) => isPlayableScene(scene, minute, options));
+    if (!matches.length) return [];
+
+    const bestPriority = Math.min(...matches.map((scene) => scene.priority));
+    const priorityMatches = matches.filter((scene) => scene.priority === bestPriority);
+    const bestSpanSize = Math.min(...priorityMatches.map(spanSize));
+    return priorityMatches.filter((scene) => spanSize(scene) === bestSpanSize);
   }
 
   function isPlayableScene(scene, minute, options) {
     if (!coversMinute(scene, minute)) return false;
-    if (scene.id === options.excludeSceneId) return false;
     if (options.exactOnly) return scene.precision === "exact";
     if (options.mode === "ongoing") return isOngoingScene(scene);
     return true;
@@ -632,6 +642,58 @@
         return 1440 - span.startMinute + span.endMinute + 1;
       }),
     );
+  }
+
+  function idleMessageFor(scene, date) {
+    if (!scene) return [IDLE_MESSAGE];
+    const contextDate = date || sceneContextDate(scene);
+    const count = sceneSlotCountForScene(scene, contextDate);
+    if (count <= 1) return [IDLE_MESSAGE];
+    return [`The time slot "${timeSlotLabel(scene, contextDate)}" has ${count} different scenes.`, IDLE_MESSAGE];
+  }
+
+  function sceneSlotCountForScene(scene, date) {
+    if (scene.precision === "fallback") {
+      return state.scenes.filter((candidate) => candidate.precision === "fallback").length;
+    }
+
+    if (scene.precision === "broad") {
+      return state.scenes.filter((candidate) =>
+        candidate.precision === "broad" && candidate.displayTime === scene.displayTime,
+      ).length;
+    }
+
+    const referenceSpan = matchingSpan(scene, date) || scene.spans[0];
+    const referenceTarget = sceneTargetMinute(scene, referenceSpan);
+
+    return state.scenes.filter((candidate) =>
+      candidate.precision === scene.precision &&
+      candidate.spans.some((span) => sceneTargetMinute(candidate, span) === referenceTarget),
+    ).length;
+  }
+
+  function timeSlotLabel(scene, date) {
+    if (scene.precision === "fallback") return "lost track of time";
+    if (scene.precision === "broad") return scene.displayTime.toLowerCase();
+
+    const span = matchingSpan(scene, date) || scene.spans[0];
+    const target = sceneTargetTime(scene, span);
+    const labels = {
+      exact: "exactly",
+      before: "before",
+      after: "after",
+      approx: "approximately",
+      range: "around",
+    };
+
+    return `${labels[scene.precision] || scene.precision} ${target}`;
+  }
+
+  function sceneTargetMinute(scene, span) {
+    if (scene.precision === "before") return span.endMinute;
+    if (scene.precision === "after") return span.startMinute;
+    if (scene.precision === "approx" || scene.precision === "range") return centerMinute(span);
+    return span.startMinute;
   }
 
   /*_______________________________________ AUDIO _________________________________________*/
@@ -729,7 +791,7 @@
     audio.fadeFrame = null;
   }
 
-  function stopPlayback() {
+  function stopPlayback(options = {}) {
     state.sequenceToken += 1;
     clearManagedTimers();
     fadeOutProjectorSound(TIMING.quickFadeMs);
@@ -738,7 +800,7 @@
     restoreRoomLight();
     hidePanels();
     setFaviconLetter();
-    showIdle(IDLE_MESSAGE);
+    if (options.showIdle !== false) showIdle(idleMessageFor(state.currentScene, state.currentSceneDate));
   }
 
   /*__________________________________________ UI __________________________________________*/
@@ -798,7 +860,7 @@
 
   function showIdle(message) {
     clearCreditOverlay();
-    el.idleMessage.textContent = message;
+    renderIdleMessage(message);
     el.idle.hidden = false;
     if (state.hasStarted) {
       showPlaybackStatus();
@@ -806,10 +868,19 @@
     }
   }
 
-  function setCreditOverlay(scene) {
+  function renderIdleMessage(message) {
+    const lines = Array.isArray(message) ? message : [message];
+    el.idleMessage.replaceChildren();
+    lines.forEach((line, index) => {
+      if (index) el.idleMessage.append(document.createElement("br"));
+      el.idleMessage.append(document.createTextNode(line));
+    });
+  }
+
+  function setCreditOverlay(scene, contextDate) {
     showPlaybackStatus();
     el.currentCredit.hidden = false;
-    el.overlayMatch.textContent = sceneMatchLine(scene, new Date());
+    el.overlayMatch.textContent = sceneMatchLine(scene, contextDate);
     el.overlayMovie.textContent = scene.movieTitle;
     el.overlayRights.textContent = creditLine(scene);
   }
@@ -962,7 +1033,6 @@
   function filterScenes(scenes, options = {}) {
     let result = [...scenes];
     if (options.exactOnly) result = result.filter((scene) => scene.precision === "exact");
-    if (options.wideOnly) result = result.filter((scene) => scene.precision !== "exact");
     if (options.precision) result = result.filter((scene) => scene.precision === options.precision);
     if (options.period) result = result.filter((scene) => scene.period === options.period);
     if (options.time) {
@@ -983,7 +1053,7 @@
     );
   }
 
-  function debugPlay(options = {}) {
+  function consolePlay(options = {}) {
     const normalized = typeof options === "string" ? { query: options } : options;
     const scene =
       (normalized.id && state.scenes.find((item) => item.id === normalized.id)) ||
@@ -991,40 +1061,41 @@
       (normalized.query && findScenes(normalized)[0]);
 
     if (!scene) throw new Error(`No scene found for ${JSON.stringify(normalized)}`);
-    return forcePlay(scene);
+    return forcePlay(scene, sceneContextDate(scene, normalized));
   }
 
-  function debugPlayAt(hhmm, options = {}) {
+  function consolePlayAt(hhmm, options = {}) {
     const scene = selectScene(atLocalTime(hhmm), {
       exactOnly: Boolean(options.exactOnly),
       mode: options.mode,
     });
     if (!scene) throw new Error(`No scene found at ${hhmm}`);
-    return forcePlay(scene);
+    return forcePlay(scene, atLocalTime(hhmm));
   }
 
-  function debugPlayRandom(options = {}) {
+  function consolePlayRandom(options = {}) {
     const pool = filterScenes(state.scenes, options);
     if (!pool.length) throw new Error("No scenes available");
-    return forcePlay(pool[Math.floor(Math.random() * pool.length)]);
+    const scene = pool[Math.floor(Math.random() * pool.length)];
+    return forcePlay(scene, sceneContextDate(scene, options));
   }
 
   function replayCurrentScene() {
     if (!state.currentScene || state.isPlayingSequence) return;
-    forcePlay(state.currentScene);
+    forcePlay(state.currentScene, state.currentSceneDate || sceneContextDate(state.currentScene));
   }
 
-  function forcePlay(scene) {
-    stopPlayback();
+  function forcePlay(scene, contextDate = sceneContextDate(scene)) {
+    stopPlayback({ showIdle: false });
     enterPlaybackMode();
-    playSequence(scene);
+    playSequence(scene, contextDate);
     return scene;
   }
 
   function apiHelp() {
     return {
       now: "ReelTime.now({ mode: 'arrival' | 'ongoing', exactOnly: true })",
-      scenes: "ReelTime.scenes({ exactOnly, wideOnly, precision, period, time })",
+      scenes: "ReelTime.scenes({ exactOnly, precision, period, time })",
       find: "ReelTime.find({ query, precision, time })",
       at: "ReelTime.at('08:30', { mode, exactOnly })",
       next: "ReelTime.next({ mode: 'ongoing', exactOnly })",
@@ -1035,7 +1106,7 @@
     };
   }
 
-  function installDebugApi() {
+  function installConsoleApi() {
     window.ReelTime = {
       help: () => apiHelp(),
       state,
@@ -1052,9 +1123,9 @@
         mode: options.mode || "ongoing",
       }),
       nextExact: () => nextReport({ exactOnly: true }),
-      play: (options = {}) => debugPlay(options),
-      playAt: (hhmm, options = {}) => debugPlayAt(hhmm, options),
-      random: (options = {}) => debugPlayRandom(options),
+      play: (options = {}) => consolePlay(options),
+      playAt: (hhmm, options = {}) => consolePlayAt(hhmm, options),
+      random: (options = {}) => consolePlayRandom(options),
       stop: () => stopPlayback(),
       audio: {
         beep: () => playCountdownBeep(),
@@ -1065,6 +1136,22 @@
   }
 
   /*__________________________________ REEL TIME HELPERS __________________________________*/
+
+  function sceneContextDate(scene, options = {}) {
+    if (options.time) return atLocalTime(options.time);
+
+    const now = new Date();
+    const currentMinute = now.getHours() * 60 + now.getMinutes();
+    if (coversMinute(scene, currentMinute)) return now;
+
+    return atLocalMinute(scene.spans[0].startMinute);
+  }
+
+  function atLocalMinute(minute) {
+    const date = new Date();
+    date.setHours(Math.floor(minute / 60), minute % 60, 0, 0);
+    return date;
+  }
 
   function atLocalTime(hhmm) {
     const [hour, minute] = parseTime(hhmm);

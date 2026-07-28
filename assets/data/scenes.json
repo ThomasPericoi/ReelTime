@@ -4540,29 +4540,6 @@
       ]
     },
     {
-      "id": "11-30_both_exact_all-the-presidents-men_001",
-      "src": "assets/movie-scenes/11-30_both_exact_all-the-presidents-men_001.mp4",
-      "movieTitle": "All the President's Men",
-      "movieSlug": "all-the-presidents-men",
-      "releaseYear": 1976,
-      "director": "Alan J. Pakula",
-      "rightsHolder": "Warner Bros. Pictures",
-      "displayTime": "11:30",
-      "period": "both",
-      "precision": "exact",
-      "priority": 1,
-      "spans": [
-        {
-          "start": "11:30",
-          "end": "11:30"
-        },
-        {
-          "start": "23:30",
-          "end": "23:30"
-        }
-      ]
-    },
-    {
       "id": "11-30_both_exact_citizen-kane_001",
       "src": "assets/movie-scenes/11-30_both_exact_citizen-kane_001.mp4",
       "movieTitle": "Citizen Kane",
@@ -4625,6 +4602,25 @@
           "start": "11:30",
           "end": "11:30"
         },
+        {
+          "start": "23:30",
+          "end": "23:30"
+        }
+      ]
+    },
+    {
+      "id": "11-30_pm_exact_all-the-presidents-men_001",
+      "src": "assets/movie-scenes/11-30_pm_exact_all-the-presidents-men_001.mp4",
+      "movieTitle": "All the President's Men",
+      "movieSlug": "all-the-presidents-men",
+      "releaseYear": 1976,
+      "director": "Alan J. Pakula",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "11:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "23:30",
           "end": "23:30"
