@@ -1589,6 +1589,29 @@
       ]
     },
     {
+      "id": "04-00_both_exact_there-will-be-blood_001",
+      "src": "assets/movie-scenes/04-00_both_exact_there-will-be-blood_001.mp4",
+      "movieTitle": "There Will Be Blood",
+      "movieSlug": "there-will-be-blood",
+      "releaseYear": 2007,
+      "director": "Paul Thomas Anderson",
+      "rightsHolder": "Paramount Vantage / Miramax Films",
+      "displayTime": "04:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:00",
+          "end": "04:00"
+        },
+        {
+          "start": "16:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
       "id": "04-11_both_exact_being-john-malkovich_001",
       "src": "assets/movie-scenes/04-11_both_exact_being-john-malkovich_001.mp4",
       "movieTitle": "Being John Malkovich",
@@ -1822,6 +1845,29 @@
         {
           "start": "16:36",
           "end": "16:36"
+        }
+      ]
+    },
+    {
+      "id": "04-48_both_exact_quick-change_001",
+      "src": "assets/movie-scenes/04-48_both_exact_quick-change_001.mp4",
+      "movieTitle": "Quick Change",
+      "movieSlug": "quick-change",
+      "releaseYear": 1990,
+      "director": "Bill Murray and Howard Franklin",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "04:48",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:48",
+          "end": "04:48"
+        },
+        {
+          "start": "16:48",
+          "end": "16:48"
         }
       ]
     },
@@ -2238,6 +2284,25 @@
       ]
     },
     {
+      "id": "06-00_am_exact_yes-man_001",
+      "src": "assets/movie-scenes/06-00_am_exact_yes-man_001.mp4",
+      "movieTitle": "Yes Man",
+      "movieSlug": "yes-man",
+      "releaseYear": 2008,
+      "director": "Peyton Reed",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "06:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:00",
+          "end": "06:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_both_after_rocky_001",
       "src": "assets/movie-scenes/06-00_both_after_rocky_001.mp4",
       "movieTitle": "Rocky",
@@ -2353,6 +2418,29 @@
       ]
     },
     {
+      "id": "06-00_both_exact_halloween-3_001",
+      "src": "assets/movie-scenes/06-00_both_exact_halloween-3_001.mp4",
+      "movieTitle": "Halloween III: Season of the Witch",
+      "movieSlug": "halloween-3",
+      "releaseYear": 1982,
+      "director": "Tommy Lee Wallace",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:00",
+          "end": "06:00"
+        },
+        {
+          "start": "18:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_pm_exact_the-farewell_001",
       "src": "assets/movie-scenes/06-00_pm_exact_the-farewell_001.mp4",
       "movieTitle": "The Farewell",
@@ -2411,6 +2499,25 @@
           "start": "06:15",
           "end": "06:15"
         },
+        {
+          "start": "18:15",
+          "end": "18:15"
+        }
+      ]
+    },
+    {
+      "id": "06-15_pm_exact_mona-lisa-smile_001",
+      "src": "assets/movie-scenes/06-15_pm_exact_mona-lisa-smile_001.mp4",
+      "movieTitle": "Mona Lisa Smile",
+      "movieSlug": "mona-lisa-smile",
+      "releaseYear": 2003,
+      "director": "Mike Newell",
+      "rightsHolder": "Revolution Studios / Sony Pictures",
+      "displayTime": "06:15",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "18:15",
           "end": "18:15"
@@ -2656,6 +2763,25 @@
           "start": "07:00",
           "end": "07:00"
         },
+        {
+          "start": "19:00",
+          "end": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "07-00_pm_exact_primer_001",
+      "src": "assets/movie-scenes/07-00_pm_exact_primer_001.mp4",
+      "movieTitle": "Primer",
+      "movieSlug": "primer",
+      "releaseYear": 2004,
+      "director": "Shane Carruth",
+      "rightsHolder": "THINKFilm",
+      "displayTime": "07:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "19:00",
           "end": "19:00"
@@ -3198,6 +3324,29 @@
         {
           "start": "20:00",
           "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "08-12_both_exact_mission-impossible-3_001",
+      "src": "assets/movie-scenes/08-12_both_exact_mission-impossible-3_001.mp4",
+      "movieTitle": "Mission: Impossible III",
+      "movieSlug": "mission-impossible-3",
+      "releaseYear": 2006,
+      "director": "J. J. Abrams",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "08:12",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:12",
+          "end": "08:12"
+        },
+        {
+          "start": "20:12",
+          "end": "20:12"
         }
       ]
     },
@@ -4592,6 +4741,29 @@
       "movieSlug": "goodfellas",
       "releaseYear": 1990,
       "director": "Martin Scorsese",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "11:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:30",
+          "end": "11:30"
+        },
+        {
+          "start": "23:30",
+          "end": "23:30"
+        }
+      ]
+    },
+    {
+      "id": "11-30_both_exact_ocean-s-twelve_001",
+      "src": "assets/movie-scenes/11-30_both_exact_ocean-s-twelve_001.mp4",
+      "movieTitle": "Ocean's Twelve",
+      "movieSlug": "ocean-s-twelve",
+      "releaseYear": 2004,
+      "director": "Steven Soderbergh",
       "rightsHolder": "Warner Bros. Pictures",
       "displayTime": "11:30",
       "period": "both",
