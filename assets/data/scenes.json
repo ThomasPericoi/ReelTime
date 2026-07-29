@@ -1566,10 +1566,10 @@
       ]
     },
     {
-      "id": "04-00_both_before_the-worlds-end_001",
-      "src": "assets/movie-scenes/04-00_both_before_the-worlds-end_001.mp4",
+      "id": "04-00_both_before_the-world-s-end_001",
+      "src": "assets/movie-scenes/04-00_both_before_the-world-s-end_001.mp4",
       "movieTitle": "The World's End",
-      "movieSlug": "the-worlds-end",
+      "movieSlug": "the-world-s-end",
       "releaseYear": 2013,
       "director": "Edgar Wright",
       "rightsHolder": "Universal Pictures / Focus Features",
@@ -2349,10 +2349,10 @@
       ]
     },
     {
-      "id": "06-00_both_before_the-worlds-end_001",
-      "src": "assets/movie-scenes/06-00_both_before_the-worlds-end_001.mp4",
+      "id": "06-00_both_before_the-world-s-end_001",
+      "src": "assets/movie-scenes/06-00_both_before_the-world-s-end_001.mp4",
       "movieTitle": "The World's End",
-      "movieSlug": "the-worlds-end",
+      "movieSlug": "the-world-s-end",
       "releaseYear": 2013,
       "director": "Edgar Wright",
       "rightsHolder": "Universal Pictures / Focus Features",
@@ -2479,6 +2479,29 @@
         {
           "start": "18:05",
           "end": "18:05"
+        }
+      ]
+    },
+    {
+      "id": "06-10_both_exact_sergeant-york_001",
+      "src": "assets/movie-scenes/06-10_both_exact_sergeant-york_001.mp4",
+      "movieTitle": "Sergeant York",
+      "movieSlug": "sergeant-york",
+      "releaseYear": 1941,
+      "director": "Howard Hawks",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "06:10",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:10",
+          "end": "06:10"
+        },
+        {
+          "start": "18:10",
+          "end": "18:10"
         }
       ]
     },
@@ -3871,6 +3894,29 @@
       ]
     },
     {
+      "id": "09-10_both_range_being-there_001",
+      "src": "assets/movie-scenes/09-10_both_range_being-there_001.mp4",
+      "movieTitle": "Being There",
+      "movieSlug": "being-there",
+      "releaseYear": 1979,
+      "director": "Hal Ashby",
+      "rightsHolder": "United Artists / Warner Bros. Discovery",
+      "displayTime": "09:10",
+      "period": "both",
+      "precision": "range",
+      "priority": 4,
+      "spans": [
+        {
+          "start": "09:00",
+          "end": "09:20"
+        },
+        {
+          "start": "21:00",
+          "end": "21:20"
+        }
+      ]
+    },
+    {
       "id": "09-15_both_exact_pig_001",
       "src": "assets/movie-scenes/09-15_both_exact_pig_001.mp4",
       "movieTitle": "Pig",
@@ -4058,6 +4104,52 @@
       ]
     },
     {
+      "id": "10-00_both_after_night-school_001",
+      "src": "assets/movie-scenes/10-00_both_after_night-school_001.mp4",
+      "movieTitle": "Night School",
+      "movieSlug": "night-school",
+      "releaseYear": 2018,
+      "director": "Malcolm D. Lee",
+      "rightsHolder": "Universal Pictures",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "10:00",
+          "end": "10:05"
+        },
+        {
+          "start": "22:00",
+          "end": "22:05"
+        }
+      ]
+    },
+    {
+      "id": "10-00_both_approx_big_001",
+      "src": "assets/movie-scenes/10-00_both_approx_big_001.mp4",
+      "movieTitle": "Big",
+      "movieSlug": "big",
+      "releaseYear": 1988,
+      "director": "Penny Marshall",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "09:55",
+          "end": "10:05"
+        },
+        {
+          "start": "21:55",
+          "end": "22:05"
+        }
+      ]
+    },
+    {
       "id": "10-00_both_exact_chef_001",
       "src": "assets/movie-scenes/10-00_both_exact_chef_001.mp4",
       "movieTitle": "Chef",
@@ -4150,6 +4242,29 @@
       ]
     },
     {
+      "id": "10-00_both_exact_sleepless-in-seattle_001",
+      "src": "assets/movie-scenes/10-00_both_exact_sleepless-in-seattle_001.mp4",
+      "movieTitle": "Sleepless in Seattle",
+      "movieSlug": "sleepless-in-seattle",
+      "releaseYear": 1993,
+      "director": "Nora Ephron",
+      "rightsHolder": "TriStar Pictures / Sony Pictures",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:00",
+          "end": "10:00"
+        },
+        {
+          "start": "22:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
       "id": "10-00_both_exact_the-notebook_001",
       "src": "assets/movie-scenes/10-00_both_exact_the-notebook_001.mp4",
       "movieTitle": "The Notebook",
@@ -4169,6 +4284,52 @@
         {
           "start": "22:00",
           "end": "22:00"
+        }
+      ]
+    },
+    {
+      "id": "10-00_both_exact_west-side-story_001",
+      "src": "assets/movie-scenes/10-00_both_exact_west-side-story_001.mp4",
+      "movieTitle": "West Side Story",
+      "movieSlug": "west-side-story",
+      "releaseYear": 1961,
+      "director": "Jerome Robbins and Robert Wise",
+      "rightsHolder": "United Artists / MGM",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:00",
+          "end": "10:00"
+        },
+        {
+          "start": "22:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "id": "10-00_both_range_incredibles-2_001",
+      "src": "assets/movie-scenes/10-00_both_range_incredibles-2_001.mp4",
+      "movieTitle": "Incredibles 2",
+      "movieSlug": "incredibles-2",
+      "releaseYear": 2018,
+      "director": "Brad Bird",
+      "rightsHolder": "Pixar / Walt Disney Pictures",
+      "displayTime": "10:00",
+      "period": "both",
+      "precision": "range",
+      "priority": 4,
+      "spans": [
+        {
+          "start": "09:50",
+          "end": "10:10"
+        },
+        {
+          "start": "21:50",
+          "end": "22:10"
         }
       ]
     },
@@ -4272,6 +4433,29 @@
       ]
     },
     {
+      "id": "10-02_both_after_we-bought-a-zoo_001",
+      "src": "assets/movie-scenes/10-02_both_after_we-bought-a-zoo_001.mp4",
+      "movieTitle": "We Bought a Zoo",
+      "movieSlug": "we-bought-a-zoo",
+      "releaseYear": 2011,
+      "director": "Cameron Crowe",
+      "rightsHolder": "20th Century Studios",
+      "displayTime": "10:02",
+      "period": "both",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "10:02",
+          "end": "10:07"
+        },
+        {
+          "start": "22:02",
+          "end": "22:07"
+        }
+      ]
+    },
+    {
       "id": "10-04_pm_exact_back-to-the-future-part-3_001",
       "src": "assets/movie-scenes/10-04_pm_exact_back-to-the-future-part-3_001.mp4",
       "movieTitle": "Back to the Future Part III",
@@ -4287,6 +4471,29 @@
         {
           "start": "22:04",
           "end": "22:04"
+        }
+      ]
+    },
+    {
+      "id": "10-15_both_exact_being-the-ricardos_001",
+      "src": "assets/movie-scenes/10-15_both_exact_being-the-ricardos_001.mp4",
+      "movieTitle": "Being the Ricardos",
+      "movieSlug": "being-the-ricardos",
+      "releaseYear": 2021,
+      "director": "Aaron Sorkin",
+      "rightsHolder": "Amazon Studios",
+      "displayTime": "10:15",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:15",
+          "end": "10:15"
+        },
+        {
+          "start": "22:15",
+          "end": "22:15"
         }
       ]
     },
@@ -4406,6 +4613,48 @@
       ]
     },
     {
+      "id": "10-30_both_exact_unfriended_001",
+      "src": "assets/movie-scenes/10-30_both_exact_unfriended_001.mp4",
+      "movieTitle": "Unfriended",
+      "movieSlug": "unfriended",
+      "releaseYear": 2014,
+      "director": "Levan Gabriadze",
+      "rightsHolder": "Universal Pictures / Blumhouse Productions",
+      "displayTime": "10:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:30",
+          "end": "10:30"
+        },
+        {
+          "start": "22:30",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
+      "id": "10-30_pm_exact_dave_001",
+      "src": "assets/movie-scenes/10-30_pm_exact_dave_001.mp4",
+      "movieTitle": "Dave",
+      "movieSlug": "dave",
+      "releaseYear": 1993,
+      "director": "Ivan Reitman",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "10:30",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "22:30",
+          "end": "22:30"
+        }
+      ]
+    },
+    {
       "id": "10-30_pm_exact_i-saw-the-tv-glow_001",
       "src": "assets/movie-scenes/10-30_pm_exact_i-saw-the-tv-glow_001.mp4",
       "movieTitle": "I Saw the TV Glow",
@@ -4440,6 +4689,29 @@
         {
           "start": "22:30",
           "end": "22:30"
+        }
+      ]
+    },
+    {
+      "id": "10-33_both_exact_superbad_001",
+      "src": "assets/movie-scenes/10-33_both_exact_superbad_001.mp4",
+      "movieTitle": "Superbad",
+      "movieSlug": "superbad",
+      "releaseYear": 2007,
+      "director": "Greg Mottola",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "displayTime": "10:33",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:33",
+          "end": "10:33"
+        },
+        {
+          "start": "22:33",
+          "end": "22:33"
         }
       ]
     },
@@ -4490,6 +4762,29 @@
       ]
     },
     {
+      "id": "10-45_both_exact_scrooge_001",
+      "src": "assets/movie-scenes/10-45_both_exact_scrooge_001.mp4",
+      "movieTitle": "Scrooge",
+      "movieSlug": "scrooge",
+      "releaseYear": 1970,
+      "director": "Ronald Neame",
+      "rightsHolder": "Cinema Center Films / Paramount Pictures",
+      "displayTime": "10:45",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:45",
+          "end": "10:45"
+        },
+        {
+          "start": "22:45",
+          "end": "22:45"
+        }
+      ]
+    },
+    {
       "id": "10-46_both_exact_ocean-s-eleven_001",
       "src": "assets/movie-scenes/10-46_both_exact_ocean-s-eleven_001.mp4",
       "movieTitle": "Ocean's Eleven",
@@ -4509,6 +4804,29 @@
         {
           "start": "22:46",
           "end": "22:46"
+        }
+      ]
+    },
+    {
+      "id": "10-55_both_exact_unfriended_001",
+      "src": "assets/movie-scenes/10-55_both_exact_unfriended_001.mp4",
+      "movieTitle": "Unfriended",
+      "movieSlug": "unfriended",
+      "releaseYear": 2014,
+      "director": "Levan Gabriadze",
+      "rightsHolder": "Universal Pictures / Blumhouse Productions",
+      "displayTime": "10:55",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "10:55",
+          "end": "10:55"
+        },
+        {
+          "start": "22:55",
+          "end": "22:55"
         }
       ]
     },
@@ -4566,6 +4884,29 @@
       "releaseYear": 1950,
       "director": "Billy Wilder",
       "rightsHolder": "Paramount Pictures",
+      "displayTime": "11:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:00",
+          "end": "11:00"
+        },
+        {
+          "start": "23:00",
+          "end": "23:00"
+        }
+      ]
+    },
+    {
+      "id": "11-00_both_exact_the-hustler_001",
+      "src": "assets/movie-scenes/11-00_both_exact_the-hustler_001.mp4",
+      "movieTitle": "The Hustler",
+      "movieSlug": "the-hustler",
+      "releaseYear": 1961,
+      "director": "Robert Rossen",
+      "rightsHolder": "20th Century Studios",
       "displayTime": "11:00",
       "period": "both",
       "precision": "exact",
@@ -4735,6 +5076,29 @@
       ]
     },
     {
+      "id": "11-30_both_exact_den-of-thieves_001",
+      "src": "assets/movie-scenes/11-30_both_exact_den-of-thieves_001.mp4",
+      "movieTitle": "Den of Thieves",
+      "movieSlug": "den-of-thieves",
+      "releaseYear": 2018,
+      "director": "Christian Gudegast",
+      "rightsHolder": "STX Entertainment",
+      "displayTime": "11:30",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:30",
+          "end": "11:30"
+        },
+        {
+          "start": "23:30",
+          "end": "23:30"
+        }
+      ]
+    },
+    {
       "id": "11-30_both_exact_goodfellas_001",
       "src": "assets/movie-scenes/11-30_both_exact_goodfellas_001.mp4",
       "movieTitle": "Goodfellas",
@@ -4781,10 +5145,10 @@
       ]
     },
     {
-      "id": "11-30_pm_exact_all-the-presidents-men_001",
-      "src": "assets/movie-scenes/11-30_pm_exact_all-the-presidents-men_001.mp4",
+      "id": "11-30_pm_exact_all-the-president-s-men_001",
+      "src": "assets/movie-scenes/11-30_pm_exact_all-the-president-s-men_001.mp4",
       "movieTitle": "All the President's Men",
-      "movieSlug": "all-the-presidents-men",
+      "movieSlug": "all-the-president-s-men",
       "releaseYear": 1976,
       "director": "Alan J. Pakula",
       "rightsHolder": "Warner Bros. Pictures",
@@ -4819,6 +5183,29 @@
       ]
     },
     {
+      "id": "11-36_both_exact_father-of-the-bride_001",
+      "src": "assets/movie-scenes/11-36_both_exact_father-of-the-bride_001.mp4",
+      "movieTitle": "Father of the Bride",
+      "movieSlug": "father-of-the-bride",
+      "releaseYear": 1991,
+      "director": "Charles Shyer",
+      "rightsHolder": "Touchstone Pictures / Disney",
+      "displayTime": "11:36",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:36",
+          "end": "11:36"
+        },
+        {
+          "start": "23:36",
+          "end": "23:36"
+        }
+      ]
+    },
+    {
       "id": "11-40_both_exact_the-game_001",
       "src": "assets/movie-scenes/11-40_both_exact_the-game_001.mp4",
       "movieTitle": "The Game",
@@ -4842,6 +5229,29 @@
       ]
     },
     {
+      "id": "11-45_both_exact_roman-holiday_001",
+      "src": "assets/movie-scenes/11-45_both_exact_roman-holiday_001.mp4",
+      "movieTitle": "Roman Holiday",
+      "movieSlug": "roman-holiday",
+      "releaseYear": 1953,
+      "director": "William Wyler",
+      "rightsHolder": "Paramount Pictures",
+      "displayTime": "11:45",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:45",
+          "end": "11:45"
+        },
+        {
+          "start": "23:45",
+          "end": "23:45"
+        }
+      ]
+    },
+    {
       "id": "11-55_pm_exact_watchmen_001",
       "src": "assets/movie-scenes/11-55_pm_exact_watchmen_001.mp4",
       "movieTitle": "Watchmen",
@@ -4857,6 +5267,52 @@
         {
           "start": "23:55",
           "end": "23:55"
+        }
+      ]
+    },
+    {
+      "id": "11-56_both_exact_no-hard-feelings_001",
+      "src": "assets/movie-scenes/11-56_both_exact_no-hard-feelings_001.mp4",
+      "movieTitle": "No Hard Feelings",
+      "movieSlug": "no-hard-feelings",
+      "releaseYear": 2023,
+      "director": "Gene Stupnitsky",
+      "rightsHolder": "Sony Pictures",
+      "displayTime": "11:56",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:56",
+          "end": "11:56"
+        },
+        {
+          "start": "23:56",
+          "end": "23:56"
+        }
+      ]
+    },
+    {
+      "id": "11-57_both_exact_no-hard-feelings_001",
+      "src": "assets/movie-scenes/11-57_both_exact_no-hard-feelings_001.mp4",
+      "movieTitle": "No Hard Feelings",
+      "movieSlug": "no-hard-feelings",
+      "releaseYear": 2023,
+      "director": "Gene Stupnitsky",
+      "rightsHolder": "Sony Pictures",
+      "displayTime": "11:57",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:57",
+          "end": "11:57"
+        },
+        {
+          "start": "23:57",
+          "end": "23:57"
         }
       ]
     },
@@ -5524,6 +5980,25 @@
       ]
     },
     {
+      "id": "fallback_casablanca_001",
+      "src": "assets/movie-scenes/fallback_casablanca_001.mp4",
+      "movieTitle": "Casablanca",
+      "movieSlug": "casablanca",
+      "releaseYear": 1942,
+      "director": "Michael Curtiz",
+      "rightsHolder": "Warner Bros. Pictures",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
       "id": "fallback_civil-war_001",
       "src": "assets/movie-scenes/fallback_civil-war_001.mp4",
       "movieTitle": "Civil War",
@@ -5569,6 +6044,25 @@
       "releaseYear": 2023,
       "director": "Yorgos Lanthimos",
       "rightsHolder": "Searchlight Pictures",
+      "displayTime": "Fallback",
+      "period": "unknown",
+      "precision": "fallback",
+      "priority": 9,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "fallback_pulp-fiction_001",
+      "src": "assets/movie-scenes/fallback_pulp-fiction_001.mp4",
+      "movieTitle": "Pulp Fiction",
+      "movieSlug": "pulp-fiction",
+      "releaseYear": 1994,
+      "director": "Quentin Tarantino",
+      "rightsHolder": "Miramax",
       "displayTime": "Fallback",
       "period": "unknown",
       "precision": "fallback",

@@ -152,8 +152,8 @@ video {
     0 28px 90px rgba(0, 0, 0, 0.82),
     inset 0 0 46px rgba(255, 236, 192, 0.14),
     0 0 120px rgba(238, 215, 166, 0.16);
-  filter: sepia(0.16) contrast(1.12) saturate(0.74) brightness(0.98);
-  animation: lamp-flicker 0.18s steps(2, end) infinite;
+  filter: sepia(0.1) contrast(1.08) saturate(0.86) brightness(0.98);
+  animation: lamp-flicker 0.32s steps(2, end) infinite;
 }
 
 @media (min-width: 721px) {
@@ -173,7 +173,7 @@ video {
 .projection__video.gate-hit {
   animation:
     image-catch 0.42s steps(1, end) 1,
-    lamp-flicker 0.18s steps(2, end) infinite;
+    lamp-flicker 0.32s steps(2, end) infinite;
 }
 
 .projection__video.gate-hit.is-ending {
@@ -182,14 +182,16 @@ video {
 
 .projection__noise {
   z-index: 2;
-  opacity: 0.14;
+  opacity: 0.18;
   mix-blend-mode: screen;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 .34'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"),
-    radial-gradient(circle, rgba(244, 236, 216, 0.42) 0 0.045rem, transparent 0.055rem);
-  background-size: 180px 180px, 0.42rem 0.42rem;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.12' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 .28'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(circle, rgba(244, 236, 216, 0.3) 0 0.035rem, transparent 0.0525rem),
+    repeating-linear-gradient(90deg, transparent 0 3.5rem, rgba(244, 236, 216, 0.055) 3.55rem 3.6rem);
+  background-size: 180px 180px, 0.34rem 0.34rem, 100% 100%;
+  filter: contrast(1.16);
   pointer-events: none;
-  animation: projection-grain 0.42s steps(2, end) infinite;
+  animation: projection-grain 0.36s steps(2, end) infinite;
 }
 
 .projection__video:not([src]) + .projection__noise {
@@ -199,7 +201,7 @@ video {
 .projection__video.gate-hit + .projection__noise {
   animation:
     image-catch 0.42s steps(1, end) 1,
-    projection-grain 0.42s steps(2, end) infinite;
+    projection-grain 0.36s steps(2, end) infinite;
 }
 
 /*________________________________________ PANELS _____________________________________________*/
@@ -949,29 +951,29 @@ video {
 
 @keyframes lamp-flicker {
   0% {
-    filter: sepia(0.16) contrast(1.12) saturate(0.74) brightness(0.96);
+    filter: sepia(0.1) contrast(1.08) saturate(0.86) brightness(0.97);
   }
 
   45% {
-    filter: sepia(0.18) contrast(1.18) saturate(0.72) brightness(1.06);
+    filter: sepia(0.11) contrast(1.1) saturate(0.84) brightness(1.02);
   }
 
   100% {
-    filter: sepia(0.14) contrast(1.1) saturate(0.76) brightness(0.91);
+    filter: sepia(0.09) contrast(1.07) saturate(0.88) brightness(0.95);
   }
 }
 
 @keyframes end-of-reel {
   0% {
-    filter: sepia(0.16) contrast(1.12) saturate(0.8) brightness(0.95);
+    filter: sepia(0.1) contrast(1.08) saturate(0.86) brightness(0.94);
   }
 
   45% {
-    filter: sepia(0.1) contrast(1.16) saturate(1.08) brightness(0.82);
+    filter: sepia(0.07) contrast(1.1) saturate(0.96) brightness(0.84);
   }
 
   100% {
-    filter: sepia(0.08) contrast(1.18) saturate(1.12) brightness(0.68);
+    filter: sepia(0.05) contrast(1.12) saturate(0.92) brightness(0.76);
   }
 }
 
