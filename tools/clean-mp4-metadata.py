@@ -7,7 +7,7 @@ import imageio_ffmpeg
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SCENES_DIR = ROOT / "assets" / "movie-scenes"
+SCENES_DIR = ROOT / "assets" / "medias" / "videos" / "movie-scenes"
 
 
 def clean_file(path: Path, dry_run: bool) -> bool:

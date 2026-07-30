@@ -145,7 +145,6 @@ video {
   object-fit: cover;
   background: #050505;
   border: 6px solid rgba(28, 24, 17, 0.96);
-  outline: 1px solid rgba(241, 222, 176, 0.45);
   box-shadow:
     0 0 0 2px rgba(238, 216, 166, 0.18),
     0 0 0 28px rgba(7, 6, 4, 0.86),
