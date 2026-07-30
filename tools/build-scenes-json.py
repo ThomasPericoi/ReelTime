@@ -100,7 +100,6 @@ MOVIE_META = {
     "labyrinth": {"title": "Labyrinth", "year": 1986, "director": "Jim Henson", "rightsHolder": "TriStar Pictures / The Jim Henson Company"},
     "late-night-with-the-devil": {"title": "Late Night with the Devil", "year": 2023, "director": "Cameron Cairnes and Colin Cairnes", "rightsHolder": "IFC Films / Shudder"},
     "little-miss-sunshine": {"title": "Little Miss Sunshine", "year": 2006, "director": "Jonathan Dayton and Valerie Faris", "rightsHolder": "Searchlight Pictures"},
-    "lord-of-the-rings-3": {"title": "The Lord of the Rings: The Return of the King", "year": 2003, "director": "Peter Jackson", "rightsHolder": "New Line Cinema / Warner Bros. Pictures"},
     "lost-in-translation": {"title": "Lost In Translation", "year": 2003, "director": "Sofia Coppola", "rightsHolder": "Focus Features / Universal Pictures"},
     "lucky-number-slevin": {"title": "Lucky Number Slevin", "year": 2006, "director": "Paul McGuigan", "rightsHolder": "The Weinstein Company / MGM"},
     "manchester-by-the-sea": {"title": "Manchester By the Sea", "year": 2016, "director": "Kenneth Lonergan", "rightsHolder": "Amazon Studios / Roadside Attractions"},
@@ -219,7 +218,6 @@ SPAN_LABELS = {
     "dusk": {"display": "Dusk", "spans": [{"start": "18:00", "end": "20:10"}]},
     "early-morning": {"display": "Early morning", "spans": [{"start": "05:00", "end": "07:30"}]},
     "evening": {"display": "Evening", "spans": [{"start": "19:00", "end": "22:00"}]},
-    "midday": {"display": "Midday", "spans": [{"start": "11:30", "end": "12:45"}]},
     "middle-night": {"display": "Middle of the night", "spans": [{"start": "00:30", "end": "04:00"}]},
     "morning": {"display": "Morning", "spans": [{"start": "07:00", "end": "11:30"}]},
 }

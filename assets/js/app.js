@@ -149,7 +149,6 @@
     "labyrinth.jpg",
     "late-night-with-the-devil.jpeg",
     "little-miss-sunshine.jpg",
-    "lord-of-the-rings-3.jpg",
     "lost-in-translation.jpg",
     "lucky-number-slevin.jpg",
     "manchester-by-the-sea.jpg",

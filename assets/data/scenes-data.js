@@ -6132,25 +6132,6 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
-      "id": "midday_broad_lord-of-the-rings-3_001",
-      "src": "assets/movie-scenes/midday_broad_lord-of-the-rings-3_001.mp4",
-      "movieTitle": "The Lord of the Rings: The Return of the King",
-      "movieSlug": "lord-of-the-rings-3",
-      "releaseYear": 2003,
-      "director": "Peter Jackson",
-      "rightsHolder": "New Line Cinema / Warner Bros. Pictures",
-      "displayTime": "Midday",
-      "period": "unknown",
-      "precision": "broad",
-      "priority": 5,
-      "spans": [
-        {
-          "start": "11:30",
-          "end": "12:45"
-        }
-      ]
-    },
-    {
       "id": "middle-night_broad_four-lions_001",
       "src": "assets/movie-scenes/middle-night_broad_four-lions_001.mp4",
       "movieTitle": "Four Lions",

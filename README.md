@@ -288,7 +288,6 @@ The local video files stored in `assets/movie-scenes/` are intentionally ignored
 * HTML.
 * CSS.
 * Vanilla JavaScript.
-* JSON.
 * Python for scene-data generation.
 * Static audio and video files.
 
