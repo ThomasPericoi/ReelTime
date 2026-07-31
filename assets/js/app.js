@@ -15,7 +15,6 @@
     titleCard: "#titleCard",
     idle: "#idle",
     localTime: "#localTime",
-    localTimeAmPm: "#localTimeAmPm",
     idleMessage: "#idleMessage",
     movieTitle: "#movieTitle",
     sceneMatch: "#sceneMatch",
@@ -46,6 +45,8 @@
   };
 
   const FLEXIBLE_PRECISIONS = new Set(["approx", "before", "after"]);
+  const TIME_FORMAT_KEY = "reel-time-hour-format";
+  const TIME_FORMATS = createTimeFormatters();
   const ONGOING_PRECISIONS = new Set(["exact", ...FLEXIBLE_PRECISIONS]);
 
   const SOUND_PATHS = {
@@ -59,7 +60,7 @@
     ],
   };
 
-  const IDLE_MESSAGE = "Waiting for the next scene. Grab some pop-corn.";
+  const IDLE_MESSAGE = "Waiting for the next scene to play. Grab some pop-corn.";
 
   const POSTER_BASE_PATH = "assets/medias/images/movie-posters/";
   const POSTER_FILES = [
@@ -347,7 +348,6 @@
     nextCheckAt: null,
     timers: [],
     renderedLocalTime: "",
-    renderedLocalTimeAmPm: "",
     renderedNextTimer: "",
     masterVolume: VOLUME.master,
     playedFlexibleSceneIds: new Set(),
@@ -381,7 +381,7 @@
       const library = await loadSceneLibrary();
       state.scenes = library.scenes.map(normalizeScene).sort(sortScenes);
       installConsoleApi();
-      el.startMessage.textContent = "A talking clock made of movie scenes. Best enjoyed running in the background, waiting for cinema to tell you the time.";
+      el.startMessage.textContent = "A talking clock made of movie scenes. Leave it open and wait for cinema to tell you the time.";
       el.startButton.disabled = false;
     } catch {
       el.startMessage.textContent = "Could not load the scene library. Check that assets/data/scenes-data.js is available.";
@@ -1002,7 +1002,6 @@
   function updateClockFace() {
     const now = new Date();
     renderText(el.localTime, "renderedLocalTime", formatClockTime(now));
-    renderText(el.localTimeAmPm, "renderedLocalTimeAmPm", formatClockTimeAmPm(now));
 
     if (state.nextCheckAt) {
       const nextTimer = formatDuration(Math.max(0, state.nextCheckAt.getTime() - now.getTime()));
@@ -1085,11 +1084,11 @@
   }
 
   function sceneTargetTime(scene, span) {
-    if (!span) return scene.displayTime;
-    if (scene.precision === "before") return span.end;
-    if (scene.precision === "after") return span.start;
-    if (scene.precision === "approx" || scene.precision === "range") return minuteToTime(centerMinute(span));
-    return span.start;
+    if (!span) return formatSceneTime(scene.displayTime);
+    if (scene.precision === "before") return formatSceneTime(span.end);
+    if (scene.precision === "after") return formatSceneTime(span.start);
+    if (scene.precision === "approx" || scene.precision === "range") return formatMinuteAsSceneTime(centerMinute(span));
+    return formatSceneTime(span.start);
   }
 
   function coversSpanMinute(span, minute) {
@@ -1185,6 +1184,8 @@
       playAt: "ReelTime.playAt('08:30', { mode, exactOnly })",
       random: "ReelTime.random({ precision, exactOnly })",
       stop: "ReelTime.stop()",
+      timeFormat: "ReelTime.timeFormat()",
+      setTimeFormat: "ReelTime.setTimeFormat('auto' | '12' | '24')",
     };
   }
 
@@ -1209,6 +1210,8 @@
       playAt: (hhmm, options = {}) => consolePlayAt(hhmm, options),
       random: (options = {}) => consolePlayRandom(options),
       stop: () => stopPlayback(),
+      timeFormat: () => timeFormatReport(),
+      setTimeFormat: (mode = "auto") => setTimeFormatPreference(mode),
       audio: {
         beep: () => playCountdownBeep(),
         projectorStart: () => startProjectorSound(),
@@ -1263,14 +1266,84 @@
   }
 
   function formatClockTime(date) {
-    return `${pad2(date.getHours())}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())}`;
+    return TIME_FORMATS.clock.format(date);
   }
 
-  function formatClockTimeAmPm(date) {
-    const hour = date.getHours();
-    const meridiem = hour >= 12 ? "PM" : "AM";
-    const hour12 = hour % 12 || 12;
-    return `${hour12}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())} ${meridiem}`;
+  function formatSceneTime(value) {
+    const [hour, minute] = parseTime(value);
+    return formatMinuteAsSceneTime(hour * 60 + minute);
+  }
+
+  function formatMinuteAsSceneTime(minute) {
+    const value = ((minute % 1440) + 1440) % 1440;
+    return TIME_FORMATS.scene.format(new Date(2000, 0, 1, Math.floor(value / 60), value % 60));
+  }
+
+  function createTimeFormatters() {
+    const hour12 = shouldUse12HourTime();
+    return {
+      mode: storedTimeFormatPreference(),
+      hour12,
+      clock: new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", second: "2-digit", hour12 }),
+      scene: new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", hour12 }),
+    };
+  }
+
+  function shouldUse12HourTime() {
+    const preference = storedTimeFormatPreference();
+    if (preference === "12") return true;
+    if (preference === "24") return false;
+
+    const resolved = new Intl.DateTimeFormat(undefined, { hour: "numeric" }).resolvedOptions();
+    if (resolved.hourCycle === "h23" || resolved.hourCycle === "h24") return false;
+    if (resolved.hourCycle === "h11" || resolved.hourCycle === "h12") return !isLikely24HourRegion();
+
+    return !formatLooks24Hour(new Intl.DateTimeFormat(undefined, { hour: "numeric" }));
+  }
+
+  function isLikely24HourRegion() {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    if (/^(Europe|Africa|Asia)\//.test(timeZone)) return true;
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ""];
+    return languages.some((language) => !/\b(en-US|en-CA|en-PH)\b/i.test(language));
+  }
+
+  function formatLooks24Hour(formatter) {
+    return /\b13\b/.test(formatter.format(new Date(2000, 0, 1, 13, 0, 0)));
+  }
+
+  function storedTimeFormatPreference() {
+    try {
+      const value = window.localStorage.getItem(TIME_FORMAT_KEY);
+      return ["auto", "12", "24"].includes(value) ? value : "auto";
+    } catch {
+      return "auto";
+    }
+  }
+
+  function setTimeFormatPreference(mode = "auto") {
+    if (!["auto", "12", "24"].includes(mode)) throw new Error("Expected 'auto', '12', or '24'");
+    try {
+      if (mode === "auto") window.localStorage.removeItem(TIME_FORMAT_KEY);
+      else window.localStorage.setItem(TIME_FORMAT_KEY, mode);
+    } catch {
+      // Ignore storage failures; the current page can still update its formatter.
+    }
+    Object.assign(TIME_FORMATS, createTimeFormatters());
+    state.renderedLocalTime = "";
+    state.renderedNextTimer = "";
+    updateClockFace();
+    return timeFormatReport();
+  }
+
+  function timeFormatReport() {
+    return {
+      mode: TIME_FORMATS.mode,
+      hour12: TIME_FORMATS.hour12,
+      sample: TIME_FORMATS.clock.format(new Date(2000, 0, 1, 13, 5, 9)),
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      languages: navigator.languages?.length ? [...navigator.languages] : [navigator.language],
+    };
   }
 
   function minuteToTime(minute) {
