@@ -25,12 +25,14 @@
     overlayMovie: "#overlayMovie",
     overlayRights: "#overlayRights",
     nextCountdown: "#nextCountdown",
+    nextTime: "#nextTime",
     nextTimer: "#nextTimer",
     replayButton: "#replayButton",
     cornerSignature: "#cornerSignature",
     volumeControl: "#volumeControl",
     volumeRange: "#volumeRange",
     volumeValue: "#volumeValue",
+    timeFormatInputs: "input[name=\"timeFormat\"]",
     favicon: "#favicon",
   };
 
@@ -46,7 +48,7 @@
 
   const FLEXIBLE_PRECISIONS = new Set(["approx", "before", "after"]);
   const TIME_FORMAT_KEY = "reel-time-hour-format";
-  const TIME_FORMATS = createTimeFormatters();
+  const TIME_FORMATS = createTimeFormatters(storedTimeFormatPreference());
   const ONGOING_PRECISIONS = new Set(["exact", ...FLEXIBLE_PRECISIONS]);
 
   const SOUND_PATHS = {
@@ -60,7 +62,7 @@
     ],
   };
 
-  const IDLE_MESSAGE = "Waiting for the next scene to play. Grab some pop-corn.";
+  const IDLE_MESSAGE = "Grab some pop-corn and wait for the next scene to play.";
 
   const POSTER_BASE_PATH = "assets/medias/images/movie-posters/";
   const POSTER_FILES = [
@@ -334,7 +336,10 @@
   /*_____________________________________ APP STATE ______________________________________*/
 
   const el = Object.fromEntries(
-    Object.entries(SELECTORS).map(([key, selector]) => [key, document.querySelector(selector)]),
+    Object.entries(SELECTORS).map(([key, selector]) => [
+      key,
+      key.endsWith("Inputs") ? document.querySelectorAll(selector) : document.querySelector(selector),
+    ]),
   );
 
   const state = {
@@ -348,6 +353,7 @@
     nextCheckAt: null,
     timers: [],
     renderedLocalTime: "",
+    renderedNextTime: "",
     renderedNextTimer: "",
     masterVolume: VOLUME.master,
     playedFlexibleSceneIds: new Set(),
@@ -372,7 +378,7 @@
     setFaviconLetter();
     tickClock();
     window.setInterval(tickClock, 1000);
-    initVolumeControl();
+    initOptionsPanel();
     initPosterWall();
     el.startButton.addEventListener("click", startClock, { once: true });
     el.replayButton.addEventListener("click", replayCurrentScene);
@@ -499,6 +505,7 @@
     }
 
     state.nextCheckAt = findNextPlayableTime(afterCurrentMinute(now), { mode: "ongoing" });
+    showNextCountdown();
     showIdle(idleMessageFor(state.currentScene, state.currentSceneDate));
   }
 
@@ -730,7 +737,7 @@
     if (!scene) return [IDLE_MESSAGE];
     const contextDate = date || sceneContextDate(scene);
     const count = sceneSlotCountForScene(scene, contextDate);
-    if (count <= 1) return [IDLE_MESSAGE];
+    if (count === 1) return [`The time slot "${timeSlotLabel(scene, contextDate)}" has only one scene.`, IDLE_MESSAGE];
     return [`The time slot "${timeSlotLabel(scene, contextDate)}" has ${count} different scenes.`, IDLE_MESSAGE];
   }
 
@@ -780,11 +787,19 @@
 
   /*_______________________________________ AUDIO _________________________________________*/
 
-  function initVolumeControl() {
+  function initOptionsPanel() {
     el.volumeRange.value = Math.round(state.masterVolume * 100);
     updateVolumeControl();
+    updateTimeFormatControl();
+
     el.volumeRange.addEventListener("input", () => {
       setMasterVolume(Number(el.volumeRange.value) / 100);
+    });
+
+    el.timeFormatInputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        if (input.checked) setTimeFormatPreference(input.value);
+      });
     });
   }
 
@@ -976,7 +991,11 @@
 
   function showNextCountdown() {
     el.nextCountdown.hidden = false;
-    updateClockFace();
+    try {
+      updateClockFace();
+    } catch {
+      // The countdown display must never block scene playback.
+    }
   }
 
   function showReplayButton() {
@@ -1005,12 +1024,13 @@
 
     if (state.nextCheckAt) {
       const nextTimer = formatDuration(Math.max(0, state.nextCheckAt.getTime() - now.getTime()));
+      renderText(el.nextTime, "renderedNextTime", formatDateAsSceneTime(state.nextCheckAt));
       renderText(el.nextTimer, "renderedNextTimer", nextTimer);
     }
   }
 
   function renderText(node, cacheKey, value) {
-    if (state[cacheKey] === value) return;
+    if (!node || state[cacheKey] === value) return;
     state[cacheKey] = value;
     node.textContent = value;
   }
@@ -1185,7 +1205,7 @@
       random: "ReelTime.random({ precision, exactOnly })",
       stop: "ReelTime.stop()",
       timeFormat: "ReelTime.timeFormat()",
-      setTimeFormat: "ReelTime.setTimeFormat('auto' | '12' | '24')",
+      setTimeFormat: "ReelTime.setTimeFormat('12' | '24')",
     };
   }
 
@@ -1211,7 +1231,7 @@
       random: (options = {}) => consolePlayRandom(options),
       stop: () => stopPlayback(),
       timeFormat: () => timeFormatReport(),
-      setTimeFormat: (mode = "auto") => setTimeFormatPreference(mode),
+      setTimeFormat: (mode = "12") => setTimeFormatPreference(mode),
       audio: {
         beep: () => playCountdownBeep(),
         projectorStart: () => startProjectorSound(),
@@ -1266,7 +1286,11 @@
   }
 
   function formatClockTime(date) {
-    return TIME_FORMATS.clock.format(date);
+    try {
+      return TIME_FORMATS.clock.format(date);
+    } catch {
+      return `${pad2(date.getHours())}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())}`;
+    }
   }
 
   function formatSceneTime(value) {
@@ -1274,66 +1298,72 @@
     return formatMinuteAsSceneTime(hour * 60 + minute);
   }
 
-  function formatMinuteAsSceneTime(minute) {
-    const value = ((minute % 1440) + 1440) % 1440;
-    return TIME_FORMATS.scene.format(new Date(2000, 0, 1, Math.floor(value / 60), value % 60));
+  function formatDateAsSceneTime(date) {
+    try {
+      return TIME_FORMATS.scene.format(date);
+    } catch {
+      return `${pad2(date.getHours())}:${pad2(date.getMinutes())}`;
+    }
   }
 
-  function createTimeFormatters() {
-    const hour12 = shouldUse12HourTime();
+  function formatMinuteAsSceneTime(minute) {
+    const value = ((minute % 1440) + 1440) % 1440;
+    const date = new Date(2000, 0, 1, Math.floor(value / 60), value % 60);
+    return formatDateAsSceneTime(date);
+  }
+
+  function createTimeFormatters(mode) {
+    const hour12 = mode !== "24";
     return {
-      mode: storedTimeFormatPreference(),
+      mode,
       hour12,
       clock: new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", second: "2-digit", hour12 }),
       scene: new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", hour12 }),
     };
   }
 
-  function shouldUse12HourTime() {
-    const preference = storedTimeFormatPreference();
-    if (preference === "12") return true;
-    if (preference === "24") return false;
-
-    const resolved = new Intl.DateTimeFormat(undefined, { hour: "numeric" }).resolvedOptions();
-    if (resolved.hourCycle === "h23" || resolved.hourCycle === "h24") return false;
-    if (resolved.hourCycle === "h11" || resolved.hourCycle === "h12") return !isLikely24HourRegion();
-
-    return !formatLooks24Hour(new Intl.DateTimeFormat(undefined, { hour: "numeric" }));
-  }
-
-  function isLikely24HourRegion() {
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-    if (/^(Europe|Africa|Asia)\//.test(timeZone)) return true;
-    const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ""];
-    return languages.some((language) => !/\b(en-US|en-CA|en-PH)\b/i.test(language));
-  }
-
-  function formatLooks24Hour(formatter) {
-    return /\b13\b/.test(formatter.format(new Date(2000, 0, 1, 13, 0, 0)));
-  }
-
   function storedTimeFormatPreference() {
     try {
       const value = window.localStorage.getItem(TIME_FORMAT_KEY);
-      return ["auto", "12", "24"].includes(value) ? value : "auto";
+      return ["12", "24"].includes(value) ? value : "12";
     } catch {
-      return "auto";
+      return "12";
     }
   }
 
-  function setTimeFormatPreference(mode = "auto") {
-    if (!["auto", "12", "24"].includes(mode)) throw new Error("Expected 'auto', '12', or '24'");
+  function setTimeFormatPreference(mode = "12") {
+    if (!["12", "24"].includes(mode)) throw new Error("Expected '12' or '24'");
     try {
-      if (mode === "auto") window.localStorage.removeItem(TIME_FORMAT_KEY);
-      else window.localStorage.setItem(TIME_FORMAT_KEY, mode);
+      window.localStorage.setItem(TIME_FORMAT_KEY, mode);
     } catch {
       // Ignore storage failures; the current page can still update its formatter.
     }
-    Object.assign(TIME_FORMATS, createTimeFormatters());
+
+    Object.assign(TIME_FORMATS, createTimeFormatters(mode));
+    updateTimeFormatControl();
+    refreshTimeDisplays();
+    return timeFormatReport();
+  }
+
+  function updateTimeFormatControl() {
+    el.timeFormatInputs.forEach((input) => {
+      input.checked = input.value === TIME_FORMATS.mode;
+    });
+  }
+
+  function refreshTimeDisplays() {
     state.renderedLocalTime = "";
+    state.renderedNextTime = "";
     state.renderedNextTimer = "";
     updateClockFace();
-    return timeFormatReport();
+
+    if (!state.currentScene) return;
+
+    const contextDate = state.currentSceneDate || sceneContextDate(state.currentScene);
+    const match = sceneMatchLine(state.currentScene, contextDate);
+    if (!el.titleCard.hidden) el.sceneMatch.textContent = match;
+    if (!el.currentCredit.hidden) el.overlayMatch.textContent = match;
+    if (!el.idle.hidden) renderIdleMessage(idleMessageFor(state.currentScene, contextDate));
   }
 
   function timeFormatReport() {
@@ -1341,8 +1371,6 @@
       mode: TIME_FORMATS.mode,
       hour12: TIME_FORMATS.hour12,
       sample: TIME_FORMATS.clock.format(new Date(2000, 0, 1, 13, 5, 9)),
-      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      languages: navigator.languages?.length ? [...navigator.languages] : [navigator.language],
     };
   }
 

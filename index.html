@@ -142,11 +142,24 @@
       <p id="idleMessage" class="panel__copy" role="status" aria-live="polite">Waiting for the next scene. Grab some pop-corn.</p>
     </section>
 
-    <div id="volumeControl" class="volume-control" hidden>
-      <label class="volume-control__label" for="volumeRange">Volume</label>
-      <input id="volumeRange" class="volume-control__range" type="range" min="0" max="100" value="80" step="1">
-      <span id="volumeValue" class="volume-control__value">80%</span>
-    </div>
+    <aside id="volumeControl" class="options-panel" aria-label="Options" hidden>
+      <div class="volume-control">
+        <label class="volume-control__label" for="volumeRange">Volume</label>
+        <input id="volumeRange" class="volume-control__range" type="range" min="0" max="100" value="80" step="1">
+        <span id="volumeValue" class="volume-control__value">80%</span>
+      </div>
+      <div class="time-format" role="radiogroup" aria-labelledby="timeFormatLabel">
+        <span id="timeFormatLabel" class="time-format__label">Time format</span>
+        <label class="time-format__option">
+          <input id="timeFormat12" type="radio" name="timeFormat" value="12" checked>
+          <span>12h</span>
+        </label>
+        <label class="time-format__option">
+          <input id="timeFormat24" type="radio" name="timeFormat" value="24">
+          <span>24h</span>
+        </label>
+      </div>
+    </aside>
 
     <a id="cornerSignature" class="signature signature--corner" href="https://thomaspericoi.com/" target="_blank"
       rel="noopener noreferrer" aria-label="Thomas was here - Go to thomaspericoi.com" hidden>
@@ -194,7 +207,8 @@
       </button>
       <div id="nextCountdown" class="status__next" hidden>
         <span>Next scene</span>
-        <strong id="nextTimer">--:--</strong>
+        <strong id="nextTime">--:--</strong>
+        <small>in <span id="nextTimer">--:--</span></small>
       </div>
     </aside>
   </main>
