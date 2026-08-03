@@ -172,6 +172,7 @@ MOVIE_META = {
     "rear-window": {"title": "Rear Window", "year": 1954, "director": "Alfred Hitchcock", "rightsHolder": "Universal Pictures"},
     "road-house": {"title": "Road House", "year": 1989, "director": "Rowdy Herrington", "rightsHolder": "MGM / United Artists"},
     "rocky": {"title": "Rocky", "year": 1976, "director": "John G. Avildsen", "rightsHolder": "MGM / United Artists"},
+    "rock-n-roll-high-school": {"title": "Rock 'n' Roll High School", "year": 1979, "director": "Allan Arkush", "rightsHolder": "New World Pictures"},
     "roman-holiday": {"title": "Roman Holiday", "year": 1953, "director": "William Wyler", "rightsHolder": "Paramount Pictures"},
     "sabrina": {"title": "Sabrina", "year": 1954, "director": "Billy Wilder", "rightsHolder": "Paramount Pictures"},
     "sandlot": {"title": "The Sandlot", "year": 1993, "director": "David Mickey Evans", "rightsHolder": "20th Century Studios"},

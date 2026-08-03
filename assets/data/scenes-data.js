@@ -404,6 +404,29 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
+      "id": "01-45_both_exact_rock-n-roll-high-school_001",
+      "src": "assets/medias/videos/movie-scenes/01-45_both_exact_rock-n-roll-high-school_001.mp4",
+      "movieTitle": "Rock 'n' Roll High School",
+      "movieSlug": "rock-n-roll-high-school",
+      "releaseYear": 1979,
+      "director": "Allan Arkush",
+      "rightsHolder": "New World Pictures",
+      "displayTime": "01:45",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:45",
+          "end": "01:45"
+        },
+        {
+          "start": "13:45",
+          "end": "13:45"
+        }
+      ]
+    },
+    {
       "id": "01-56_both_exact_cast-away_001",
       "src": "assets/medias/videos/movie-scenes/01-56_both_exact_cast-away_001.mp4",
       "movieTitle": "Cast Away",

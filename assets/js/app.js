@@ -220,6 +220,7 @@
     "rainman.jpg",
     "rear-window.jpg",
     "road-house.jpg",
+    "rock-n-roll-high-school.jpg",
     "rocky.jpg",
     "roman-holiday.jpg",
     "sabrina.jpg",

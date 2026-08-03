@@ -134,6 +134,7 @@ video {
 }
 
 @media (min-width: 721px) {
+
   .projection__video,
   .projection__noise {
     top: 45%;
@@ -193,11 +194,11 @@ video {
   animation: projection-grain 0.36s steps(2, end) infinite;
 }
 
-.projection__video:not([src]) + .projection__noise {
+.projection__video:not([src])+.projection__noise {
   display: none;
 }
 
-.projection__video.gate-hit + .projection__noise {
+.projection__video.gate-hit+.projection__noise {
   animation:
     image-catch 0.42s steps(1, end) 1,
     projection-grain 0.36s steps(2, end) infinite;
@@ -257,7 +258,7 @@ video {
   background: linear-gradient(90deg, rgba(5, 5, 5, 0.72), transparent 28%, transparent 72%, rgba(5, 5, 5, 0.72));
 }
 
-.panel--start > :not(.poster-wall) {
+.panel--start> :not(.poster-wall) {
   position: relative;
   z-index: 3;
 }
@@ -285,6 +286,7 @@ video {
 }
 
 @media (min-width: 721px) {
+
   .panel h1,
   .panel h2 {
     max-width: min(1080px, 92vw);
@@ -337,6 +339,7 @@ video {
 }
 
 @media (min-width: 721px) {
+
   .panel__copy,
   .title-match {
     max-width: 52.5rem;
@@ -432,7 +435,9 @@ video {
   display: none;
 }
 
-@media (max-width: 720px), (pointer: coarse) {
+@media (max-width: 720px),
+(pointer: coarse) {
+
   .projection__video,
   .projection__noise,
   .app__room-light,
@@ -614,7 +619,7 @@ video {
   transform-origin: left center;
 }
 
-.panel--start > .signature--start {
+.panel--start>.signature--start {
   position: fixed;
   top: max(1rem, env(safe-area-inset-top));
   left: max(1rem, env(safe-area-inset-left));
@@ -773,18 +778,18 @@ video {
 }
 
 .time-format__option:hover span,
-.time-format__option input:focus-visible + span {
+.time-format__option input:focus-visible+span {
   color: var(--paper);
   border-color: rgba(244, 239, 231, 0.7);
 }
 
-.time-format__option input:checked + span {
+.time-format__option input:checked+span {
   color: var(--ink);
   background: var(--paper);
   border-color: var(--paper);
 }
 
-.time-format__option input:focus-visible + span {
+.time-format__option input:focus-visible+span {
   outline: 0.1875rem solid var(--gold);
   outline-offset: 0.1875rem;
 }
@@ -869,6 +874,7 @@ video {
 .status[hidden] {
   display: none;
 }
+
 .status__match,
 .status__movie,
 .status__rights {
@@ -933,7 +939,6 @@ video {
   color: var(--paper-muted);
   font-size: 0.75rem;
   text-align: left;
-  text-transform: uppercase;
 }
 
 @media (min-width: 721px) {
@@ -944,6 +949,10 @@ video {
 
 .status__next[hidden] {
   display: none;
+}
+
+.status__next span {
+  text-transform: uppercase;
 }
 
 .status__next strong {
@@ -1094,7 +1103,7 @@ video {
   .projection__video,
   .projection__noise,
   .projection__video.gate-hit,
-  .projection__video.gate-hit + .projection__noise,
+  .projection__video.gate-hit+.projection__noise,
   .projection__video.is-ending {
     animation: none;
   }
