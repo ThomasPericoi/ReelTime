@@ -18,12 +18,12 @@
     idleMessage: "#idleMessage",
     movieTitle: "#movieTitle",
     sceneMatch: "#sceneMatch",
-    rightsIntro: "#rightsIntro",
+    titleMeta: "#titleMeta",
     playbackStatus: "#playbackStatus",
     currentCredit: "#currentCredit",
     overlayMatch: "#overlayMatch",
     overlayMovie: "#overlayMovie",
-    overlayRights: "#overlayRights",
+    overlayDetails: "#overlayDetails",
     nextCountdown: "#nextCountdown",
     nextTime: "#nextTime",
     nextTimer: "#nextTimer",
@@ -69,6 +69,7 @@
     "12-angry-men.jpg",
     "12-monkeys.jpg",
     "127-hours.jpg",
+    "13-going-on-30.jpg",
     "3-10-to-yuma.jpg",
     "8-bit-christmas.jpg",
     "a-beautiful-mind.jpg",
@@ -124,6 +125,7 @@
     "die-hard-2.jpg",
     "donnie-darko.jpg",
     "dr-strangelove.jpg",
+    "dracula-dead-and-loving-it.jpg",
     "dumb-and-dumber.jpg",
     "ed-wood.jpg",
     "election.jpg",
@@ -136,6 +138,7 @@
     "fargo.jpg",
     "father-of-the-bride.jpg",
     "fifth-element.jpg",
+    "finding-forrester.jpg",
     "flubber.jpg",
     "ford-v-ferrari.jpg",
     "foul-play.jpg",
@@ -167,12 +170,14 @@
     "jacob-s-ladder.jpg",
     "jaws.jpg",
     "jumpin-jack-flash.jpg",
+    "k-pax.jpg",
     "labyrinth.jpg",
     "lady-and-the-tramp.jpg",
     "late-night-with-the-devil.jpeg",
     "leon-the-professional.jpg",
     "lethal-weapon-3.jpg",
     "lethal-weapon.jpg",
+    "lincoln.jpg",
     "little-miss-sunshine.jpg",
     "live-and-let-die.jpg",
     "lolita.jpg",
@@ -220,6 +225,8 @@
     "rainman.jpg",
     "rear-window.jpg",
     "road-house.jpg",
+    "robin-hood.jpg",
+    "robocop-2.jpg",
     "rock-n-roll-high-school.jpg",
     "rocky.jpg",
     "roman-holiday.jpg",
@@ -270,8 +277,10 @@
     "the-hustler.jpg",
     "the-irishman.jpg",
     "the-iron-giant.jpg",
+    "the-kids-are-all-right.jpg",
     "the-lego-batman-movie.jpg",
     "the-lobster.jpg",
+    "the-lord-of-rings-the-two-towers.jpg",
     "the-lost-daughter.jpg",
     "the-man-who-fell-to-earth.jpg",
     "the-martian.jpg",
@@ -285,6 +294,7 @@
     "the-spongebob-movie-sponge-out-of-water.jpg",
     "the-sting.jpg",
     "the-strange-case-of-benjamin-button.jpg",
+    "the-talented-mr-ripley.jpg",
     "the-thin-red-line.jpg",
     "the-usual-suspects.jpg",
     "the-world-s-end.jpg",
@@ -507,7 +517,7 @@
 
     state.nextCheckAt = findNextPlayableTime(afterCurrentMinute(now), { mode: "ongoing" });
     showNextCountdown();
-    showIdle(idleMessageFor(state.currentScene, state.currentSceneDate));
+    showIdle(idleMessageFor(state.currentScene, state.currentSceneDate), { preserveCredit: Boolean(state.currentScene) });
   }
 
   /*__________________________________ PLAYBACK SEQUENCE __________________________________*/
@@ -569,7 +579,7 @@
     setFaviconRecording();
     el.movieTitle.textContent = scene.movieTitle;
     el.sceneMatch.textContent = sceneMatchLine(scene, contextDate);
-    el.rightsIntro.textContent = creditLine(scene);
+    el.titleMeta.textContent = titleCardMetaLine(scene);
     maybePlayTitleNoise();
     showPanel(el.titleCard);
     await sleep(TIMING.titleCardMs);
@@ -956,8 +966,8 @@
     hideReplayButton();
   }
 
-  function showIdle(message) {
-    clearCreditOverlay();
+  function showIdle(message, options = {}) {
+    if (!options.preserveCredit) clearCreditOverlay();
     renderIdleMessage(message);
     el.idle.hidden = false;
     if (state.hasStarted) {
@@ -979,15 +989,15 @@
     showPlaybackStatus();
     el.currentCredit.hidden = false;
     el.overlayMatch.textContent = sceneMatchLine(scene, contextDate);
-    el.overlayMovie.textContent = scene.movieTitle;
-    el.overlayRights.textContent = creditLine(scene);
+    el.overlayMovie.textContent = filmTitleLine(scene);
+    el.overlayDetails.textContent = creditLine(scene);
   }
 
   function clearCreditOverlay() {
     el.currentCredit.hidden = true;
     el.overlayMatch.textContent = "";
     el.overlayMovie.textContent = "";
-    el.overlayRights.textContent = "";
+    el.overlayDetails.textContent = "";
   }
 
   function showNextCountdown() {
@@ -1069,17 +1079,30 @@
   /*_______________________________________ CREDITS _______________________________________*/
 
   function rightsLine(scene) {
-    return `Rights held by ${scene.rightsHolder || "Rights holder to verify"}`;
+    return `© ${scene.rightsHolder || "Rights holder to verify"}`;
   }
 
-  function filmMetaLine(scene) {
+  function filmTitleLine(scene) {
+    return scene.releaseYear ? `${scene.movieTitle} (${scene.releaseYear})` : scene.movieTitle;
+  }
+
+  function titleCardMetaLine(scene) {
     const year = scene.releaseYear || "Year to verify";
     const director = scene.director || "Director to verify";
     return `${year} · Directed by ${director}`;
   }
 
+  function filmMetaLine(scene) {
+    const director = scene.director || "Director to verify";
+    return `Directed by ${director}`;
+  }
+
+  function imdbRatingLine(scene) {
+    return Number.isFinite(scene.imdbRating) ? `IMDb ${scene.imdbRating.toFixed(1)}☆` : "";
+  }
+
   function creditLine(scene) {
-    return `${filmMetaLine(scene)} · ${rightsLine(scene)}`;
+    return [filmMetaLine(scene), imdbRatingLine(scene), rightsLine(scene)].filter(Boolean).join(" · ");
   }
 
   function sceneMatchLine(scene, date = new Date()) {

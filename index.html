@@ -132,7 +132,7 @@
         <p id="sceneMatch" class="title-match"></p>
       </div>
       <h2 id="movieTitle">Reel Time</h2>
-      <p id="rightsIntro" class="panel__copy"></p>
+      <p id="titleMeta" class="panel__copy"></p>
     </section>
 
     <section id="idle" class="panel panel--idle" aria-labelledby="localTime" hidden>
@@ -194,17 +194,17 @@
       <div id="currentCredit" class="status__credit" hidden>
         <p id="overlayMatch" class="status__match"></p>
         <p id="overlayMovie" class="status__movie"></p>
-        <p id="overlayRights" class="status__rights"></p>
+        <p id="overlayDetails" class="status__details"></p>
+        <button id="replayButton" class="button button--replay" type="button" aria-label="Replay this scene" hidden>
+          <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
+            <path d="M2.5 2v6h6"></path>
+            <path d="M2.66 15.57a10 10 0 1 0 .57-8.38"></path>
+          </svg>
+          <span>Replay this scene</span>
+        </button>
       </div>
-      <button id="replayButton" class="button button--replay" type="button" aria-label="Replay the last scene" hidden>
-        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          aria-hidden="true" focusable="false">
-          <path d="M2.5 2v6h6"></path>
-          <path d="M2.66 15.57a10 10 0 1 0 .57-8.38"></path>
-        </svg>
-        <span>Replay the last scene</span>
-      </button>
       <div id="nextCountdown" class="status__next" hidden>
         <span>Next scene</span>
         <strong>at <span id="nextTime">--:--</span></strong>

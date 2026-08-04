@@ -26,8 +26,8 @@ The project is intentionally compact: plain static files, no framework, no build
 
 Current library statistics:
 
-* Total scenes: **350**
-* Exact-time scenes: **265**
+* Total scenes: **361**
+* Exact-time scenes: **269**
 * Exact minutes covered: **204 / 1440**
 * Exact-time coverage: **14.2%**
 
@@ -235,7 +235,7 @@ When scenes are added, renamed, or removed, rebuild the scene library:
 python3 tools/build-scenes-json.py
 ```
 
-`build-scenes-json.py` reads filenames from `assets/medias/videos/movie-scenes/`, resolves movie metadata from `MOVIE_META`, applies `SPAN_LABELS`, and regenerates:
+`build-scenes-json.py` reads filenames from `assets/medias/videos/movie-scenes/`, resolves movie metadata from `MOVIE_META`, applies `BROAD_LABELS`, and regenerates:
 
 ```text
 assets/data/scenes.json
