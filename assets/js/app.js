@@ -820,7 +820,7 @@
       exact: "exactly",
       before: "before",
       after: "after",
-      approx: "approximately",
+      approx: "around",
     };
 
     return `${labels[scene.precision] || scene.precision} ${target}`;
