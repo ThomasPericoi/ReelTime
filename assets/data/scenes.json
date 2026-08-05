@@ -3,6 +3,26 @@
   "generatedFrom": "movie-scenes filenames",
   "scenes": [
     {
+      "id": "01-00_am_02-00_am_range_the-bfg_001",
+      "src": "assets/medias/videos/movie-scenes/01-00_am_02-00_am_range_the-bfg_001.mp4",
+      "movieTitle": "The BFG",
+      "movieSlug": "the-bfg",
+      "releaseYear": 2016,
+      "director": "Steven Spielberg",
+      "rightsHolder": "Walt Disney Pictures / Amblin Entertainment",
+      "imdbRating": 6.3,
+      "displayTime": "01:00-02:00",
+      "period": "am",
+      "precision": "range",
+      "priority": 4,
+      "spans": [
+        {
+          "start": "01:00",
+          "end": "02:00"
+        }
+      ]
+    },
+    {
       "id": "01-00_am_after_munich_001",
       "src": "assets/medias/videos/movie-scenes/01-00_am_after_munich_001.mp4",
       "movieTitle": "Munich",
@@ -31,6 +51,26 @@
       "director": "James Mangold",
       "rightsHolder": "20th Century Studios",
       "imdbRating": 8.1,
+      "displayTime": "01:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:00",
+          "end": "01:00"
+        }
+      ]
+    },
+    {
+      "id": "01-00_am_exact_thunder-force_001",
+      "src": "assets/medias/videos/movie-scenes/01-00_am_exact_thunder-force_001.mp4",
+      "movieTitle": "Thunder Force",
+      "movieSlug": "thunder-force",
+      "releaseYear": 2021,
+      "director": "Ben Falcone",
+      "rightsHolder": "Netflix",
+      "imdbRating": 4.6,
       "displayTime": "01:00",
       "period": "am",
       "precision": "exact",
@@ -75,6 +115,30 @@
       "director": "Peter Farrelly",
       "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
       "imdbRating": 7.3,
+      "displayTime": "01:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:00",
+          "end": "01:00"
+        },
+        {
+          "start": "13:00",
+          "end": "13:00"
+        }
+      ]
+    },
+    {
+      "id": "01-00_both_exact_requiem-for-a-dream_001",
+      "src": "assets/medias/videos/movie-scenes/01-00_both_exact_requiem-for-a-dream_001.mp4",
+      "movieTitle": "Requiem for a Dream",
+      "movieSlug": "requiem-for-a-dream",
+      "releaseYear": 2000,
+      "director": "Darren Aronofsky",
+      "rightsHolder": "Artisan Entertainment / Lionsgate",
+      "imdbRating": 8.3,
       "displayTime": "01:00",
       "period": "both",
       "precision": "exact",
@@ -599,6 +663,26 @@
       ]
     },
     {
+      "id": "02-00_am_exact_the-limey_001",
+      "src": "assets/medias/videos/movie-scenes/02-00_am_exact_the-limey_001.mp4",
+      "movieTitle": "The Limey",
+      "movieSlug": "the-limey",
+      "releaseYear": 1999,
+      "director": "Steven Soderbergh",
+      "rightsHolder": "Artisan Entertainment / Lionsgate",
+      "imdbRating": 6.9,
+      "displayTime": "02:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:00"
+        }
+      ]
+    },
+    {
       "id": "02-00_am_exact_the-sting_001",
       "src": "assets/medias/videos/movie-scenes/02-00_am_exact_the-sting_001.mp4",
       "movieTitle": "The Sting",
@@ -794,6 +878,30 @@
       "releaseYear": 2019,
       "director": "Martin Scorsese",
       "rightsHolder": "Netflix",
+      "imdbRating": 7.8,
+      "displayTime": "02:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:00"
+        },
+        {
+          "start": "14:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
+      "id": "02-00_both_exact_the-muppet-christmas-carol_001",
+      "src": "assets/medias/videos/movie-scenes/02-00_both_exact_the-muppet-christmas-carol_001.mp4",
+      "movieTitle": "The Muppet Christmas Carol",
+      "movieSlug": "the-muppet-christmas-carol",
+      "releaseYear": 1992,
+      "director": "Brian Henson",
+      "rightsHolder": "Walt Disney Pictures / The Jim Henson Company",
       "imdbRating": 7.8,
       "displayTime": "02:00",
       "period": "both",
@@ -1183,6 +1291,26 @@
       ]
     },
     {
+      "id": "03-00_am_exact_explorers_001",
+      "src": "assets/medias/videos/movie-scenes/03-00_am_exact_explorers_001.mp4",
+      "movieTitle": "Explorers",
+      "movieSlug": "explorers",
+      "releaseYear": 1985,
+      "director": "Joe Dante",
+      "rightsHolder": "Paramount Pictures",
+      "imdbRating": 6.4,
+      "displayTime": "03:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        }
+      ]
+    },
+    {
       "id": "03-00_am_exact_the-master_001",
       "src": "assets/medias/videos/movie-scenes/03-00_am_exact_the-master_001.mp4",
       "movieTitle": "The Master",
@@ -1351,6 +1479,30 @@
       "director": "Barry Levinson",
       "rightsHolder": "MGM / United Artists",
       "imdbRating": 8.0,
+      "displayTime": "03:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:00",
+          "end": "03:00"
+        },
+        {
+          "start": "15:00",
+          "end": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "03-00_both_exact_raising-cain_001",
+      "src": "assets/medias/videos/movie-scenes/03-00_both_exact_raising-cain_001.mp4",
+      "movieTitle": "Raising Cain",
+      "movieSlug": "raising-cain",
+      "releaseYear": 1992,
+      "director": "Brian De Palma",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.1,
       "displayTime": "03:00",
       "period": "both",
       "precision": "exact",
@@ -1943,6 +2095,30 @@
       ]
     },
     {
+      "id": "04-00_both_exact_twilight-eclipse_001",
+      "src": "assets/medias/videos/movie-scenes/04-00_both_exact_twilight-eclipse_001.mp4",
+      "movieTitle": "The Twilight Saga: Eclipse",
+      "movieSlug": "twilight-eclipse",
+      "releaseYear": 2010,
+      "director": "David Slade",
+      "rightsHolder": "Summit Entertainment / Lionsgate",
+      "imdbRating": 5.1,
+      "displayTime": "04:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "04:00",
+          "end": "04:00"
+        },
+        {
+          "start": "16:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
       "id": "04-05_both_exact_mommie-dearest_001",
       "src": "assets/medias/videos/movie-scenes/04-05_both_exact_mommie-dearest_001.mp4",
       "movieTitle": "Mommie Dearest",
@@ -2343,6 +2519,26 @@
       ]
     },
     {
+      "id": "05-00_am_exact_monster_001",
+      "src": "assets/medias/videos/movie-scenes/05-00_am_exact_monster_001.mp4",
+      "movieTitle": "Monster",
+      "movieSlug": "monster",
+      "releaseYear": 2003,
+      "director": "Patty Jenkins",
+      "rightsHolder": "Newmarket Films / Lionsgate",
+      "imdbRating": 7.3,
+      "displayTime": "05:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "05:00"
+        }
+      ]
+    },
+    {
       "id": "05-00_am_exact_sunset-boulevard_001",
       "src": "assets/medias/videos/movie-scenes/05-00_am_exact_sunset-boulevard_001.mp4",
       "movieTitle": "Sunset Boulevard",
@@ -2467,6 +2663,30 @@
       "director": "Robert Zemeckis",
       "rightsHolder": "Walt Disney Pictures",
       "imdbRating": 5.1,
+      "displayTime": "05:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "05:00",
+          "end": "05:00"
+        },
+        {
+          "start": "17:00",
+          "end": "17:00"
+        }
+      ]
+    },
+    {
+      "id": "05-00_both_exact_spy-kids-all-the-time-in-the-world_001",
+      "src": "assets/medias/videos/movie-scenes/05-00_both_exact_spy-kids-all-the-time-in-the-world_001.mp4",
+      "movieTitle": "Spy Kids 4: All the Time in the World",
+      "movieSlug": "spy-kids-all-the-time-in-the-world",
+      "releaseYear": 2011,
+      "director": "Robert Rodriguez",
+      "rightsHolder": "Dimension Films / The Weinstein Company",
+      "imdbRating": 3.6,
       "displayTime": "05:00",
       "period": "both",
       "precision": "exact",
@@ -2879,6 +3099,30 @@
       ]
     },
     {
+      "id": "06-00_both_before_scrooge-a-christmas-carol_001",
+      "src": "assets/medias/videos/movie-scenes/06-00_both_before_scrooge-a-christmas-carol_001.mp4",
+      "movieTitle": "Scrooge: A Christmas Carol",
+      "movieSlug": "scrooge-a-christmas-carol",
+      "releaseYear": 2022,
+      "director": "Stephen Donnelly",
+      "rightsHolder": "Netflix",
+      "imdbRating": 6.2,
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "05:55",
+          "end": "06:00"
+        },
+        {
+          "start": "17:55",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
       "id": "06-00_both_before_the-age-of-innocence_001",
       "src": "assets/medias/videos/movie-scenes/06-00_both_before_the-age-of-innocence_001.mp4",
       "movieTitle": "The Age of Innocence",
@@ -2983,6 +3227,30 @@
       "director": "Tommy Lee Wallace",
       "rightsHolder": "Universal Pictures",
       "imdbRating": 5.2,
+      "displayTime": "06:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:00",
+          "end": "06:00"
+        },
+        {
+          "start": "18:00",
+          "end": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "06-00_both_exact_the-bounty_001",
+      "src": "assets/medias/videos/movie-scenes/06-00_both_exact_the-bounty_001.mp4",
+      "movieTitle": "The Bounty",
+      "movieSlug": "the-bounty",
+      "releaseYear": 1984,
+      "director": "Roger Donaldson",
+      "rightsHolder": "Dino De Laurentiis Company / MGM",
+      "imdbRating": 7.1,
       "displayTime": "06:00",
       "period": "both",
       "precision": "exact",
@@ -3955,6 +4223,30 @@
       ]
     },
     {
+      "id": "08-00_both_exact_angels-and-demons_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_both_exact_angels-and-demons_001.mp4",
+      "movieTitle": "Angels & Demons",
+      "movieSlug": "angels-and-demons",
+      "releaseYear": 2009,
+      "director": "Ron Howard",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 6.7,
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_exact_back-to-the-future-part-3_001",
       "src": "assets/medias/videos/movie-scenes/08-00_both_exact_back-to-the-future-part-3_001.mp4",
       "movieTitle": "Back to the Future Part III",
@@ -4051,6 +4343,30 @@
       ]
     },
     {
+      "id": "08-00_both_exact_charlie-s-angels_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_both_exact_charlie-s-angels_001.mp4",
+      "movieTitle": "Charlie's Angels",
+      "movieSlug": "charlie-s-angels",
+      "releaseYear": 2000,
+      "director": "McG",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 5.7,
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_exact_ed-wood_001",
       "src": "assets/medias/videos/movie-scenes/08-00_both_exact_ed-wood_001.mp4",
       "movieTitle": "Ed Wood",
@@ -4099,6 +4415,30 @@
       ]
     },
     {
+      "id": "08-00_both_exact_superman_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_both_exact_superman_001.mp4",
+      "movieTitle": "Superman",
+      "movieSlug": "superman",
+      "releaseYear": 1978,
+      "director": "Richard Donner",
+      "rightsHolder": "Warner Bros. Pictures / DC",
+      "imdbRating": 7.4,
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_exact_trick-r-treat_001",
       "src": "assets/medias/videos/movie-scenes/08-00_both_exact_trick-r-treat_001.mp4",
       "movieTitle": "Trick 'r Treat",
@@ -4116,6 +4456,66 @@
           "start": "08:00",
           "end": "08:00"
         },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "08-00_pm_after_julius-caesar_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_pm_after_julius-caesar_001.mp4",
+      "movieTitle": "Julius Caesar",
+      "movieSlug": "julius-caesar",
+      "releaseYear": 1953,
+      "director": "Joseph L. Mankiewicz",
+      "rightsHolder": "MGM",
+      "imdbRating": 7.2,
+      "displayTime": "08:00",
+      "period": "pm",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "20:00",
+          "end": "20:05"
+        }
+      ]
+    },
+    {
+      "id": "08-00_pm_exact_octopussy_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_pm_exact_octopussy_001.mp4",
+      "movieTitle": "Octopussy",
+      "movieSlug": "octopussy",
+      "releaseYear": 1983,
+      "director": "John Glen",
+      "rightsHolder": "Eon Productions / MGM",
+      "imdbRating": 6.5,
+      "displayTime": "08:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "08-00_pm_exact_penguins-of-madagascar_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_pm_exact_penguins-of-madagascar_001.mp4",
+      "movieTitle": "Penguins of Madagascar",
+      "movieSlug": "penguins-of-madagascar",
+      "releaseYear": 2014,
+      "director": "Eric Darnell and Simon J. Smith",
+      "rightsHolder": "DreamWorks Animation / 20th Century Fox",
+      "imdbRating": 6.7,
+      "displayTime": "08:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "20:00",
           "end": "20:00"

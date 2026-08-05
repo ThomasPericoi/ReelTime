@@ -192,9 +192,12 @@
 
     <aside id="playbackStatus" class="status" aria-label="Playback details" hidden>
       <div id="currentCredit" class="status__credit" hidden>
-        <p id="overlayMatch" class="status__match"></p>
-        <p id="overlayMovie" class="status__movie"></p>
-        <p id="overlayDetails" class="status__details"></p>
+        <img id="overlayPoster" class="status__poster" alt="" loading="lazy" decoding="async" hidden>
+        <div class="status__copy">
+          <p id="overlayMatch" class="status__match"></p>
+          <p id="overlayMovie" class="status__movie"></p>
+          <p id="overlayDetails" class="status__details"></p>
+        </div>
         <button id="replayButton" class="button button--replay" type="button" aria-label="Replay this scene" hidden>
           <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

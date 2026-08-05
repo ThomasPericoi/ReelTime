@@ -26,8 +26,8 @@ The project is intentionally compact: plain static files, no framework, no build
 
 Current library statistics:
 
-* Total scenes: **361**
-* Exact-time scenes: **269**
+* Total scenes: **379**
+* Exact-time scenes: **284**
 * Exact minutes covered: **204 / 1440**
 * Exact-time coverage: **14.2%**
 
@@ -110,6 +110,20 @@ approx
 before
 after
 ```
+
+### Range scenes use
+
+```text
+HH-MM_start-period_HH-MM_end-period_range_movie-slug_###.mp4
+```
+
+Example:
+
+```text
+01-00_am_02-00_am_range_the-bfg_001.mp4
+```
+
+Range scenes are only used as arrival fallbacks. They are not part of the ongoing playlist after the first scene.
 
 ### Broad scenes use
 

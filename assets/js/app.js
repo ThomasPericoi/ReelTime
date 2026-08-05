@@ -22,6 +22,7 @@
     playbackStatus: "#playbackStatus",
     currentCredit: "#currentCredit",
     overlayMatch: "#overlayMatch",
+    overlayPoster: "#overlayPoster",
     overlayMovie: "#overlayMovie",
     overlayDetails: "#overlayDetails",
     nextCountdown: "#nextCountdown",
@@ -85,6 +86,7 @@
     "american-made.jpg",
     "american-psycho.jpg",
     "and-justice-for-all.jpg",
+    "angels-and-demons.jpg",
     "annie.jpg",
     "anora.jpg",
     "ant-man-and-the-wasp-quantumania.jpg",
@@ -112,6 +114,7 @@
     "carrie.jpg",
     "casablanca.jpg",
     "cast-away.jpg",
+    "charlie-s-angels.jpg",
     "chef.jpg",
     "child-s-play.jpg",
     "citizen-kane.jpg",
@@ -133,6 +136,7 @@
     "eternal-sunshine-of-the-spotless-mind.jpg",
     "evil-dead-2.jpg",
     "ex-machina.jpg",
+    "explorers.webp",
     "eyes-wide-shut.jpg",
     "fantastic-mister-fox.jpg",
     "fargo.jpg",
@@ -169,6 +173,7 @@
     "into-the-wild.jpg",
     "jacob-s-ladder.jpg",
     "jaws.jpg",
+    "julius-caesar.jpg",
     "jumpin-jack-flash.jpg",
     "k-pax.jpg",
     "labyrinth.jpg",
@@ -195,6 +200,7 @@
     "mission-impossible-3.jpg",
     "mommie-dearest.jpg",
     "mona-lisa-smile.jpg",
+    "monster.jpg",
     "moonrise-kingdom.jpg",
     "mulholland-drive.jpg",
     "munich.jpg",
@@ -209,10 +215,12 @@
     "novocaine.jpg",
     "ocean-s-eleven.jpg",
     "ocean-s-twelve.jpg",
+    "octopussy.jpg",
     "once-upon-a-time-in-america.jpg",
     "once-upon-a-time-in-hollywood.jpg",
     "paddington.jpg",
     "paris-texas.jpg",
+    "penguins-of-madagascar.jpg",
     "percy-jackson.jpg",
     "pig.jpg",
     "pinocchio.jpg",
@@ -223,7 +231,9 @@
     "pulp-fiction.jpg",
     "quick-change.jpg",
     "rainman.jpg",
+    "raising-cain.jpg",
     "rear-window.jpg",
+    "requiem-for-a-dream.jpg",
     "road-house.jpg",
     "robin-hood.jpg",
     "robocop-2.jpg",
@@ -235,6 +245,7 @@
     "scarface.jpg",
     "school-ties.jpg",
     "scott-pilgrim-vs-the-world.jpg",
+    "scrooge-a-christmas-carol.jpg",
     "scrooge.jpg",
     "sergeant-york.jpg",
     "shaun-of-the-dead.jpg",
@@ -248,9 +259,11 @@
     "some-like-it-hot.jpg",
     "spirited.jpg",
     "spotlight.jpg",
+    "spy-kids-all-the-time-in-the-world.jpg",
     "stand-by-me.jpg",
     "sunset-boulevard.jpg",
     "superbad.jpg",
+    "superman.jpg",
     "taxi-driver.jpg",
     "ted.jpg",
     "tenet.jpg",
@@ -259,7 +272,9 @@
     "the-aviator.jpg",
     "the-babadook.jpg",
     "the-banshees-of-inisherin.jpg",
+    "the-bfg.jpg",
     "the-blues-brothers.jpg",
+    "the-bounty.jpg",
     "the-breakfast-club.jpg",
     "the-cat-in-the-hat.jpg",
     "the-change-up.jpg",
@@ -279,6 +294,7 @@
     "the-iron-giant.jpg",
     "the-kids-are-all-right.jpg",
     "the-lego-batman-movie.jpg",
+    "the-limey.jpg",
     "the-lobster.jpg",
     "the-lord-of-rings-the-two-towers.jpg",
     "the-lost-daughter.jpg",
@@ -286,9 +302,11 @@
     "the-martian.jpg",
     "the-master.jpg",
     "the-mist.jpg",
+    "the-muppet-christmas-carol.jpg",
     "the-notebook.jpg",
     "the-road.jpg",
     "the-rocky-horror-picture-show.jpg",
+    "the-shining.jpg",
     "the-social-network.jpg",
     "the-space-children.jpg",
     "the-spongebob-movie-sponge-out-of-water.jpg",
@@ -300,11 +318,13 @@
     "the-world-s-end.jpg",
     "thelma-and-louise.jpg",
     "there-will-be-blood.jpg",
+    "thunder-force.jpg",
     "to-kill-a-mockingbird.jpg",
     "trading-places.jpg",
     "trainspotting-2.jpg",
     "true-grit.jpg",
     "true-lies.jpg",
+    "twilight-eclipse.jpg",
     "under-the-skin.jpg",
     "unfriended.jpg",
     "us.jpg",
@@ -398,7 +418,11 @@
       const library = await loadSceneLibrary();
       state.scenes = library.scenes.map(normalizeScene).sort(sortScenes);
       installConsoleApi();
-      el.startMessage.textContent = "A talking clock made of movie scenes. Leave it open and wait for cinema to tell you the time.";
+      el.startMessage.innerHTML = [
+        "A talking clock made of movie scenes.",
+        "Leave it open and wait for cinema to tell you the time.",
+        `${state.scenes.length} scenes are waiting in the projection booth.`,
+      ].join("<br>");
       el.startButton.disabled = false;
     } catch {
       el.startMessage.textContent = "Could not load the scene library. Check that assets/data/scenes-data.js is available.";
@@ -458,6 +482,10 @@
     img.loading = "lazy";
     img.decoding = "async";
     return img;
+  }
+
+  function posterFileForScene(scene) {
+    return POSTER_FILES.find((file) => file.startsWith(`${scene.movieSlug}.`));
   }
 
   /*____________________________________ SCENE LIBRARY ____________________________________*/
@@ -764,6 +792,14 @@
     }
 
     const referenceSpan = matchingSpan(scene, date) || scene.spans[0];
+
+    if (scene.precision === "range") {
+      return state.scenes.filter((candidate) =>
+        candidate.precision === "range" &&
+        candidate.spans.some((span) => span.start === referenceSpan.start && span.end === referenceSpan.end),
+      ).length;
+    }
+
     const referenceTarget = sceneTargetMinute(scene, referenceSpan);
 
     return state.scenes.filter((candidate) =>
@@ -777,13 +813,14 @@
     if (scene.precision === "broad") return scene.displayTime.toLowerCase();
 
     const span = matchingSpan(scene, date) || scene.spans[0];
+    if (scene.precision === "range") return `between ${rangeTimeLabel(span)}`;
+
     const target = sceneTargetTime(scene, span);
     const labels = {
       exact: "exactly",
       before: "before",
       after: "after",
       approx: "approximately",
-      range: "around",
     };
 
     return `${labels[scene.precision] || scene.precision} ${target}`;
@@ -988,6 +1025,13 @@
   function setCreditOverlay(scene, contextDate) {
     showPlaybackStatus();
     el.currentCredit.hidden = false;
+    const posterFile = posterFileForScene(scene);
+    el.currentCredit.classList.toggle("has-poster", Boolean(posterFile));
+    el.overlayPoster.hidden = !posterFile;
+    if (posterFile) {
+      el.overlayPoster.src = `${POSTER_BASE_PATH}${posterFile}`;
+      el.overlayPoster.alt = `${scene.movieTitle} poster`;
+    }
     el.overlayMatch.textContent = sceneMatchLine(scene, contextDate);
     el.overlayMovie.textContent = filmTitleLine(scene);
     el.overlayDetails.textContent = creditLine(scene);
@@ -995,6 +1039,10 @@
 
   function clearCreditOverlay() {
     el.currentCredit.hidden = true;
+    el.currentCredit.classList.remove("has-poster");
+    el.overlayPoster.hidden = true;
+    el.overlayPoster.removeAttribute("src");
+    el.overlayPoster.alt = "";
     el.overlayMatch.textContent = "";
     el.overlayMovie.textContent = "";
     el.overlayDetails.textContent = "";
@@ -1106,25 +1154,30 @@
   }
 
   function sceneMatchLine(scene, date = new Date()) {
-    if (scene.precision === "fallback") return "Best time match: Lost track of time";
-    if (scene.precision === "broad") return `Best time match: ${scene.displayTime}`;
+    if (scene.precision === "fallback") return "Best match: Lost track of time";
+    if (scene.precision === "broad") return `Best match: ${scene.displayTime}`;
 
     const span = matchingSpan(scene, date) || scene.spans[0];
+    if (scene.precision === "range") return `Best match: Between ${rangeTimeLabel(span)}`;
+
     const target = sceneTargetTime(scene, span);
     const labels = {
       exact: "Exactly",
       before: "Before",
       after: "After",
-      approx: "Approximately",
-      range: "Around",
+      approx: "Around",
     };
 
-    return `Best time match: ${labels[scene.precision] || titleCase(scene.precision)} ${target}`;
+    return `Best match: ${labels[scene.precision] || titleCase(scene.precision)} ${target}`;
   }
 
   function matchingSpan(scene, date) {
     const minute = date.getHours() * 60 + date.getMinutes();
     return scene.spans.find((span) => coversSpanMinute(span, minute));
+  }
+
+  function rangeTimeLabel(span) {
+    return `${formatSceneTime(span.start)} and ${formatSceneTime(span.end)}`;
   }
 
   function sceneTargetTime(scene, span) {
