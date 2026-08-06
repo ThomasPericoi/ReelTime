@@ -381,7 +381,7 @@ video {
   gap: clamp(0.5rem, 1.25vw, 1rem);
   opacity: 0;
   transform: translate(-50%, -50%) rotate(-7deg) scale(1.06);
-  transition: opacity 1.4s ease;
+  transition: opacity 3s ease;
   transform-origin: center;
   filter: sepia(0.22) saturate(0.74) brightness(0.72) contrast(1.08);
   overflow: hidden;
@@ -389,7 +389,7 @@ video {
 }
 
 .poster-wall.is-visible {
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 .poster-wall__column {
@@ -951,7 +951,6 @@ video {
   grid-column: 1 / -1;
   justify-self: start;
   min-height: 0;
-  margin-top: 1rem;
   padding: 0;
   flex: 0 0 auto;
   color: var(--paper-muted);

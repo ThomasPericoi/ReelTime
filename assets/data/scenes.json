@@ -38,7 +38,7 @@
       "spans": [
         {
           "start": "01:00",
-          "end": "01:05"
+          "end": "01:07"
         }
       ]
     },
@@ -97,11 +97,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "00:55",
+          "start": "00:53",
           "end": "01:00"
         },
         {
-          "start": "12:55",
+          "start": "12:53",
           "end": "13:00"
         }
       ]
@@ -218,7 +218,7 @@
       "spans": [
         {
           "start": "13:00",
-          "end": "13:05"
+          "end": "13:07"
         }
       ]
     },
@@ -283,6 +283,26 @@
         {
           "start": "13:06",
           "end": "13:06"
+        }
+      ]
+    },
+    {
+      "id": "01-08_am_exact_molly-s-game_001",
+      "src": "assets/medias/videos/movie-scenes/01-08_am_exact_molly-s-game_001.mp4",
+      "movieTitle": "Molly's Game",
+      "movieSlug": "molly-s-game",
+      "releaseYear": 2017,
+      "director": "Aaron Sorkin",
+      "rightsHolder": "STX Entertainment",
+      "imdbRating": 7.4,
+      "displayTime": "01:08",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:08",
+          "end": "01:08"
         }
       ]
     },
@@ -463,6 +483,26 @@
       ]
     },
     {
+      "id": "01-30_am_exact_singin-in-the-rain_001",
+      "src": "assets/medias/videos/movie-scenes/01-30_am_exact_singin-in-the-rain_001.mp4",
+      "movieTitle": "Singin' in the Rain",
+      "movieSlug": "singin-in-the-rain",
+      "releaseYear": 1952,
+      "director": "Stanley Donen and Gene Kelly",
+      "rightsHolder": "MGM / Warner Bros. Discovery",
+      "imdbRating": 8.3,
+      "displayTime": "01:30",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:30",
+          "end": "01:30"
+        }
+      ]
+    },
+    {
       "id": "01-30_both_exact_blue-velvet_001",
       "src": "assets/medias/videos/movie-scenes/01-30_both_exact_blue-velvet_001.mp4",
       "movieTitle": "Blue Velvet",
@@ -535,6 +575,50 @@
       ]
     },
     {
+      "id": "01-33_both_exact_swimfan_001",
+      "src": "assets/medias/videos/movie-scenes/01-33_both_exact_swimfan_001.mp4",
+      "movieTitle": "Swimfan",
+      "movieSlug": "swimfan",
+      "releaseYear": 2002,
+      "director": "John Polson",
+      "rightsHolder": "20th Century Studios",
+      "imdbRating": 5.1,
+      "displayTime": "01:33",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:33",
+          "end": "01:33"
+        },
+        {
+          "start": "13:33",
+          "end": "13:33"
+        }
+      ]
+    },
+    {
+      "id": "01-37_am_exact_the-punisher_001",
+      "src": "assets/medias/videos/movie-scenes/01-37_am_exact_the-punisher_001.mp4",
+      "movieTitle": "The Punisher",
+      "movieSlug": "the-punisher",
+      "releaseYear": 2004,
+      "director": "Jonathan Hensleigh",
+      "rightsHolder": "Lionsgate / Marvel Enterprises",
+      "imdbRating": 6.4,
+      "displayTime": "01:37",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "01:37",
+          "end": "01:37"
+        }
+      ]
+    },
+    {
       "id": "01-45_both_exact_rock-n-roll-high-school_001",
       "src": "assets/medias/videos/movie-scenes/01-45_both_exact_rock-n-roll-high-school_001.mp4",
       "movieTitle": "Rock 'n' Roll High School",
@@ -597,8 +681,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "01:55",
-          "end": "02:05"
+          "start": "01:53",
+          "end": "02:07"
         }
       ]
     },
@@ -699,6 +783,30 @@
         {
           "start": "02:00",
           "end": "02:00"
+        }
+      ]
+    },
+    {
+      "id": "02-00_both_after_the-sting_001",
+      "src": "assets/medias/videos/movie-scenes/02-00_both_after_the-sting_001.mp4",
+      "movieTitle": "The Sting",
+      "movieSlug": "the-sting",
+      "releaseYear": 1973,
+      "director": "George Roy Hill",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 8.2,
+      "displayTime": "02:00",
+      "period": "both",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:07"
+        },
+        {
+          "start": "14:00",
+          "end": "14:07"
         }
       ]
     },
@@ -871,6 +979,30 @@
       ]
     },
     {
+      "id": "02-00_both_exact_the-hurricane_001",
+      "src": "assets/medias/videos/movie-scenes/02-00_both_exact_the-hurricane_001.mp4",
+      "movieTitle": "The Hurricane",
+      "movieSlug": "the-hurricane",
+      "releaseYear": 1999,
+      "director": "Norman Jewison",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 7.6,
+      "displayTime": "02:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:00",
+          "end": "02:00"
+        },
+        {
+          "start": "14:00",
+          "end": "14:00"
+        }
+      ]
+    },
+    {
       "id": "02-00_both_exact_the-irishman_001",
       "src": "assets/medias/videos/movie-scenes/02-00_both_exact_the-irishman_001.mp4",
       "movieTitle": "The Irishman",
@@ -959,6 +1091,26 @@
       ]
     },
     {
+      "id": "02-02_am_exact_the-ringer_001",
+      "src": "assets/medias/videos/movie-scenes/02-02_am_exact_the-ringer_001.mp4",
+      "movieTitle": "The Ringer",
+      "movieSlug": "the-ringer",
+      "releaseYear": 2005,
+      "director": "Barry W. Blaustein",
+      "rightsHolder": "Searchlight Pictures",
+      "imdbRating": 5.8,
+      "displayTime": "02:02",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "02:02",
+          "end": "02:02"
+        }
+      ]
+    },
+    {
       "id": "02-15_both_exact_little-miss-sunshine_001",
       "src": "assets/medias/videos/movie-scenes/02-15_both_exact_little-miss-sunshine_001.mp4",
       "movieTitle": "Little Miss Sunshine",
@@ -1037,11 +1189,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "02:25",
+          "start": "02:23",
           "end": "02:30"
         },
         {
-          "start": "14:25",
+          "start": "14:23",
           "end": "14:30"
         }
       ]
@@ -1246,7 +1398,7 @@
       "spans": [
         {
           "start": "03:00",
-          "end": "03:05"
+          "end": "03:07"
         }
       ]
     },
@@ -1366,11 +1518,11 @@
       "spans": [
         {
           "start": "03:00",
-          "end": "03:05"
+          "end": "03:07"
         },
         {
           "start": "15:00",
-          "end": "15:05"
+          "end": "15:07"
         }
       ]
     },
@@ -1707,6 +1859,30 @@
       ]
     },
     {
+      "id": "03-07_both_exact_jackie-brown_001",
+      "src": "assets/medias/videos/movie-scenes/03-07_both_exact_jackie-brown_001.mp4",
+      "movieTitle": "Jackie Brown",
+      "movieSlug": "jackie-brown",
+      "releaseYear": 1997,
+      "director": "Quentin Tarantino",
+      "rightsHolder": "Miramax",
+      "imdbRating": 7.5,
+      "displayTime": "03:07",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:07",
+          "end": "03:07"
+        },
+        {
+          "start": "15:07",
+          "end": "15:07"
+        }
+      ]
+    },
+    {
       "id": "03-08_both_exact_the-conjuring_001",
       "src": "assets/medias/videos/movie-scenes/03-08_both_exact_the-conjuring_001.mp4",
       "movieTitle": "The Conjuring",
@@ -1767,6 +1943,54 @@
         {
           "start": "15:20",
           "end": "15:20"
+        }
+      ]
+    },
+    {
+      "id": "03-22_both_exact_national-treasure_001",
+      "src": "assets/medias/videos/movie-scenes/03-22_both_exact_national-treasure_001.mp4",
+      "movieTitle": "National Treasure",
+      "movieSlug": "national-treasure",
+      "releaseYear": 2004,
+      "director": "Jon Turteltaub",
+      "rightsHolder": "Walt Disney Pictures",
+      "imdbRating": 6.9,
+      "displayTime": "03:22",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:22",
+          "end": "03:22"
+        },
+        {
+          "start": "15:22",
+          "end": "15:22"
+        }
+      ]
+    },
+    {
+      "id": "03-25_both_exact_election_001",
+      "src": "assets/medias/videos/movie-scenes/03-25_both_exact_election_001.mp4",
+      "movieTitle": "Election",
+      "movieSlug": "election",
+      "releaseYear": 1999,
+      "director": "Alexander Payne",
+      "rightsHolder": "Paramount Pictures",
+      "imdbRating": 7.2,
+      "displayTime": "03:25",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "03:25",
+          "end": "03:25"
+        },
+        {
+          "start": "15:25",
+          "end": "15:25"
         }
       ]
     },
@@ -1935,6 +2159,26 @@
       ]
     },
     {
+      "id": "03-55_pm_exact_ghost_001",
+      "src": "assets/medias/videos/movie-scenes/03-55_pm_exact_ghost_001.mp4",
+      "movieTitle": "Ghost",
+      "movieSlug": "ghost",
+      "releaseYear": 1990,
+      "director": "Jerry Zucker",
+      "rightsHolder": "Paramount Pictures",
+      "imdbRating": 7.1,
+      "displayTime": "03:55",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "15:55",
+          "end": "15:55"
+        }
+      ]
+    },
+    {
       "id": "04-00_am_exact_nocturnal-animals_001",
       "src": "assets/medias/videos/movie-scenes/04-00_am_exact_nocturnal-animals_001.mp4",
       "movieTitle": "Nocturnal Animals",
@@ -1989,12 +2233,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "03:55",
-          "end": "04:05"
+          "start": "03:53",
+          "end": "04:07"
         },
         {
-          "start": "15:55",
-          "end": "16:05"
+          "start": "15:53",
+          "end": "16:07"
         }
       ]
     },
@@ -2013,11 +2257,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "03:55",
+          "start": "03:53",
           "end": "04:00"
         },
         {
-          "start": "15:55",
+          "start": "15:53",
           "end": "16:00"
         }
       ]
@@ -2037,11 +2281,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "03:55",
+          "start": "03:53",
           "end": "04:00"
         },
         {
-          "start": "15:55",
+          "start": "15:53",
           "end": "16:00"
         }
       ]
@@ -2112,6 +2356,26 @@
           "start": "04:00",
           "end": "04:00"
         },
+        {
+          "start": "16:00",
+          "end": "16:00"
+        }
+      ]
+    },
+    {
+      "id": "04-00_pm_exact_bullet-train_001",
+      "src": "assets/medias/videos/movie-scenes/04-00_pm_exact_bullet-train_001.mp4",
+      "movieTitle": "Bullet Train",
+      "movieSlug": "bullet-train",
+      "releaseYear": 2022,
+      "director": "David Leitch",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 7.3,
+      "displayTime": "04:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "16:00",
           "end": "16:00"
@@ -2573,12 +2837,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "04:55",
-          "end": "05:05"
+          "start": "04:53",
+          "end": "05:07"
         },
         {
-          "start": "16:55",
-          "end": "17:05"
+          "start": "16:53",
+          "end": "17:07"
         }
       ]
     },
@@ -2597,11 +2861,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "04:55",
+          "start": "04:53",
           "end": "05:00"
         },
         {
-          "start": "16:55",
+          "start": "16:53",
           "end": "17:00"
         }
       ]
@@ -2703,14 +2967,14 @@
       ]
     },
     {
-      "id": "05-00_both_exact_the-father_001",
-      "src": "assets/medias/videos/movie-scenes/05-00_both_exact_the-father_001.mp4",
-      "movieTitle": "The Father",
-      "movieSlug": "the-father",
-      "releaseYear": 2020,
-      "director": "Florian Zeller",
-      "rightsHolder": "Sony Pictures Classics",
-      "imdbRating": 8.2,
+      "id": "05-00_both_exact_the-curious-case-of-benjamin-button_001",
+      "src": "assets/medias/videos/movie-scenes/05-00_both_exact_the-curious-case-of-benjamin-button_001.mp4",
+      "movieTitle": "The Curious Case of Benjamin Button",
+      "movieSlug": "the-curious-case-of-benjamin-button",
+      "releaseYear": 2008,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "imdbRating": 7.8,
       "displayTime": "05:00",
       "period": "both",
       "precision": "exact",
@@ -2727,14 +2991,14 @@
       ]
     },
     {
-      "id": "05-00_both_exact_the-strange-case-of-benjamin-button_001",
-      "src": "assets/medias/videos/movie-scenes/05-00_both_exact_the-strange-case-of-benjamin-button_001.mp4",
-      "movieTitle": "The Curious Case of Benjamin Button",
-      "movieSlug": "the-strange-case-of-benjamin-button",
-      "releaseYear": 2008,
-      "director": "David Fincher",
-      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
-      "imdbRating": 7.8,
+      "id": "05-00_both_exact_the-father_001",
+      "src": "assets/medias/videos/movie-scenes/05-00_both_exact_the-father_001.mp4",
+      "movieTitle": "The Father",
+      "movieSlug": "the-father",
+      "releaseYear": 2020,
+      "director": "Florian Zeller",
+      "rightsHolder": "Sony Pictures Classics",
+      "imdbRating": 8.2,
       "displayTime": "05:00",
       "period": "both",
       "precision": "exact",
@@ -2935,6 +3199,26 @@
       ]
     },
     {
+      "id": "05-45_pm_exact_elysium_001",
+      "src": "assets/medias/videos/movie-scenes/05-45_pm_exact_elysium_001.mp4",
+      "movieTitle": "Elysium",
+      "movieSlug": "elysium",
+      "releaseYear": 2013,
+      "director": "Neill Blomkamp",
+      "rightsHolder": "TriStar Pictures / Sony Pictures",
+      "imdbRating": 6.6,
+      "displayTime": "05:45",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "17:45",
+          "end": "17:45"
+        }
+      ]
+    },
+    {
       "id": "06-00_am_exact_american-made_001",
       "src": "assets/medias/videos/movie-scenes/06-00_am_exact_american-made_001.mp4",
       "movieTitle": "American Made",
@@ -3090,11 +3374,11 @@
       "spans": [
         {
           "start": "06:00",
-          "end": "06:05"
+          "end": "06:07"
         },
         {
           "start": "18:00",
-          "end": "18:05"
+          "end": "18:07"
         }
       ]
     },
@@ -3113,11 +3397,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "05:55",
+          "start": "05:53",
           "end": "06:00"
         },
         {
-          "start": "17:55",
+          "start": "17:53",
           "end": "18:00"
         }
       ]
@@ -3137,11 +3421,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "05:55",
+          "start": "05:53",
           "end": "06:00"
         },
         {
-          "start": "17:55",
+          "start": "17:53",
           "end": "18:00"
         }
       ]
@@ -3161,11 +3445,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "05:55",
+          "start": "05:53",
           "end": "06:00"
         },
         {
-          "start": "17:55",
+          "start": "17:53",
           "end": "18:00"
         }
       ]
@@ -3311,6 +3595,30 @@
       ]
     },
     {
+      "id": "06-07_both_exact_every-which-way-but-loose_001",
+      "src": "assets/medias/videos/movie-scenes/06-07_both_exact_every-which-way-but-loose_001.mp4",
+      "movieTitle": "Every Which Way but Loose",
+      "movieSlug": "every-which-way-but-loose",
+      "releaseYear": 1978,
+      "director": "James Fargo",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 6.3,
+      "displayTime": "06:07",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "06:07",
+          "end": "06:07"
+        },
+        {
+          "start": "18:07",
+          "end": "18:07"
+        }
+      ]
+    },
+    {
       "id": "06-10_both_exact_sergeant-york_001",
       "src": "assets/medias/videos/movie-scenes/06-10_both_exact_sergeant-york_001.mp4",
       "movieTitle": "Sergeant York",
@@ -3413,12 +3721,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "06:25",
-          "end": "06:35"
+          "start": "06:23",
+          "end": "06:37"
         },
         {
-          "start": "18:25",
-          "end": "18:35"
+          "start": "18:23",
+          "end": "18:37"
         }
       ]
     },
@@ -3598,11 +3906,11 @@
       "spans": [
         {
           "start": "07:00",
-          "end": "07:05"
+          "end": "07:07"
         },
         {
           "start": "19:00",
-          "end": "19:05"
+          "end": "19:07"
         }
       ]
     },
@@ -3621,11 +3929,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "06:55",
+          "start": "06:53",
           "end": "07:00"
         },
         {
-          "start": "18:55",
+          "start": "18:53",
           "end": "19:00"
         }
       ]
@@ -3887,6 +4195,26 @@
       ]
     },
     {
+      "id": "07-15_pm_exact_dragnet_001",
+      "src": "assets/medias/videos/movie-scenes/07-15_pm_exact_dragnet_001.mp4",
+      "movieTitle": "Dragnet",
+      "movieSlug": "dragnet",
+      "releaseYear": 1987,
+      "director": "Tom Mankiewicz",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.0,
+      "displayTime": "07:15",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "19:15",
+          "end": "19:15"
+        }
+      ]
+    },
+    {
       "id": "07-22_am_exact_pulp-fiction_001",
       "src": "assets/medias/videos/movie-scenes/07-22_am_exact_pulp-fiction_001.mp4",
       "movieTitle": "Pulp Fiction",
@@ -3969,7 +4297,7 @@
       "priority": 2,
       "spans": [
         {
-          "start": "19:25",
+          "start": "19:23",
           "end": "19:30"
         }
       ]
@@ -4029,12 +4357,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:40",
-          "end": "07:50"
+          "start": "07:38",
+          "end": "07:52"
         },
         {
-          "start": "19:40",
-          "end": "19:50"
+          "start": "19:38",
+          "end": "19:52"
         }
       ]
     },
@@ -4078,7 +4406,7 @@
       "spans": [
         {
           "start": "08:00",
-          "end": "08:05"
+          "end": "08:07"
         }
       ]
     },
@@ -4117,12 +4445,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:55",
-          "end": "08:05"
+          "start": "07:53",
+          "end": "08:07"
         },
         {
-          "start": "19:55",
-          "end": "20:05"
+          "start": "19:53",
+          "end": "20:07"
         }
       ]
     },
@@ -4141,12 +4469,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:55",
-          "end": "08:05"
+          "start": "07:53",
+          "end": "08:07"
         },
         {
-          "start": "19:55",
-          "end": "20:05"
+          "start": "19:53",
+          "end": "20:07"
         }
       ]
     },
@@ -4165,12 +4493,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "07:55",
-          "end": "08:05"
+          "start": "07:53",
+          "end": "08:07"
         },
         {
-          "start": "19:55",
-          "end": "20:05"
+          "start": "19:53",
+          "end": "20:07"
         }
       ]
     },
@@ -4189,11 +4517,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "07:55",
+          "start": "07:53",
           "end": "08:00"
         },
         {
-          "start": "19:55",
+          "start": "19:53",
           "end": "20:00"
         }
       ]
@@ -4213,11 +4541,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "07:55",
+          "start": "07:53",
           "end": "08:00"
         },
         {
-          "start": "19:55",
+          "start": "19:53",
           "end": "20:00"
         }
       ]
@@ -4391,6 +4719,30 @@
       ]
     },
     {
+      "id": "08-00_both_exact_firestarter_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_both_exact_firestarter_001.mp4",
+      "movieTitle": "Firestarter",
+      "movieSlug": "firestarter",
+      "releaseYear": 1984,
+      "director": "Mark L. Lester",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.1,
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
       "id": "08-00_both_exact_ghostbusters_001",
       "src": "assets/medias/videos/movie-scenes/08-00_both_exact_ghostbusters_001.mp4",
       "movieTitle": "Ghostbusters",
@@ -4399,6 +4751,30 @@
       "director": "Ivan Reitman",
       "rightsHolder": "Columbia Pictures / Sony Pictures",
       "imdbRating": 7.8,
+      "displayTime": "08:00",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:00",
+          "end": "08:00"
+        },
+        {
+          "start": "20:00",
+          "end": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "08-00_both_exact_say-anything_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_both_exact_say-anything_001.mp4",
+      "movieTitle": "Say Anything",
+      "movieSlug": "say-anything",
+      "releaseYear": 1989,
+      "director": "Cameron Crowe",
+      "rightsHolder": "20th Century Studios",
+      "imdbRating": 7.3,
       "displayTime": "08:00",
       "period": "both",
       "precision": "exact",
@@ -4478,7 +4854,27 @@
       "spans": [
         {
           "start": "20:00",
-          "end": "20:05"
+          "end": "20:07"
+        }
+      ]
+    },
+    {
+      "id": "08-00_pm_exact_halloweentown-2_001",
+      "src": "assets/medias/videos/movie-scenes/08-00_pm_exact_halloweentown-2_001.mp4",
+      "movieTitle": "Halloweentown II: Kalabar's Revenge",
+      "movieSlug": "halloweentown-2",
+      "releaseYear": 2001,
+      "director": "Mary Lambert",
+      "rightsHolder": "Disney Channel / Walt Disney Television",
+      "imdbRating": 6.3,
+      "displayTime": "08:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "20:00",
+          "end": "20:00"
         }
       ]
     },
@@ -4563,6 +4959,50 @@
       ]
     },
     {
+      "id": "08-03_am_exact_the-tingler_001",
+      "src": "assets/medias/videos/movie-scenes/08-03_am_exact_the-tingler_001.mp4",
+      "movieTitle": "The Tingler",
+      "movieSlug": "the-tingler",
+      "releaseYear": 1959,
+      "director": "William Castle",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 6.6,
+      "displayTime": "08:03",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:03",
+          "end": "08:03"
+        }
+      ]
+    },
+    {
+      "id": "08-05_both_exact_two-lovers_001",
+      "src": "assets/medias/videos/movie-scenes/08-05_both_exact_two-lovers_001.mp4",
+      "movieTitle": "Two Lovers",
+      "movieSlug": "two-lovers",
+      "releaseYear": 2008,
+      "director": "James Gray",
+      "rightsHolder": "Magnolia Pictures",
+      "imdbRating": 7.0,
+      "displayTime": "08:05",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "08:05",
+          "end": "08:05"
+        },
+        {
+          "start": "20:05",
+          "end": "20:05"
+        }
+      ]
+    },
+    {
       "id": "08-12_both_exact_mission-impossible-3_001",
       "src": "assets/medias/videos/movie-scenes/08-12_both_exact_mission-impossible-3_001.mp4",
       "movieTitle": "Mission: Impossible III",
@@ -4583,6 +5023,26 @@
         {
           "start": "20:12",
           "end": "20:12"
+        }
+      ]
+    },
+    {
+      "id": "08-13_pm_exact_morbius_001",
+      "src": "assets/medias/videos/movie-scenes/08-13_pm_exact_morbius_001.mp4",
+      "movieTitle": "Morbius",
+      "movieSlug": "morbius",
+      "releaseYear": 2022,
+      "director": "Daniel Espinosa",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 5.1,
+      "displayTime": "08:13",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "20:13",
+          "end": "20:13"
         }
       ]
     },
@@ -4937,12 +5397,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "08:55",
-          "end": "09:05"
+          "start": "08:53",
+          "end": "09:07"
         },
         {
-          "start": "20:55",
-          "end": "21:05"
+          "start": "20:53",
+          "end": "21:07"
         }
       ]
     },
@@ -4961,12 +5421,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "08:55",
-          "end": "09:05"
+          "start": "08:53",
+          "end": "09:07"
         },
         {
-          "start": "20:55",
-          "end": "21:05"
+          "start": "20:53",
+          "end": "21:07"
         }
       ]
     },
@@ -4985,11 +5445,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "08:55",
+          "start": "08:53",
           "end": "09:00"
         },
         {
-          "start": "20:55",
+          "start": "20:53",
           "end": "21:00"
         }
       ]
@@ -5130,7 +5590,7 @@
       "spans": [
         {
           "start": "21:00",
-          "end": "21:05"
+          "end": "21:07"
         }
       ]
     },
@@ -5203,6 +5663,54 @@
       ]
     },
     {
+      "id": "09-13_both_exact_anomalisa_001",
+      "src": "assets/medias/videos/movie-scenes/09-13_both_exact_anomalisa_001.mp4",
+      "movieTitle": "Anomalisa",
+      "movieSlug": "anomalisa",
+      "releaseYear": 2015,
+      "director": "Charlie Kaufman and Duke Johnson",
+      "rightsHolder": "Paramount Pictures",
+      "imdbRating": 7.2,
+      "displayTime": "09:13",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:13",
+          "end": "09:13"
+        },
+        {
+          "start": "21:13",
+          "end": "21:13"
+        }
+      ]
+    },
+    {
+      "id": "09-13_both_exact_matilda_001",
+      "src": "assets/medias/videos/movie-scenes/09-13_both_exact_matilda_001.mp4",
+      "movieTitle": "Matilda",
+      "movieSlug": "matilda",
+      "releaseYear": 1996,
+      "director": "Danny DeVito",
+      "rightsHolder": "TriStar Pictures / Sony Pictures",
+      "imdbRating": 7.0,
+      "displayTime": "09:13",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:13",
+          "end": "09:13"
+        },
+        {
+          "start": "21:13",
+          "end": "21:13"
+        }
+      ]
+    },
+    {
       "id": "09-15_both_exact_pig_001",
       "src": "assets/medias/videos/movie-scenes/09-15_both_exact_pig_001.mp4",
       "movieTitle": "Pig",
@@ -5227,6 +5735,30 @@
       ]
     },
     {
+      "id": "09-18_both_exact_matilda_001",
+      "src": "assets/medias/videos/movie-scenes/09-18_both_exact_matilda_001.mp4",
+      "movieTitle": "Matilda",
+      "movieSlug": "matilda",
+      "releaseYear": 1996,
+      "director": "Danny DeVito",
+      "rightsHolder": "TriStar Pictures / Sony Pictures",
+      "imdbRating": 7.0,
+      "displayTime": "09:18",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:18",
+          "end": "09:18"
+        },
+        {
+          "start": "21:18",
+          "end": "21:18"
+        }
+      ]
+    },
+    {
       "id": "09-18_both_exact_the-conjuring_001",
       "src": "assets/medias/videos/movie-scenes/09-18_both_exact_the-conjuring_001.mp4",
       "movieTitle": "The Conjuring",
@@ -5244,6 +5776,26 @@
           "start": "09:18",
           "end": "09:18"
         },
+        {
+          "start": "21:18",
+          "end": "21:18"
+        }
+      ]
+    },
+    {
+      "id": "09-18_pm_exact_murder-at-1600_001",
+      "src": "assets/medias/videos/movie-scenes/09-18_pm_exact_murder-at-1600_001.mp4",
+      "movieTitle": "Murder at 1600",
+      "movieSlug": "murder-at-1600",
+      "releaseYear": 1997,
+      "director": "Dwight H. Little",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 6.1,
+      "displayTime": "09:18",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
         {
           "start": "21:18",
           "end": "21:18"
@@ -5479,6 +6031,30 @@
       ]
     },
     {
+      "id": "09-46_both_exact_the-departed_001",
+      "src": "assets/medias/videos/movie-scenes/09-46_both_exact_the-departed_001.mp4",
+      "movieTitle": "The Departed",
+      "movieSlug": "the-departed",
+      "releaseYear": 2006,
+      "director": "Martin Scorsese",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 8.5,
+      "displayTime": "09:46",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "09:46",
+          "end": "09:46"
+        },
+        {
+          "start": "21:46",
+          "end": "21:46"
+        }
+      ]
+    },
+    {
       "id": "10-00_am_exact_shawshank-redemption_001",
       "src": "assets/medias/videos/movie-scenes/10-00_am_exact_shawshank-redemption_001.mp4",
       "movieTitle": "Shawshank Redemption",
@@ -5534,11 +6110,11 @@
       "spans": [
         {
           "start": "10:00",
-          "end": "10:05"
+          "end": "10:07"
         },
         {
           "start": "22:00",
-          "end": "22:05"
+          "end": "22:07"
         }
       ]
     },
@@ -5557,12 +6133,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "09:55",
-          "end": "10:05"
+          "start": "09:53",
+          "end": "10:07"
         },
         {
-          "start": "21:55",
-          "end": "22:05"
+          "start": "21:53",
+          "end": "22:07"
         }
       ]
     },
@@ -5581,11 +6157,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "09:55",
+          "start": "09:53",
           "end": "10:00"
         },
         {
-          "start": "21:55",
+          "start": "21:53",
           "end": "22:00"
         }
       ]
@@ -5605,11 +6181,11 @@
       "priority": 2,
       "spans": [
         {
-          "start": "09:55",
+          "start": "09:53",
           "end": "10:00"
         },
         {
-          "start": "21:55",
+          "start": "21:53",
           "end": "22:00"
         }
       ]
@@ -5846,7 +6422,7 @@
       "spans": [
         {
           "start": "22:00",
-          "end": "22:05"
+          "end": "22:07"
         }
       ]
     },
@@ -5970,11 +6546,11 @@
       "spans": [
         {
           "start": "10:02",
-          "end": "10:07"
+          "end": "10:09"
         },
         {
           "start": "22:02",
-          "end": "22:07"
+          "end": "22:09"
         }
       ]
     },
@@ -6641,12 +7217,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "11:25",
-          "end": "11:35"
+          "start": "11:23",
+          "end": "11:37"
         },
         {
-          "start": "23:25",
-          "end": "23:35"
+          "start": "23:23",
+          "end": "23:37"
         }
       ]
     },
@@ -6927,6 +7503,70 @@
       ]
     },
     {
+      "id": "11-53_am_exact_sherlock-holmes_001",
+      "src": "assets/medias/videos/movie-scenes/11-53_am_exact_sherlock-holmes_001.mp4",
+      "movieTitle": "Sherlock Holmes",
+      "movieSlug": "sherlock-holmes",
+      "releaseYear": 2009,
+      "director": "Guy Ritchie",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 7.5,
+      "displayTime": "11:53",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:53",
+          "end": "11:53"
+        }
+      ]
+    },
+    {
+      "id": "11-53_both_exact_menace-2-society_001",
+      "src": "assets/medias/videos/movie-scenes/11-53_both_exact_menace-2-society_001.mp4",
+      "movieTitle": "Menace II Society",
+      "movieSlug": "menace-2-society",
+      "releaseYear": 1993,
+      "director": "Albert Hughes and Allen Hughes",
+      "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
+      "imdbRating": 7.5,
+      "displayTime": "11:53",
+      "period": "both",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:53",
+          "end": "11:53"
+        },
+        {
+          "start": "23:53",
+          "end": "23:53"
+        }
+      ]
+    },
+    {
+      "id": "11-54_am_exact_a-million-ways-to-die-in-the-west_001",
+      "src": "assets/medias/videos/movie-scenes/11-54_am_exact_a-million-ways-to-die-in-the-west_001.mp4",
+      "movieTitle": "A Million Ways to Die in the West",
+      "movieSlug": "a-million-ways-to-die-in-the-west",
+      "releaseYear": 2014,
+      "director": "Seth MacFarlane",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.1,
+      "displayTime": "11:54",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "11:54",
+          "end": "11:54"
+        }
+      ]
+    },
+    {
       "id": "11-55_pm_exact_watchmen_001",
       "src": "assets/medias/videos/movie-scenes/11-55_pm_exact_watchmen_001.mp4",
       "movieTitle": "Watchmen",
@@ -7015,6 +7655,146 @@
       ]
     },
     {
+      "id": "11-59_pm_exact_the-polar-express_001",
+      "src": "assets/medias/videos/movie-scenes/11-59_pm_exact_the-polar-express_001.mp4",
+      "movieTitle": "The Polar Express",
+      "movieSlug": "the-polar-express",
+      "releaseYear": 2004,
+      "director": "Robert Zemeckis",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 6.6,
+      "displayTime": "11:59",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "23:59",
+          "end": "23:59"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_02-00_am_range_murder-on-the-orient-express_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_02-00_am_range_murder-on-the-orient-express_001.mp4",
+      "movieTitle": "Murder on the Orient Express",
+      "movieSlug": "murder-on-the-orient-express",
+      "releaseYear": 1974,
+      "director": "Sidney Lumet",
+      "rightsHolder": "EMI Films / Paramount Pictures",
+      "imdbRating": 7.2,
+      "displayTime": "12:00-02:00",
+      "period": "am",
+      "precision": "range",
+      "priority": 4,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "02:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_02-00_am_range_murder-on-the-orient-express_002",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_02-00_am_range_murder-on-the-orient-express_002.mp4",
+      "movieTitle": "Murder on the Orient Express",
+      "movieSlug": "murder-on-the-orient-express",
+      "releaseYear": 1974,
+      "director": "Sidney Lumet",
+      "rightsHolder": "EMI Films / Paramount Pictures",
+      "imdbRating": 7.2,
+      "displayTime": "12:00-02:00",
+      "period": "am",
+      "precision": "range",
+      "priority": 4,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "02:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_after_scream_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_after_scream_001.mp4",
+      "movieTitle": "Scream",
+      "movieSlug": "scream",
+      "releaseYear": 1996,
+      "director": "Wes Craven",
+      "rightsHolder": "Dimension Films / Paramount Pictures",
+      "imdbRating": 7.4,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_after_the-banana-splits-movie_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_after_the-banana-splits-movie_001.mp4",
+      "movieTitle": "The Banana Splits Movie",
+      "movieSlug": "the-banana-splits-movie",
+      "releaseYear": 2019,
+      "director": "Danishka Esterhazy",
+      "rightsHolder": "Warner Bros. Home Entertainment",
+      "imdbRating": 5.1,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_after_the-curious-case-of-benjamin-button_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_after_the-curious-case-of-benjamin-button_001.mp4",
+      "movieTitle": "The Curious Case of Benjamin Button",
+      "movieSlug": "the-curious-case-of-benjamin-button",
+      "releaseYear": 2008,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "imdbRating": 7.8,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_after_the-curious-case-of-benjamin-button_002",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_after_the-curious-case-of-benjamin-button_002.mp4",
+      "movieTitle": "The Curious Case of Benjamin Button",
+      "movieSlug": "the-curious-case-of-benjamin-button",
+      "releaseYear": 2008,
+      "director": "David Fincher",
+      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
+      "imdbRating": 7.8,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
       "id": "12-00_am_after_the-cutting-edge_001",
       "src": "assets/medias/videos/movie-scenes/12-00_am_after_the-cutting-edge_001.mp4",
       "movieTitle": "The Cutting Edge",
@@ -7030,7 +7810,7 @@
       "spans": [
         {
           "start": "00:00",
-          "end": "00:05"
+          "end": "00:07"
         }
       ]
     },
@@ -7050,27 +7830,7 @@
       "spans": [
         {
           "start": "00:00",
-          "end": "00:05"
-        }
-      ]
-    },
-    {
-      "id": "12-00_am_after_the-strange-case-of-benjamin-button_001",
-      "src": "assets/medias/videos/movie-scenes/12-00_am_after_the-strange-case-of-benjamin-button_001.mp4",
-      "movieTitle": "The Curious Case of Benjamin Button",
-      "movieSlug": "the-strange-case-of-benjamin-button",
-      "releaseYear": 2008,
-      "director": "David Fincher",
-      "rightsHolder": "Paramount Pictures / Warner Bros. Pictures",
-      "imdbRating": 7.8,
-      "displayTime": "12:00",
-      "period": "am",
-      "precision": "after",
-      "priority": 2,
-      "spans": [
-        {
-          "start": "00:00",
-          "end": "00:05"
+          "end": "00:07"
         }
       ]
     },
@@ -7089,8 +7849,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
         }
       ]
     },
@@ -7109,8 +7869,28 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_approx_marathon-man_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_approx_marathon-man_001.mp4",
+      "movieTitle": "Marathon Man",
+      "movieSlug": "marathon-man",
+      "releaseYear": 1976,
+      "director": "John Schlesinger",
+      "rightsHolder": "Paramount Pictures",
+      "imdbRating": 7.4,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "23:53",
+          "end": "00:07"
         }
       ]
     },
@@ -7129,8 +7909,8 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
         }
       ]
     },
@@ -7149,8 +7929,48 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_before_king-kong_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_before_king-kong_001.mp4",
+      "movieTitle": "King Kong",
+      "movieSlug": "king-kong",
+      "releaseYear": 1933,
+      "director": "Merian C. Cooper and Ernest B. Schoedsack",
+      "rightsHolder": "RKO Pictures / Warner Bros. Discovery",
+      "imdbRating": 7.9,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "23:53",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_before_the-sure-thing_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_before_the-sure-thing_001.mp4",
+      "movieTitle": "The Sure Thing",
+      "movieSlug": "the-sure-thing",
+      "releaseYear": 1985,
+      "director": "Rob Reiner",
+      "rightsHolder": "Embassy Pictures / MGM",
+      "imdbRating": 7.0,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "23:53",
+          "end": "00:00"
         }
       ]
     },
@@ -7169,7 +7989,7 @@
       "priority": 2,
       "spans": [
         {
-          "start": "23:55",
+          "start": "23:53",
           "end": "00:00"
         }
       ]
@@ -7183,6 +8003,66 @@
       "director": "Wes Craven",
       "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
       "imdbRating": 7.4,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_exact_brewster-s-millions_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_exact_brewster-s-millions_001.mp4",
+      "movieTitle": "Brewster's Millions",
+      "movieSlug": "brewster-s-millions",
+      "releaseYear": 1985,
+      "director": "Walter Hill",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.5,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_exact_house-of-gucci_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_exact_house-of-gucci_001.mp4",
+      "movieTitle": "House of Gucci",
+      "movieSlug": "house-of-gucci",
+      "releaseYear": 2021,
+      "director": "Ridley Scott",
+      "rightsHolder": "MGM / Universal Pictures",
+      "imdbRating": 6.6,
+      "displayTime": "12:00",
+      "period": "am",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "00:00",
+          "end": "00:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_am_exact_metropolitan_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_am_exact_metropolitan_001.mp4",
+      "movieTitle": "Metropolitan",
+      "movieSlug": "metropolitan",
+      "releaseYear": 1990,
+      "director": "Whit Stillman",
+      "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
+      "imdbRating": 7.2,
       "displayTime": "12:00",
       "period": "am",
       "precision": "exact",
@@ -7249,12 +8129,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
         },
         {
-          "start": "11:55",
-          "end": "12:05"
+          "start": "11:53",
+          "end": "12:07"
         }
       ]
     },
@@ -7273,12 +8153,12 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
         },
         {
-          "start": "11:55",
-          "end": "12:05"
+          "start": "11:53",
+          "end": "12:07"
         }
       ]
     },
@@ -7297,12 +8177,36 @@
       "priority": 3,
       "spans": [
         {
-          "start": "23:55",
-          "end": "00:05"
+          "start": "23:53",
+          "end": "00:07"
         },
         {
-          "start": "11:55",
-          "end": "12:05"
+          "start": "11:53",
+          "end": "12:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_both_before_the-adventures-of-sherlock-holmes_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_both_before_the-adventures-of-sherlock-holmes_001.mp4",
+      "movieTitle": "The Adventures of Sherlock Holmes",
+      "movieSlug": "the-adventures-of-sherlock-holmes",
+      "releaseYear": 1939,
+      "director": "Alfred L. Werker",
+      "rightsHolder": "20th Century Studios",
+      "imdbRating": 7.2,
+      "displayTime": "12:00",
+      "period": "both",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "23:53",
+          "end": "00:00"
+        },
+        {
+          "start": "11:53",
+          "end": "12:00"
         }
       ]
     },
@@ -7346,7 +8250,67 @@
       "spans": [
         {
           "start": "12:00",
-          "end": "12:05"
+          "end": "12:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_after_dead-man_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_after_dead-man_001.mp4",
+      "movieTitle": "Dead Man",
+      "movieSlug": "dead-man",
+      "releaseYear": 1995,
+      "director": "Jim Jarmusch",
+      "rightsHolder": "Miramax",
+      "imdbRating": 7.5,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "after",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "12:00",
+          "end": "12:07"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_before_ace-ventura-when-nature-calls_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_before_ace-ventura-when-nature-calls_001.mp4",
+      "movieTitle": "Ace Ventura: When Nature Calls",
+      "movieSlug": "ace-ventura-when-nature-calls",
+      "releaseYear": 1995,
+      "director": "Steve Oedekerk",
+      "rightsHolder": "Warner Bros. Pictures",
+      "imdbRating": 6.4,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "11:53",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_before_far-and-away_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_before_far-and-away_001.mp4",
+      "movieTitle": "Far and Away",
+      "movieSlug": "far-and-away",
+      "releaseYear": 1992,
+      "director": "Ron Howard",
+      "rightsHolder": "Universal Pictures",
+      "imdbRating": 6.6,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "11:53",
+          "end": "12:00"
         }
       ]
     },
@@ -7365,7 +8329,27 @@
       "priority": 2,
       "spans": [
         {
-          "start": "11:55",
+          "start": "11:53",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_before_glengarry-glen-ross_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_before_glengarry-glen-ross_001.mp4",
+      "movieTitle": "Glengarry Glen Ross",
+      "movieSlug": "glengarry-glen-ross",
+      "releaseYear": 1992,
+      "director": "James Foley",
+      "rightsHolder": "New Line Cinema / Warner Bros. Discovery",
+      "imdbRating": 7.6,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "before",
+      "priority": 2,
+      "spans": [
+        {
+          "start": "11:53",
           "end": "12:00"
         }
       ]
@@ -7451,6 +8435,26 @@
       ]
     },
     {
+      "id": "12-00_pm_exact_pineapple-express_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_exact_pineapple-express_001.mp4",
+      "movieTitle": "Pineapple Express",
+      "movieSlug": "pineapple-express",
+      "releaseYear": 2008,
+      "director": "David Gordon Green",
+      "rightsHolder": "Columbia Pictures / Sony Pictures",
+      "imdbRating": 6.9,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "12:00",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
       "id": "12-00_pm_exact_the-conversation_001",
       "src": "assets/medias/videos/movie-scenes/12-00_pm_exact_the-conversation_001.mp4",
       "movieTitle": "The Conversation",
@@ -7459,6 +8463,26 @@
       "director": "Francis Ford Coppola",
       "rightsHolder": "Paramount Pictures",
       "imdbRating": 7.7,
+      "displayTime": "12:00",
+      "period": "pm",
+      "precision": "exact",
+      "priority": 1,
+      "spans": [
+        {
+          "start": "12:00",
+          "end": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "12-00_pm_exact_viva-las-vegas_001",
+      "src": "assets/medias/videos/movie-scenes/12-00_pm_exact_viva-las-vegas_001.mp4",
+      "movieTitle": "Viva Las Vegas",
+      "movieSlug": "viva-las-vegas",
+      "releaseYear": 1964,
+      "director": "George Sidney",
+      "rightsHolder": "MGM / Warner Bros. Discovery",
+      "imdbRating": 6.4,
       "displayTime": "12:00",
       "period": "pm",
       "precision": "exact",

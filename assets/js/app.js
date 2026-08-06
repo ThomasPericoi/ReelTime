@@ -66,282 +66,7 @@
   const IDLE_MESSAGE = "Grab some pop-corn and wait for the next scene to play.";
 
   const POSTER_BASE_PATH = "assets/medias/images/movie-posters/";
-  const POSTER_FILES = [
-    "12-angry-men.jpg",
-    "12-monkeys.jpg",
-    "127-hours.jpg",
-    "13-going-on-30.jpg",
-    "3-10-to-yuma.jpg",
-    "8-bit-christmas.jpg",
-    "a-beautiful-mind.jpg",
-    "a-christmas-story.jpg",
-    "a-clockwork-orange.jpg",
-    "a-fish-called-wanda.jpg",
-    "a-nightmare-on-elm-street.jpg",
-    "a-serious-man.jpg",
-    "a-star-is-born.jpg",
-    "all-the-president-s-men.jpg",
-    "american-gangster.jpg",
-    "american-hustle.jpg",
-    "american-made.jpg",
-    "american-psycho.jpg",
-    "and-justice-for-all.jpg",
-    "angels-and-demons.jpg",
-    "annie.jpg",
-    "anora.jpg",
-    "ant-man-and-the-wasp-quantumania.jpg",
-    "antichrist.jpg",
-    "apocalypse-now.jpg",
-    "asteroid-city.jpg",
-    "babe.jpg",
-    "back-to-the-future-part-3.jpg",
-    "back-to-the-future.jpg",
-    "basic-instinct.jpg",
-    "batman-returns.jpg",
-    "beetlejuice.jpg",
-    "before-sunrise.jpg",
-    "being-john-malkovich.jpg",
-    "being-the-ricardos.jpg",
-    "being-there.jpg",
-    "belfast.jpg",
-    "big.jpg",
-    "black-hawk-down.jpg",
-    "blue-velvet.jpg",
-    "bone-tomahawk.jpg",
-    "bugonia.jpg",
-    "burn-after-reading.jpg",
-    "captain-fantastic.jpg",
-    "carrie.jpg",
-    "casablanca.jpg",
-    "cast-away.jpg",
-    "charlie-s-angels.jpg",
-    "chef.jpg",
-    "child-s-play.jpg",
-    "citizen-kane.jpg",
-    "clueless.jpg",
-    "crazy-stupid-love.jpg",
-    "darkest-hour.jpg",
-    "dave.jpg",
-    "dawn-of-the-dead.jpg",
-    "demolition.jpg",
-    "den-of-thieves.jpg",
-    "die-hard-2.jpg",
-    "donnie-darko.jpg",
-    "dr-strangelove.jpg",
-    "dracula-dead-and-loving-it.jpg",
-    "dumb-and-dumber.jpg",
-    "ed-wood.jpg",
-    "election.jpg",
-    "escape-from-new-york.jpg",
-    "eternal-sunshine-of-the-spotless-mind.jpg",
-    "evil-dead-2.jpg",
-    "ex-machina.jpg",
-    "explorers.webp",
-    "eyes-wide-shut.jpg",
-    "fantastic-mister-fox.jpg",
-    "fargo.jpg",
-    "father-of-the-bride.jpg",
-    "fifth-element.jpg",
-    "finding-forrester.jpg",
-    "flubber.jpg",
-    "ford-v-ferrari.jpg",
-    "foul-play.jpg",
-    "four-lions.jpg",
-    "foxcatcher.jpg",
-    "from-dusk-till-dawn.jpg",
-    "from-russia-with-love.jpg",
-    "fury.jpg",
-    "ghostbusters.jpg",
-    "good-morning-vietnam.jpg",
-    "good-time.jpg",
-    "good-will-hunting.jpg",
-    "goodfellas.jpg",
-    "gran-torino.jpg",
-    "green-book.jpg",
-    "gremlins-2.jpg",
-    "gremlins.jpg",
-    "halloween-3.jpg",
-    "hostel-2.jpg",
-    "i-saw-the-tv-glow.jpg",
-    "in-the-loop.jpg",
-    "in-the-name-of-the-father.jpg",
-    "incredibles-2.jpg",
-    "indiana-jones-3.jpg",
-    "insidious.jpg",
-    "insomnia.jpg",
-    "inspector-gadget-2.jpg",
-    "into-the-wild.jpg",
-    "jacob-s-ladder.jpg",
-    "jaws.jpg",
-    "julius-caesar.jpg",
-    "jumpin-jack-flash.jpg",
-    "k-pax.jpg",
-    "labyrinth.jpg",
-    "lady-and-the-tramp.jpg",
-    "late-night-with-the-devil.jpeg",
-    "leon-the-professional.jpg",
-    "lethal-weapon-3.jpg",
-    "lethal-weapon.jpg",
-    "lincoln.jpg",
-    "little-miss-sunshine.jpg",
-    "live-and-let-die.jpg",
-    "lolita.jpg",
-    "lost-in-translation.jpg",
-    "lucky-number-slevin.jpg",
-    "manchester-by-the-sea.jpg",
-    "marty-supreme.jpg",
-    "master-and-commander.jpg",
-    "mean-girls.jpg",
-    "memento.jpg",
-    "men-in-black-2.jpg",
-    "mickey-17.jpg",
-    "mid90s.jpg",
-    "midsommar.jpeg",
-    "mission-impossible-3.jpg",
-    "mommie-dearest.jpg",
-    "mona-lisa-smile.jpg",
-    "monster.jpg",
-    "moonrise-kingdom.jpg",
-    "mulholland-drive.jpg",
-    "munich.jpg",
-    "night-school.jpg",
-    "nightcrawler.jpg",
-    "no-country-for-old-men.jpg",
-    "no-hard-feelings.jpg",
-    "no-strings-attached.jpg",
-    "nocturnal-animals.jpg",
-    "nosferatu.jpg",
-    "notorious.jpg",
-    "novocaine.jpg",
-    "ocean-s-eleven.jpg",
-    "ocean-s-twelve.jpg",
-    "octopussy.jpg",
-    "once-upon-a-time-in-america.jpg",
-    "once-upon-a-time-in-hollywood.jpg",
-    "paddington.jpg",
-    "paris-texas.jpg",
-    "penguins-of-madagascar.jpg",
-    "percy-jackson.jpg",
-    "pig.jpg",
-    "pinocchio.jpg",
-    "point-break.jpg",
-    "predator.jpg",
-    "primal-fear.jpg",
-    "primer.jpg",
-    "pulp-fiction.jpg",
-    "quick-change.jpg",
-    "rainman.jpg",
-    "raising-cain.jpg",
-    "rear-window.jpg",
-    "requiem-for-a-dream.jpg",
-    "road-house.jpg",
-    "robin-hood.jpg",
-    "robocop-2.jpg",
-    "rock-n-roll-high-school.jpg",
-    "rocky.jpg",
-    "roman-holiday.jpg",
-    "sabrina.jpg",
-    "sandlot.jpg",
-    "scarface.jpg",
-    "school-ties.jpg",
-    "scott-pilgrim-vs-the-world.jpg",
-    "scrooge-a-christmas-carol.jpg",
-    "scrooge.jpg",
-    "sergeant-york.jpg",
-    "shaun-of-the-dead.jpg",
-    "shawshank-redemption.jpg",
-    "sherlock-holmes-2.jpg",
-    "sicario.jpg",
-    "sing-sing.jpg",
-    "sleeping-beauty.jpg",
-    "sleepless-in-seattle.jpg",
-    "snowden.jpg",
-    "some-like-it-hot.jpg",
-    "spirited.jpg",
-    "spotlight.jpg",
-    "spy-kids-all-the-time-in-the-world.jpg",
-    "stand-by-me.jpg",
-    "sunset-boulevard.jpg",
-    "superbad.jpg",
-    "superman.jpg",
-    "taxi-driver.jpg",
-    "ted.jpg",
-    "tenet.jpg",
-    "terminator.jpg",
-    "the-age-of-innocence.jpg",
-    "the-aviator.jpg",
-    "the-babadook.jpg",
-    "the-banshees-of-inisherin.jpg",
-    "the-bfg.jpg",
-    "the-blues-brothers.jpg",
-    "the-bounty.jpg",
-    "the-breakfast-club.jpg",
-    "the-cat-in-the-hat.jpg",
-    "the-change-up.jpg",
-    "the-conjuring.jpg",
-    "the-conversation.jpg",
-    "the-cutting-edge.jpg",
-    "the-departed.jpg",
-    "the-elephant-man.jpg",
-    "the-eyes-of-tammy-faye.jpg",
-    "the-farewell.jpg",
-    "the-father.jpg",
-    "the-florida-project.jpg",
-    "the-game.jpg",
-    "the-green-mile.jpg",
-    "the-hustler.jpg",
-    "the-irishman.jpg",
-    "the-iron-giant.jpg",
-    "the-kids-are-all-right.jpg",
-    "the-lego-batman-movie.jpg",
-    "the-limey.jpg",
-    "the-lobster.jpg",
-    "the-lord-of-rings-the-two-towers.jpg",
-    "the-lost-daughter.jpg",
-    "the-man-who-fell-to-earth.jpg",
-    "the-martian.jpg",
-    "the-master.jpg",
-    "the-mist.jpg",
-    "the-muppet-christmas-carol.jpg",
-    "the-notebook.jpg",
-    "the-road.jpg",
-    "the-rocky-horror-picture-show.jpg",
-    "the-shining.jpg",
-    "the-social-network.jpg",
-    "the-space-children.jpg",
-    "the-spongebob-movie-sponge-out-of-water.jpg",
-    "the-sting.jpg",
-    "the-strange-case-of-benjamin-button.jpg",
-    "the-talented-mr-ripley.jpg",
-    "the-thin-red-line.jpg",
-    "the-usual-suspects.jpg",
-    "the-world-s-end.jpg",
-    "thelma-and-louise.jpg",
-    "there-will-be-blood.jpg",
-    "thunder-force.jpg",
-    "to-kill-a-mockingbird.jpg",
-    "trading-places.jpg",
-    "trainspotting-2.jpg",
-    "true-grit.jpg",
-    "true-lies.jpg",
-    "twilight-eclipse.jpg",
-    "under-the-skin.jpg",
-    "unfriended.jpg",
-    "us.jpg",
-    "wall-e.jpg",
-    "watchmen.jpg",
-    "we-bought-a-zoo.jpg",
-    "weapons.jpg",
-    "west-side-story.jpg",
-    "wet-hot-american-summer.jpg",
-    "what-we-do-in-the-shadows.jpg",
-    "when-harry-met-sally.jpg",
-    "wonder-boys.jpg",
-    "yes-man.jpg",
-    "you-can-count-on-me.jpg",
-    "zero-dark-thirty.jpg",
-    "zodiac.jpg",
-  ];
+  const POSTER_WALL_MIN_RATING = 6.9;
 
   const TIMING = {
     countdownStepMs: 1000,
@@ -410,13 +135,13 @@
     tickClock();
     window.setInterval(tickClock, 1000);
     initOptionsPanel();
-    initPosterWall();
     el.startButton.addEventListener("click", startClock, { once: true });
     el.replayButton.addEventListener("click", replayCurrentScene);
 
     try {
       const library = await loadSceneLibrary();
       state.scenes = library.scenes.map(normalizeScene).sort(sortScenes);
+      initPosterWall();
       installConsoleApi();
       el.startMessage.innerHTML = [
         "A talking clock made of movie scenes.",
@@ -432,12 +157,13 @@
   /*_____________________________________ POSTER WALL ______________________________________*/
 
   function initPosterWall() {
-    if (!el.posterWall || !POSTER_FILES.length || prefersReducedMotion()) return;
+    const posterFiles = posterWallFiles();
+    if (!el.posterWall || !posterFiles.length || prefersReducedMotion()) return;
 
     const isCompactViewport = window.matchMedia("(max-width: 720px)").matches;
     const columnCount = isCompactViewport ? 5 : 8;
     const rowsPerColumn = isCompactViewport ? 8 : 9;
-    const pool = createPosterPool();
+    const pool = createPosterPool(posterFiles);
     const fragment = document.createDocumentFragment();
 
     el.posterWall.textContent = "";
@@ -450,13 +176,7 @@
       column.style.setProperty("--poster-offset", `${(columnIndex % 3) * -4}rem`);
       if (columnIndex % 2) column.classList.add("poster-wall__column--reverse");
 
-      const group = document.createElement("div");
-      group.className = "poster-wall__group";
-      for (let rowIndex = 0; rowIndex < rowsPerColumn; rowIndex += 1) {
-        group.append(createPoster(pool.next().value));
-      }
-
-      column.append(group, group.cloneNode(true));
+      column.append(createPosterGroup(pool, rowsPerColumn), createPosterGroup(pool, rowsPerColumn));
       fragment.append(column);
     }
 
@@ -466,26 +186,46 @@
     }, 500);
   }
 
-  function* createPosterPool() {
+  function posterWallFiles() {
+    const posterPaths = state.scenes
+      .filter((scene) => Number.isFinite(scene.imdbRating) && scene.imdbRating > POSTER_WALL_MIN_RATING)
+      .map((scene) => posterPath(scene.movieSlug));
+
+    return Array.from(new Set(posterPaths));
+  }
+
+  function* createPosterPool(files) {
     let pool = [];
     while (true) {
-      if (!pool.length) pool = shuffle(POSTER_FILES);
+      if (!pool.length) pool = shuffle(files);
       yield pool.pop();
     }
+  }
+
+  function createPosterGroup(pool, rowsPerColumn) {
+    const group = document.createElement("div");
+    group.className = "poster-wall__group";
+
+    for (let rowIndex = 0; rowIndex < rowsPerColumn; rowIndex += 1) {
+      group.append(createPoster(pool.next().value));
+    }
+
+    return group;
   }
 
   function createPoster(src) {
     const img = document.createElement("img");
     img.className = "poster-wall__poster";
-    img.src = `${POSTER_BASE_PATH}${src}`;
+    img.src = src;
     img.alt = "";
     img.loading = "lazy";
     img.decoding = "async";
+    img.addEventListener("error", () => img.remove(), { once: true });
     return img;
   }
 
-  function posterFileForScene(scene) {
-    return POSTER_FILES.find((file) => file.startsWith(`${scene.movieSlug}.`));
+  function posterPath(movieSlug) {
+    return `${POSTER_BASE_PATH}${movieSlug}.webp`;
   }
 
   /*____________________________________ SCENE LIBRARY ____________________________________*/
@@ -1025,13 +765,16 @@
   function setCreditOverlay(scene, contextDate) {
     showPlaybackStatus();
     el.currentCredit.hidden = false;
-    const posterFile = posterFileForScene(scene);
-    el.currentCredit.classList.toggle("has-poster", Boolean(posterFile));
-    el.overlayPoster.hidden = !posterFile;
-    if (posterFile) {
-      el.overlayPoster.src = `${POSTER_BASE_PATH}${posterFile}`;
-      el.overlayPoster.alt = `${scene.movieTitle} poster`;
-    }
+    const posterSrc = posterPath(scene.movieSlug);
+    el.currentCredit.classList.add("has-poster");
+    el.overlayPoster.hidden = false;
+    el.overlayPoster.src = posterSrc;
+    el.overlayPoster.alt = `${scene.movieTitle} poster`;
+    el.overlayPoster.onerror = () => {
+      el.currentCredit.classList.remove("has-poster");
+      el.overlayPoster.hidden = true;
+      el.overlayPoster.removeAttribute("src");
+    };
     el.overlayMatch.textContent = sceneMatchLine(scene, contextDate);
     el.overlayMovie.textContent = filmTitleLine(scene);
     el.overlayDetails.textContent = creditLine(scene);
@@ -1041,6 +784,7 @@
     el.currentCredit.hidden = true;
     el.currentCredit.classList.remove("has-poster");
     el.overlayPoster.hidden = true;
+    el.overlayPoster.onerror = null;
     el.overlayPoster.removeAttribute("src");
     el.overlayPoster.alt = "";
     el.overlayMatch.textContent = "";
