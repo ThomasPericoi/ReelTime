@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reel-time.thomaspericoi.com/sitemap.xml
