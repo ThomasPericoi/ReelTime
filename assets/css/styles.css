@@ -620,7 +620,7 @@ video {
   font-size: clamp(0.875rem, 3.2vw, 1.125rem);
   font-weight: 700;
   letter-spacing: 0.01em;
-  transform: scaleY(1.75) skewX(5deg);
+  transform: scaleY(1.75);
   transform-origin: left center;
 }
 
