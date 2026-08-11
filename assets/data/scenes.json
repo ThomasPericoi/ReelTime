@@ -5615,8 +5615,8 @@
       ]
     },
     {
-      "id": "09-10_both_range_being-there_001",
-      "src": "assets/medias/videos/movie-scenes/09-10_both_range_being-there_001.mp4",
+      "id": "09-10_both_exact_being-there_001",
+      "src": "assets/medias/videos/movie-scenes/09-10_both_exact_being-there_001.mp4",
       "movieTitle": "Being There",
       "movieSlug": "being-there",
       "releaseYear": 1979,
@@ -5625,16 +5625,16 @@
       "imdbRating": 7.9,
       "displayTime": "09:10",
       "period": "both",
-      "precision": "range",
-      "priority": 4,
+      "precision": "exact",
+      "priority": 1,
       "spans": [
         {
-          "start": "09:00",
-          "end": "09:20"
+          "start": "09:10",
+          "end": "09:10"
         },
         {
-          "start": "21:00",
-          "end": "21:20"
+          "start": "21:10",
+          "end": "21:10"
         }
       ]
     },

@@ -6,9 +6,9 @@ This document is generated from `assets/data/scenes.json` and helps contributors
 
 - Total scenes: **427**
 - Films represented: **325**
-- Exact-time scenes: **318**
-- Exact minutes covered: **231 / 1440**
-- Exact-time coverage: **16.0%**
+- Exact-time scenes: **319**
+- Exact minutes covered: **233 / 1440**
+- Exact-time coverage: **16.2%**
 
 ## Scene Types
 
@@ -18,9 +18,9 @@ This document is generated from `assets/data/scenes.json` and helps contributors
 | approx | 20 |
 | before | 23 |
 | broad | 25 |
-| exact | 318 |
+| exact | 319 |
 | fallback | 15 |
-| range | 5 |
+| range | 4 |
 
 ## Exact Minutes Covered
 
@@ -35,7 +35,7 @@ This document is generated from `assets/data/scenes.json` and helps contributors
 | 06:00-06:59 | 06:00, 06:05, 06:07, 06:10, 06:15, 06:30, 06:34, 06:35, 06:45, 06:53 |
 | 07:00-07:59 | 07:00, 07:06, 07:07, 07:15, 07:22, 07:23, 07:30, 07:45 |
 | 08:00-08:59 | 08:00, 08:03, 08:05, 08:12, 08:15, 08:17, 08:20, 08:30, 08:35, 08:42, 08:45, 08:59 |
-| 09:00-09:59 | 09:00, 09:02, 09:13, 09:15, 09:18, 09:20, 09:23, 09:30, 09:40, 09:45, 09:46 |
+| 09:00-09:59 | 09:00, 09:02, 09:10, 09:13, 09:15, 09:18, 09:20, 09:23, 09:30, 09:40, 09:45, 09:46 |
 | 10:00-10:59 | 10:00, 10:01, 10:15, 10:25, 10:30, 10:33, 10:44, 10:45, 10:46, 10:55 |
 | 11:00-11:59 | 11:00, 11:01, 11:11, 11:30, 11:36, 11:40, 11:45, 11:46, 11:53, 11:54, 11:56, 11:57 |
 | 12:00-12:59 | 12:00, 12:10, 12:15, 12:30, 12:31, 12:45 |
@@ -47,7 +47,7 @@ This document is generated from `assets/data/scenes.json` and helps contributors
 | 18:00-18:59 | 18:00, 18:05, 18:07, 18:10, 18:15, 18:30, 18:34, 18:35, 18:53 |
 | 19:00-19:59 | 19:00, 19:06, 19:07, 19:15, 19:23, 19:30, 19:45 |
 | 20:00-20:59 | 20:00, 20:05, 20:12, 20:13, 20:15, 20:17, 20:20, 20:30, 20:35, 20:45, 20:59 |
-| 21:00-21:59 | 21:00, 21:02, 21:13, 21:15, 21:18, 21:20, 21:23, 21:30, 21:40, 21:45, 21:46 |
+| 21:00-21:59 | 21:00, 21:02, 21:10, 21:13, 21:15, 21:18, 21:20, 21:23, 21:30, 21:40, 21:45, 21:46 |
 | 22:00-22:59 | 22:00, 22:01, 22:04, 22:15, 22:25, 22:30, 22:33, 22:44, 22:45, 22:46, 22:55 |
 | 23:00-23:59 | 23:00, 23:01, 23:11, 23:30, 23:36, 23:40, 23:45, 23:46, 23:50, 23:53, 23:55, 23:56, 23:57, 23:58, 23:59 |
 
@@ -319,8 +319,8 @@ This document is generated from `assets/data/scenes.json` and helps contributors
 | 09:00 | exact | both | 09:00-09:00, 21:00-21:00 | Fury (2014) | `09-00_both_exact_fury_001.mp4` |
 | 09:00 | exact | both | 09:00-09:00, 21:00-21:00 | The Babadook (2014) | `09-00_both_exact_the-babadook_001.mp4` |
 | 09:00 | exact | am | 09:00-09:00 | The Sandlot (1993) | `09-00_am_exact_sandlot_001.mp4` |
-| 09:10 | range | both | 09:00-09:20, 21:00-21:20 | Being There (1979) | `09-10_both_range_being-there_001.mp4` |
 | 09:02 | exact | both | 09:02-09:02, 21:02-21:02 | The Cat in the Hat (2003) | `09-02_both_exact_the-cat-in-the-hat_001.mp4` |
+| 09:10 | exact | both | 09:10-09:10, 21:10-21:10 | Being There (1979) | `09-10_both_exact_being-there_001.mp4` |
 | 09:13 | exact | both | 09:13-09:13, 21:13-21:13 | Anomalisa (2015) | `09-13_both_exact_anomalisa_001.mp4` |
 | 09:13 | exact | both | 09:13-09:13, 21:13-21:13 | Matilda (1996) | `09-13_both_exact_matilda_001.mp4` |
 | 09:15 | exact | both | 09:15-09:15, 21:15-21:15 | Pig (2021) | `09-15_both_exact_pig_001.mp4` |
