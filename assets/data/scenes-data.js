@@ -5383,30 +5383,6 @@ window.REEL_TIME_SCENES = {
       ]
     },
     {
-      "id": "09-00_both_approx_no-country-for-old-men_001",
-      "src": "assets/medias/videos/movie-scenes/09-00_both_approx_no-country-for-old-men_001.mp4",
-      "movieTitle": "No Country for Old Men",
-      "movieSlug": "no-country-for-old-men",
-      "releaseYear": 2007,
-      "director": "Joel Coen and Ethan Coen",
-      "rightsHolder": "Miramax / Paramount Vantage",
-      "imdbRating": 8.2,
-      "displayTime": "09:00",
-      "period": "both",
-      "precision": "approx",
-      "priority": 3,
-      "spans": [
-        {
-          "start": "08:53",
-          "end": "09:07"
-        },
-        {
-          "start": "20:53",
-          "end": "21:07"
-        }
-      ]
-    },
-    {
       "id": "09-00_both_approx_the-blues-brothers_001",
       "src": "assets/medias/videos/movie-scenes/09-00_both_approx_the-blues-brothers_001.mp4",
       "movieTitle": "The Blues Brothers",
@@ -5847,6 +5823,30 @@ window.REEL_TIME_SCENES = {
         {
           "start": "21:23",
           "end": "21:23"
+        }
+      ]
+    },
+    {
+      "id": "09-30_both_approx_no-country-for-old-men_001",
+      "src": "assets/medias/videos/movie-scenes/09-30_both_approx_no-country-for-old-men_001.mp4",
+      "movieTitle": "No Country for Old Men",
+      "movieSlug": "no-country-for-old-men",
+      "releaseYear": 2007,
+      "director": "Joel Coen and Ethan Coen",
+      "rightsHolder": "Miramax / Paramount Vantage",
+      "imdbRating": 8.2,
+      "displayTime": "09:30",
+      "period": "both",
+      "precision": "approx",
+      "priority": 3,
+      "spans": [
+        {
+          "start": "09:23",
+          "end": "09:37"
+        },
+        {
+          "start": "21:23",
+          "end": "21:37"
         }
       ]
     },
