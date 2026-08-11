@@ -35,6 +35,8 @@ Current library statistics:
 
 Scenes marked as `both` count toward both their AM and PM equivalents.
 
+For contribution planning, see the full coverage table in [`docs/scene-coverage.md`](docs/scene-coverage.md).
+
 ### Exact minutes covered
 
 | Hour | Minutes |
@@ -271,6 +273,8 @@ python3 tools/clean-mp4-metadata.py
 ```text
 index.html
 README.md
+docs/
+  scene-coverage.md
 assets/
   css/
     styles.css
