@@ -449,6 +449,7 @@ video {
   .panel--start .start-title,
   .panel--start #startMessage,
   .panel--start #startButton,
+  .panel--start .source-link,
   .panel--countdown,
   .panel--title,
   .panel--idle,
@@ -570,6 +571,34 @@ video {
 }
 
 .button:focus-visible {
+  outline: 0.1875rem solid var(--gold);
+  outline-offset: 0.25rem;
+}
+
+.source-link,
+.button--replay {
+  color: var(--paper-muted);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-decoration: none;
+  opacity: 0.78;
+  transition:
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.source-link:hover,
+.source-link:focus-visible,
+.button--replay:hover,
+.button--replay:focus-visible {
+  color: var(--paper);
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.source-link:focus-visible {
   outline: 0.1875rem solid var(--gold);
   outline-offset: 0.25rem;
 }
@@ -953,27 +982,15 @@ video {
   min-height: 0;
   padding: 0;
   flex: 0 0 auto;
-  color: var(--paper-muted);
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
   letter-spacing: 0;
   background: none;
   box-shadow: none;
-  opacity: 0.78;
   overflow: visible;
 }
 
 .button--replay:before,
 .button--replay:after {
   content: none;
-}
-
-.button--replay:hover,
-.button--replay:focus-visible {
-  color: var(--paper);
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 0.25rem;
 }
 
 .status__next {
